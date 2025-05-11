@@ -13,8 +13,10 @@ from time import sleep
 
 from loadwin_ui import Ui_loadwin  # 根据自己的目录设置文件路径
 from Ui_mainwin import Ui_mainwin  # 根据自己的目录设置文件路径
-
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
+BASE_DIR = os.getenv("BASE_DIR")
 class LoadWin(QWidget, Ui_loadwin):  # 启动画面类
     def __init__(self):
         super(LoadWin, self).__init__()
@@ -80,7 +82,8 @@ class LoadWin(QWidget, Ui_loadwin):  # 启动画面类
 
         # 加载图片
         self.label_logo.setAlignment(Qt.AlignLeft | Qt.AlignTop)
-        pix = QPixmap("./load_logo.png")
+        logo_path = os.path.join(BASE_DIR, "load_logo.png")
+        pix = QPixmap(logo_path)
         # target_height = int(self.height() * 0.5)  # 动态高度
         # target_width = int(self.width() * 0.95)
         scaled_pix = pix.scaled(
