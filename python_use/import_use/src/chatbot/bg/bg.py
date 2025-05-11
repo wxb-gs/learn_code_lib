@@ -1,0 +1,3 @@
+def getBg():
+    print("bg")
+    

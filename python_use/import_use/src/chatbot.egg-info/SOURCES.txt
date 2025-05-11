@@ -1,0 +1,10 @@
+setup.py
+src/chatbot/__init__.py
+src/chatbot.egg-info/PKG-INFO
+src/chatbot.egg-info/SOURCES.txt
+src/chatbot.egg-info/dependency_links.txt
+src/chatbot.egg-info/top_level.txt
+src/chatbot/utils/__init__.py
+src/chatbot/utils/utils.py
+src/chatbot/utils/prompts/__init__.py
+src/chatbot/utils/prompts/militory.py
