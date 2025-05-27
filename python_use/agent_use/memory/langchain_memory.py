@@ -64,3 +64,6 @@ for event in app.stream({"messages": [input_message]}, config, stream_mode="valu
 input_message = HumanMessage(content="what was my name?")
 for event in app.stream({"messages": [input_message]}, config, stream_mode="values"):
     event["messages"][-1].pretty_print()
+
+snapstate = app.get_state(config)
+print(snapstate.values)
