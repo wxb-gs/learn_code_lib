@@ -6,45 +6,57 @@ using namespace std;
 class Solution
 {
 public:
-    unordered_map<int, string> m;
-    vector<int> v1{1, 5, 10, 50, 100, 500, 1000};
-    vector<string> v1_str{"I", "V", "X", "L", "C", "D", "M"};
-    vector<int> v2{4, 9, 40, 90, 400, 900};
-    vector<string> v2_str{"IV", "IX", "XL", "XC", "CD", "CM"};
-    string intToRoman(int num)
+    vector<string> fullJustify(vector<string> &words, int maxWidth)
     {
-        string ans = "";
-        while (num > 0)
+        vector<string> ans;
+        int i = 0;
+        vector<string> line;
+        int now = 0;
+        while (i < words.size())
         {
-            int tm = num;
-            while (tm / 10 > 0)
+            if (now + words[i].size() <= maxWidth)
             {
-                tm /= 10;
+                line.push_back(words[i]);
+                now = now + words[i].size() + 1;
             }
-            int first = tm;
+            if (i == words.size() - 1 || now + words[i + 1].size() > maxWidth)
+            {
+                int size = line.size();
+                int char_len = 0;
+                for (int j = 0; j < size; j++)
+                {
+                    char_len += line[j].size();
+                }
 
-            int index = 0;
-
-            vector<int> *v;
-            vector<string> *v_str;
-            if (first == 4 || first == 9)
-            {
-                v = &v1;
-                v_str = &v1_str;
+                int blank = maxWidth - char_len;
+                int every_blank_num = blank / (size - 1);
+                int rest = blank % (size - 1);
+                string tm = "" + line[0];
+                for (int j = 1; j < size; j++)
+                {
+                    for (int k = 0; k < every_blank_num; k++)
+                        tm += " ";
+                    if (rest)
+                    {
+                        tm += " ";
+                        rest--;
+                    }
+                    tm += line[j];
+                }
+                ans.push_back(tm);
+                now = 0;
+                line.clear();
             }
-            else
-            {
-                v = &v2;
-                v_str = &v2_str;
-            }
-            index = v->size() - 1;
-            while (num < v->at(index))
-            {
-                index--;
-            }
-            num -= v_str->at(index);
-            ans += v_str->at(index);
+            i++;
         }
         return ans;
     }
 };
+int main(void)
+{
+    Solution s;
+    vector<string> v{"This", "is", "an", "example", "of", "text", "justification."};
+    bool ans = s.fullJustify(v, 16);
+    cout << ans;
+    return 0;
+}
