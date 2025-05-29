@@ -5,7 +5,7 @@ from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
 # 1. 构建基础链（保持不变）
-llm = ChatOpenAI(model="qwen:7b", base_url="http://127.0.0.1:10087/v1", api_key="vllm")
+llm = ChatOllama(model="Qwen2.5-7B-Instruct:latest")
 prompt = ChatPromptTemplate.from_messages([
     ("system", "你是一个AI助手"),
     MessagesPlaceholder(variable_name="history"),
@@ -47,7 +47,7 @@ gr.ChatInterface(
     textbox=gr.Textbox(placeholder="输入消息...", scale=7),
     examples=["你好！", "如何学习AI？"],
     title="智能助手",
-    css="""
+    css="""r
     #custom-chatbot{
         height: 600px !important;
     }
