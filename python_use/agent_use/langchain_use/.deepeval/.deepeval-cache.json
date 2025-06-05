@@ -1,0 +1,130 @@
+{
+  "test_cases_lookup_map": {
+    "{\"actual_output\": \"Hi Bob, according to the information we have, you are 42 years old.\", \"context\": [\"User name is Bob\"], \"expected_output\": \"42 years old\", \"hyperparameters\": null, \"input\": \"hi! I'm bob. What is my age?\", \"retrieval_context\": null}": {
+      "cached_metrics_data": [
+        {
+          "metric_data": {
+            "name": "Answer Relevancy",
+            "threshold": 0.7,
+            "success": true,
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no irrelevant statements in the output, making it fully relevant to the input.",
+            "strictMode": false,
+            "evaluationModel": "qwen2.5:7b (Ollama)",
+            "evaluationCost": 0,
+            "verboseLogs": "Statements:\n[\n    \"You are 42 years old.\"\n] \n \nVerdicts:\n[\n    {\n        \"verdict\": \"yes\",\n        \"reason\": null\n    }\n]"
+          },
+          "metric_configuration": {
+            "threshold": 0.7,
+            "evaluation_model": "qwen2.5:7b (Ollama)",
+            "strict_mode": false,
+            "include_reason": true
+          }
+        },
+        {
+          "metric_data": {
+            "name": "Hallucination",
+            "threshold": 0.8,
+            "success": false,
+            "score": 1.0,
+            "reason": "The score is 1.00 because the actual output introduces new information (age) that is not present in the context.",
+            "strictMode": false,
+            "evaluationModel": "qwen2.5:7b (Ollama)",
+            "evaluationCost": 0,
+            "verboseLogs": "Verdicts:\n[\n    {\n        \"verdict\": \"no\",\n        \"reason\": \"The actual output introduces new information (age) that is not present in the context. The context only mentions the user name as Bob, without any age information.\"\n    }\n]"
+          },
+          "metric_configuration": {
+            "threshold": 0.8,
+            "evaluation_model": "qwen2.5:7b (Ollama)",
+            "strict_mode": false,
+            "include_reason": true
+          }
+        }
+      ]
+    },
+    "{\"actual_output\": \"Yes, I remember your name is Bob. How can I assist you further?\", \"context\": [\"\\u4e0a\\u4e00\\u8f6e\\u5bf9\\u8bdd\\u5df2\\u544a\\u77e5\\u540d\\u5b57\"], \"expected_output\": \"Bob\", \"hyperparameters\": null, \"input\": \"do you remember my name?\", \"retrieval_context\": null}": {
+      "cached_metrics_data": [
+        {
+          "metric_data": {
+            "name": "Answer Relevancy",
+            "threshold": 0.7,
+            "success": false,
+            "score": 0.5,
+            "reason": "The score is 0.50 because the response did not directly address whether the assistant remembers the user's name, making it irrelevant to the input.",
+            "strictMode": false,
+            "evaluationModel": "qwen2.5:7b (Ollama)",
+            "evaluationCost": 0,
+            "verboseLogs": "Statements:\n[\n    \"I remember your name is Bob.\",\n    \"How can I assist you further?\"\n] \n \nVerdicts:\n[\n    {\n        \"verdict\": \"yes\",\n        \"reason\": \"The statement confirms the user's name, directly addressing the input.\"\n    },\n    {\n        \"verdict\": \"no\",\n        \"reason\": \"This statement does not address whether the assistant remembers the user's name and is irrelevant to the input.\"\n    }\n]"
+          },
+          "metric_configuration": {
+            "threshold": 0.7,
+            "evaluation_model": "qwen2.5:7b (Ollama)",
+            "strict_mode": false,
+            "include_reason": true
+          }
+        },
+        {
+          "metric_data": {
+            "name": "Hallucination",
+            "threshold": 0.8,
+            "success": true,
+            "score": 0.0,
+            "reason": "The score is 0.00 because there are no contradictions, and the output aligns with the context of mentioning a name in the previous conversation.",
+            "strictMode": false,
+            "evaluationModel": "qwen2.5:7b (Ollama)",
+            "evaluationCost": 0,
+            "verboseLogs": "Verdicts:\n[\n    {\n        \"verdict\": \"yes\",\n        \"reason\": \"The actual output does not contradict the provided context which states that the previous conversation mentioned a name.\"\n    }\n]"
+          },
+          "metric_configuration": {
+            "threshold": 0.8,
+            "evaluation_model": "qwen2.5:7b (Ollama)",
+            "strict_mode": false,
+            "include_reason": true
+          }
+        }
+      ]
+    },
+    "{\"actual_output\": \"I don't have any information about Alice's age. To find out her age, we would need to use the `get_user_age` function and provide her name. However, since I only have your name (Bob) stored, could you please tell me Alice's name so I can check her age for you?\", \"context\": [\"\\u5de5\\u5177\\u9ed8\\u8ba4\\u8fd4\\u56de41\\u5c81\"], \"expected_output\": \"41 years old\", \"hyperparameters\": null, \"input\": \"what's Alice's age?\", \"retrieval_context\": null}": {
+      "cached_metrics_data": [
+        {
+          "metric_data": {
+            "name": "Answer Relevancy",
+            "threshold": 0.7,
+            "success": false,
+            "score": 0.6666666666666666,
+            "reason": "The score is 0.67 because while it addresses the query by indicating a lack of information, it does not provide any specific details or context about Alice's age.",
+            "strictMode": false,
+            "evaluationModel": "qwen2.5:7b (Ollama)",
+            "evaluationCost": 0,
+            "verboseLogs": "Statements:\n[\n    \"I don't have any information about Alice's age.\",\n    \"To find out her age, we would need to use the `get_user_age` function and provide her name.\",\n    \"Since I only have your name (Bob) stored, could you please tell me Alice's name so I can check her age for you?\"\n] \n \nVerdicts:\n[\n    {\n        \"verdict\": \"no\",\n        \"reason\": \"The statement does not provide any information about Alice's age and only indicates a lack of information.\"\n    },\n    {\n        \"verdict\": \"yes\",\n        \"reason\": null\n    },\n    {\n        \"verdict\": \"idk\",\n        \"reason\": \"While the statement suggests a way to find out Alice's age, it is ambiguous as to whether this method would work without additional information.\"\n    }\n]"
+          },
+          "metric_configuration": {
+            "threshold": 0.7,
+            "evaluation_model": "qwen2.5:7b (Ollama)",
+            "strict_mode": false,
+            "include_reason": true
+          }
+        },
+        {
+          "metric_data": {
+            "name": "Hallucination",
+            "threshold": 0.8,
+            "success": false,
+            "score": 1.0,
+            "reason": "The score is 1.00 because the actual output contradicts the context by focusing on a different topic (checking Alice's age) instead of addressing the default behavior of returning an age of 41.",
+            "strictMode": false,
+            "evaluationModel": "qwen2.5:7b (Ollama)",
+            "evaluationCost": 0,
+            "verboseLogs": "Verdicts:\n[\n    {\n        \"verdict\": \"no\",\n        \"reason\": \"The actual output does not agree with the context which states that the tool defaults to returning an age of 41. The response provided is about checking Alice's age, which is not related to the default behavior mentioned in the context.\"\n    }\n]"
+          },
+          "metric_configuration": {
+            "threshold": 0.8,
+            "evaluation_model": "qwen2.5:7b (Ollama)",
+            "strict_mode": false,
+            "include_reason": true
+          }
+        }
+      ]
+    }
+  }
+}
