@@ -2,3 +2,7 @@ build
 __pycache__/
 *.exe
 dist
+chineseJH_chroma_db/
+55_db/
+1-55章.txt
+.vscode/*

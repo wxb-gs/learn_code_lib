@@ -1,5 +1,165 @@
 [
     {
+        "label": "StateGraph",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "END",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "START",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "MessagesState",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "StateGraph",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "OllamaLLM",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "AIMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "BaseMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "SystemMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "trim_messages",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
         "label": "asyncio",
         "kind": 6,
         "isExtraImport": true,
@@ -31,38 +191,6 @@
         "description": "time",
         "isExtraImport": true,
         "detail": "time",
-        "documentation": {}
-    },
-    {
-        "label": "ChatOllama",
-        "importPath": "langchain_ollama",
-        "description": "langchain_ollama",
-        "isExtraImport": true,
-        "detail": "langchain_ollama",
-        "documentation": {}
-    },
-    {
-        "label": "ChatOllama",
-        "importPath": "langchain_ollama",
-        "description": "langchain_ollama",
-        "isExtraImport": true,
-        "detail": "langchain_ollama",
-        "documentation": {}
-    },
-    {
-        "label": "ChatOllama",
-        "importPath": "langchain_ollama",
-        "description": "langchain_ollama",
-        "isExtraImport": true,
-        "detail": "langchain_ollama",
-        "documentation": {}
-    },
-    {
-        "label": "ChatOllama",
-        "importPath": "langchain_ollama",
-        "description": "langchain_ollama",
-        "isExtraImport": true,
-        "detail": "langchain_ollama",
         "documentation": {}
     },
     {
@@ -194,12 +322,11 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
+        "label": "ChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
         "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
+        "detail": "langchain_openai",
         "documentation": {}
     },
     {
@@ -209,6 +336,103 @@
         "importPath": "uuid",
         "description": "uuid",
         "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate",
+        "importPath": "deepeval",
+        "description": "deepeval",
+        "isExtraImport": true,
+        "detail": "deepeval",
+        "documentation": {}
+    },
+    {
+        "label": "LLMTestCase",
+        "importPath": "deepeval.test_case",
+        "description": "deepeval.test_case",
+        "isExtraImport": true,
+        "detail": "deepeval.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "AnswerRelevancyMetric",
+        "importPath": "deepeval.metrics",
+        "description": "deepeval.metrics",
+        "isExtraImport": true,
+        "detail": "deepeval.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "HallucinationMetric",
+        "importPath": "deepeval.metrics",
+        "description": "deepeval.metrics",
+        "isExtraImport": true,
+        "detail": "deepeval.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "DeepEvalCallbackHandler",
+        "importPath": "langchain_community.callbacks.confident_callback",
+        "description": "langchain_community.callbacks.confident_callback",
+        "isExtraImport": true,
+        "detail": "langchain_community.callbacks.confident_callback",
+        "documentation": {}
+    },
+    {
+        "label": "OllamaModel",
+        "importPath": "deepeval.models",
+        "description": "deepeval.models",
+        "isExtraImport": true,
+        "detail": "deepeval.models",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "langgraph_use",
+        "description": "langgraph_use",
+        "isExtraImport": true,
+        "detail": "langgraph_use",
+        "documentation": {}
+    },
+    {
+        "label": "tool",
+        "importPath": "langchain_core.tools",
+        "description": "langchain_core.tools",
+        "isExtraImport": true,
+        "detail": "langchain_core.tools",
+        "documentation": {}
+    },
+    {
+        "label": "MemorySaver",
+        "importPath": "langgraph.checkpoint.memory",
+        "description": "langgraph.checkpoint.memory",
+        "isExtraImport": true,
+        "detail": "langgraph.checkpoint.memory",
+        "documentation": {}
+    },
+    {
+        "label": "MemorySaver",
+        "importPath": "langgraph.checkpoint.memory",
+        "description": "langgraph.checkpoint.memory",
+        "isExtraImport": true,
+        "detail": "langgraph.checkpoint.memory",
+        "documentation": {}
+    },
+    {
+        "label": "create_react_agent",
+        "importPath": "langgraph.prebuilt",
+        "description": "langgraph.prebuilt",
+        "isExtraImport": true,
+        "detail": "langgraph.prebuilt",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
         "documentation": {}
     },
     {
@@ -225,46 +449,6 @@
         "description": "IPython.display",
         "isExtraImport": true,
         "detail": "IPython.display",
-        "documentation": {}
-    },
-    {
-        "label": "HumanMessage",
-        "importPath": "langchain_core.messages",
-        "description": "langchain_core.messages",
-        "isExtraImport": true,
-        "detail": "langchain_core.messages",
-        "documentation": {}
-    },
-    {
-        "label": "MemorySaver",
-        "importPath": "langgraph.checkpoint.memory",
-        "description": "langgraph.checkpoint.memory",
-        "isExtraImport": true,
-        "detail": "langgraph.checkpoint.memory",
-        "documentation": {}
-    },
-    {
-        "label": "START",
-        "importPath": "langgraph.graph",
-        "description": "langgraph.graph",
-        "isExtraImport": true,
-        "detail": "langgraph.graph",
-        "documentation": {}
-    },
-    {
-        "label": "MessagesState",
-        "importPath": "langgraph.graph",
-        "description": "langgraph.graph",
-        "isExtraImport": true,
-        "detail": "langgraph.graph",
-        "documentation": {}
-    },
-    {
-        "label": "StateGraph",
-        "importPath": "langgraph.graph",
-        "description": "langgraph.graph",
-        "isExtraImport": true,
-        "detail": "langgraph.graph",
         "documentation": {}
     },
     {
@@ -2288,390 +2472,561 @@
         "documentation": {}
     },
     {
-        "label": "model",
-        "kind": 5,
-        "importPath": "python_use.agent_use.langchain_use.chat",
-        "description": "python_use.agent_use.langchain_use.chat",
-        "peekOfCode": "model = ChatOpenAI(model=\"qwen2:7b\", base_url=\"127.0.0.1:10087\")  # 使用新包中的类\nasync def run():\n    # 方法1: 异步流式调用\n    print(\"\\n--- 方法1 ---\")\n    async for chunk in model.astream(\"天空的颜色是什么？\"):\n        print(chunk.content, end=\"\", flush=True)\n    print(\"next???????\")\n    # 方法2: 使用LCEL链式处理\n    print(\"\\n\\n--- 方法2 ---\")\n    prompt = ChatPromptTemplate.from_template(\"讲一个关于{topic}的笑话\")",
-        "detail": "python_use.agent_use.langchain_use.chat",
+        "label": "GraphState",
+        "kind": 6,
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "class GraphState(dict):\n    pass\n# 节点1：调用 LLM\ndef answer_question(state: GraphState) -> GraphState:\n    messages = state[\"messages\"]\n    response = llm(messages)\n    state[\"messages\"].append({\"role\": \"assistant\", \"content\": response.content})\n    return state\n# 1. 判断是否需要搜索\ndef should_search(state: GraphState) -> str:",
+        "detail": "python_use.agent.langchain_use.demo.test",
         "documentation": {}
     },
     {
-        "label": "call_model",
+        "label": "answer_question",
         "kind": 2,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
-        "peekOfCode": "def call_model(state: MessagesState):\n    response = model.invoke(state[\"messages\"])\n    # We return a list, because this will get added to the existing list\n    return {\"messages\": response}\n# Define the two nodes we will cycle between\nworkflow.add_edge(START, \"model\")\nworkflow.add_node(\"model\", call_model)\n# Adding memory is straight forward in langgraph!\nmemory = MemorySaver()\napp = workflow.compile(",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "def answer_question(state: GraphState) -> GraphState:\n    messages = state[\"messages\"]\n    response = llm(messages)\n    state[\"messages\"].append({\"role\": \"assistant\", \"content\": response.content})\n    return state\n# 1. 判断是否需要搜索\ndef should_search(state: GraphState) -> str:\n    question = state[\"messages\"][-1][\"content\"]\n    if \"latest\" in question or \"current\" in question:\n        return \"search\"",
+        "detail": "python_use.agent.langchain_use.demo.test",
         "documentation": {}
     },
     {
-        "label": "workflow",
-        "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
-        "peekOfCode": "workflow = StateGraph(state_schema=MessagesState)\n# Define a chat model\n### 设置环境\nos.environ[\"OPENAI_API_KEY\"] =  'sk-d58877221cec4f208dc353259ca9c8bc' # 阿里云Qwen密钥\nos.environ[\"OPENAI_BASE_URL\"] = 'https://dashscope.aliyuncs.com/compatible-mode/v1'   # 例如：https://dashscope.aliyuncs.com/compatible-mode/v1\n# 初始化大模型\nmodel = ChatOpenAI(\n    # model=os.getenv('DEEPSEEK_MODEL'),\n    # api_key=os.getenv('DEEPSEEK_API_KEY'),\n    # base_url=os.getenv('DEEPSEEK_URL')",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "label": "should_search",
+        "kind": 2,
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "def should_search(state: GraphState) -> str:\n    question = state[\"messages\"][-1][\"content\"]\n    if \"latest\" in question or \"current\" in question:\n        return \"search\"\n    return \"answer\"\n# 2. 定义搜索节点\ndef search_web(state: GraphState) -> GraphState:\n    # 假设是搜索后的结果\n    result = \"According to recent sources, ...\"\n    state[\"messages\"].append({\"role\": \"function\", \"name\": \"search_web\", \"content\": result})",
+        "detail": "python_use.agent.langchain_use.demo.test",
         "documentation": {}
     },
     {
-        "label": "os.environ[\"OPENAI_API_KEY\"]",
-        "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
-        "peekOfCode": "os.environ[\"OPENAI_API_KEY\"] =  'sk-d58877221cec4f208dc353259ca9c8bc' # 阿里云Qwen密钥\nos.environ[\"OPENAI_BASE_URL\"] = 'https://dashscope.aliyuncs.com/compatible-mode/v1'   # 例如：https://dashscope.aliyuncs.com/compatible-mode/v1\n# 初始化大模型\nmodel = ChatOpenAI(\n    # model=os.getenv('DEEPSEEK_MODEL'),\n    # api_key=os.getenv('DEEPSEEK_API_KEY'),\n    # base_url=os.getenv('DEEPSEEK_URL')\n    model = \"qwen-plus\",\n    api_key =  os.getenv('OPENAI_API_KEY'),\n    base_url = os.getenv('OPENAI_BASE_URL')",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "label": "search_web",
+        "kind": 2,
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "def search_web(state: GraphState) -> GraphState:\n    # 假设是搜索后的结果\n    result = \"According to recent sources, ...\"\n    state[\"messages\"].append({\"role\": \"function\", \"name\": \"search_web\", \"content\": result})\n    return state\n# 构建图\ngraph = StateGraph(GraphState)\n# 添加节点\ngraph.add_node(\"answer\", answer_question)\ngraph.add_node(\"search\", search_web)",
+        "detail": "python_use.agent.langchain_use.demo.test",
         "documentation": {}
     },
     {
-        "label": "os.environ[\"OPENAI_BASE_URL\"]",
+        "label": "llm",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
-        "peekOfCode": "os.environ[\"OPENAI_BASE_URL\"] = 'https://dashscope.aliyuncs.com/compatible-mode/v1'   # 例如：https://dashscope.aliyuncs.com/compatible-mode/v1\n# 初始化大模型\nmodel = ChatOpenAI(\n    # model=os.getenv('DEEPSEEK_MODEL'),\n    # api_key=os.getenv('DEEPSEEK_API_KEY'),\n    # base_url=os.getenv('DEEPSEEK_URL')\n    model = \"qwen-plus\",\n    api_key =  os.getenv('OPENAI_API_KEY'),\n    base_url = os.getenv('OPENAI_BASE_URL')\n)",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "llm = ChatOllama(model=\"qwen2.5:7b\")\n# 定义图状态：只包含消息列表\nclass GraphState(dict):\n    pass\n# 节点1：调用 LLM\ndef answer_question(state: GraphState) -> GraphState:\n    messages = state[\"messages\"]\n    response = llm(messages)\n    state[\"messages\"].append({\"role\": \"assistant\", \"content\": response.content})\n    return state",
+        "detail": "python_use.agent.langchain_use.demo.test",
         "documentation": {}
     },
     {
-        "label": "model",
+        "label": "graph",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
-        "peekOfCode": "model = ChatOpenAI(\n    # model=os.getenv('DEEPSEEK_MODEL'),\n    # api_key=os.getenv('DEEPSEEK_API_KEY'),\n    # base_url=os.getenv('DEEPSEEK_URL')\n    model = \"qwen-plus\",\n    api_key =  os.getenv('OPENAI_API_KEY'),\n    base_url = os.getenv('OPENAI_BASE_URL')\n)\n# Define the function that calls the model\ndef call_model(state: MessagesState):",
-        "detail": "python_use.agent_use.memory.langchain_memory",
-        "documentation": {}
-    },
-    {
-        "label": "memory",
-        "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
-        "peekOfCode": "memory = MemorySaver()\napp = workflow.compile(\n    checkpointer=memory\n)\n# The thread id is a unique key that identifies\n# this particular conversation.\n# We'll just generate a random uuid here.\n# This enables a single application to manage conversations among multiple users.\nthread_id = uuid.uuid4()\nconfig = {\"configurable\": {\"thread_id\": thread_id}}",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "graph = StateGraph(GraphState)\n# 添加节点\ngraph.add_node(\"answer\", answer_question)\ngraph.add_node(\"search\", search_web)\n# 添加分支判断\ngraph.add_conditional_edges(\"router\", should_search, {\n    \"answer\": \"answer\",\n    \"search\": \"search\",\n})\n# 路由后进入终点",
+        "detail": "python_use.agent.langchain_use.demo.test",
         "documentation": {}
     },
     {
         "label": "app",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "app = graph.compile()\n# 测试\nstate = GraphState(messages=[HumanMessage(content=\"What is the latest news about AI?\")])\nresult = app.invoke(state)\nprint(result[\"messages\"][-1][\"content\"])",
+        "detail": "python_use.agent.langchain_use.demo.test",
+        "documentation": {}
+    },
+    {
+        "label": "state",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "state = GraphState(messages=[HumanMessage(content=\"What is the latest news about AI?\")])\nresult = app.invoke(state)\nprint(result[\"messages\"][-1][\"content\"])",
+        "detail": "python_use.agent.langchain_use.demo.test",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.demo.test",
+        "description": "python_use.agent.langchain_use.demo.test",
+        "peekOfCode": "result = app.invoke(state)\nprint(result[\"messages\"][-1][\"content\"])",
+        "detail": "python_use.agent.langchain_use.demo.test",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.chat",
+        "description": "python_use.agent.langchain_use.chat",
+        "peekOfCode": "model = ChatOpenAI(model=\"qwen2:7b\", base_url=\"127.0.0.1:10087\")  # 使用新包中的类\nasync def run():\n    # 方法1: 异步流式调用\n    print(\"\\n--- 方法1 ---\")\n    async for chunk in model.astream(\"天空的颜色是什么？\"):\n        print(chunk.content, end=\"\", flush=True)\n    print(\"next???????\")\n    # 方法2: 使用LCEL链式处理\n    print(\"\\n\\n--- 方法2 ---\")\n    prompt = ChatPromptTemplate.from_template(\"讲一个关于{topic}的笑话\")",
+        "detail": "python_use.agent.langchain_use.chat",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_agent",
+        "kind": 2,
+        "importPath": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "description": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "peekOfCode": "def evaluate_agent():\n    test_results = []\n    thread_id = uuid.uuid4()\n    config = {\"configurable\": {\"thread_id\": thread_id}}\n    for case in test_cases:\n        # 运行代理\n        messages = []\n        input_msg = HumanMessage(content=case[\"input\"])\n        for event in app.stream(\n            {\"messages\": [input_msg]}, ",
+        "detail": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "documentation": {}
+    },
+    {
+        "label": "print_results",
+        "kind": 2,
+        "importPath": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "description": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "peekOfCode": "def print_results(results):\n    print(\"=\"*50)\n    print(\"LangGraph代理评估报告\")\n    print(\"=\"*50)\n    for i, res in enumerate(results, 1):\n        print(f\"\\n测试 #{i}: {res['description']}\")\n        print(f\"输入: {res['input']}\")\n        print(f\"预期: {res['expected']}\")\n        print(f\"实际: {res['actual']}\")\n        print(\"\\n评估指标:\")",
+        "detail": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "documentation": {}
+    },
+    {
+        "label": "eval_model",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "description": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "peekOfCode": "eval_model = OllamaModel(model='qwen2.5:7b')\n# 配置评估指标\nmetrics = [\n    AnswerRelevancyMetric(threshold=0.7, model=eval_model),\n    HallucinationMetric(threshold=0.8, model=eval_model),\n]\n# # 主要作用是用于自动评估？？\n# # 正确初始化回调处理器\n# callback_handler = DeepEvalCallbackHandler(metrics=metrics)\n# 定义测试场景",
+        "detail": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "documentation": {}
+    },
+    {
+        "label": "metrics",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "description": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "peekOfCode": "metrics = [\n    AnswerRelevancyMetric(threshold=0.7, model=eval_model),\n    HallucinationMetric(threshold=0.8, model=eval_model),\n]\n# # 主要作用是用于自动评估？？\n# # 正确初始化回调处理器\n# callback_handler = DeepEvalCallbackHandler(metrics=metrics)\n# 定义测试场景\ntest_cases = [\n    {",
+        "detail": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "documentation": {}
+    },
+    {
+        "label": "test_cases",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "description": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "peekOfCode": "test_cases = [\n    {\n        \"input\": \"hi! I'm bob. What is my age?\",\n        \"expected_output\": \"42 years old\",\n        \"context\": [\"User name is Bob\"],\n        \"description\": \"应正确调用工具获取年龄\"\n    },\n    {\n        \"input\": \"do you remember my name?\",\n        \"expected_output\": \"Bob\",",
+        "detail": "python_use.agent.langchain_use.eval_langgraph_agent",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_age",
+        "kind": 2,
+        "importPath": "python_use.agent.langchain_use.langgraph_use",
+        "description": "python_use.agent.langchain_use.langgraph_use",
+        "peekOfCode": "def get_user_age(name: str) -> str:\n    \"\"\"Use this tool to find the user's age.\"\"\"\n    # This is a placeholder for the actual implementation\n    if \"bob\" in name.lower():\n        return \"42 years old\"\n    return \"41 years old\"\nmemory = MemorySaver()\nmodel = ChatOllama(model=\"Qwen2.5-7B-Instruct\")\n# 上下文处理得到\ndef prompt(state) -> list[BaseMessage]:",
+        "detail": "python_use.agent.langchain_use.langgraph_use",
+        "documentation": {}
+    },
+    {
+        "label": "prompt",
+        "kind": 2,
+        "importPath": "python_use.agent.langchain_use.langgraph_use",
+        "description": "python_use.agent.langchain_use.langgraph_use",
+        "peekOfCode": "def prompt(state) -> list[BaseMessage]:\n    \"\"\"Given the agent state, return a list of messages for the chat model.\"\"\"\n    # We're using the message processor defined above.\n    return trim_messages(\n        state[\"messages\"],\n        token_counter=len,  # <-- len will simply count the number of messages rather than tokens\n        max_tokens=5,  # <-- allow up to 5 messages.\n        strategy=\"last\",\n        # Most chat models expect that chat history starts with either:\n        # (1) a HumanMessage or",
+        "detail": "python_use.agent.langchain_use.langgraph_use",
+        "documentation": {}
+    },
+    {
+        "label": "memory",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.langgraph_use",
+        "description": "python_use.agent.langchain_use.langgraph_use",
+        "peekOfCode": "memory = MemorySaver()\nmodel = ChatOllama(model=\"Qwen2.5-7B-Instruct\")\n# 上下文处理得到\ndef prompt(state) -> list[BaseMessage]:\n    \"\"\"Given the agent state, return a list of messages for the chat model.\"\"\"\n    # We're using the message processor defined above.\n    return trim_messages(\n        state[\"messages\"],\n        token_counter=len,  # <-- len will simply count the number of messages rather than tokens\n        max_tokens=5,  # <-- allow up to 5 messages.",
+        "detail": "python_use.agent.langchain_use.langgraph_use",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.langgraph_use",
+        "description": "python_use.agent.langchain_use.langgraph_use",
+        "peekOfCode": "model = ChatOllama(model=\"Qwen2.5-7B-Instruct\")\n# 上下文处理得到\ndef prompt(state) -> list[BaseMessage]:\n    \"\"\"Given the agent state, return a list of messages for the chat model.\"\"\"\n    # We're using the message processor defined above.\n    return trim_messages(\n        state[\"messages\"],\n        token_counter=len,  # <-- len will simply count the number of messages rather than tokens\n        max_tokens=5,  # <-- allow up to 5 messages.\n        strategy=\"last\",",
+        "detail": "python_use.agent.langchain_use.langgraph_use",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "python_use.agent.langchain_use.langgraph_use",
+        "description": "python_use.agent.langchain_use.langgraph_use",
+        "peekOfCode": "app = create_react_agent(\n    model,\n    tools=[get_user_age],\n    checkpointer=memory,\n    prompt=prompt,\n)\nif __name__ == \"__main__\":\n    # The thread id is a unique key that identifies\n    # this particular conversation.\n    # We'll just generate a random uuid here.",
+        "detail": "python_use.agent.langchain_use.langgraph_use",
+        "documentation": {}
+    },
+    {
+        "label": "call_model",
+        "kind": 2,
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
+        "peekOfCode": "def call_model(state: MessagesState):\n    response = model.invoke(state[\"messages\"])\n    # We return a list, because this will get added to the existing list\n    return {\"messages\": response}\n# Define the two nodes we will cycle between\nworkflow.add_edge(START, \"model\")\nworkflow.add_node(\"model\", call_model)\n# Adding memory is straight forward in langgraph!\nmemory = MemorySaver()\napp = workflow.compile(",
+        "detail": "python_use.agent.memory.langchain_memory",
+        "documentation": {}
+    },
+    {
+        "label": "workflow",
+        "kind": 5,
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
+        "peekOfCode": "workflow = StateGraph(state_schema=MessagesState)\n# Define a chat model\n### 设置环境\nos.environ[\"OPENAI_API_KEY\"] =  'sk-d58877221cec4f208dc353259ca9c8bc' # 阿里云Qwen密钥\nos.environ[\"OPENAI_BASE_URL\"] = 'https://dashscope.aliyuncs.com/compatible-mode/v1'   # 例如：https://dashscope.aliyuncs.com/compatible-mode/v1\n# 初始化大模型\nmodel = ChatOpenAI(\n    # model=os.getenv('DEEPSEEK_MODEL'),\n    # api_key=os.getenv('DEEPSEEK_API_KEY'),\n    # base_url=os.getenv('DEEPSEEK_URL')",
+        "detail": "python_use.agent.memory.langchain_memory",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"OPENAI_API_KEY\"]",
+        "kind": 5,
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
+        "peekOfCode": "os.environ[\"OPENAI_API_KEY\"] =  'sk-d58877221cec4f208dc353259ca9c8bc' # 阿里云Qwen密钥\nos.environ[\"OPENAI_BASE_URL\"] = 'https://dashscope.aliyuncs.com/compatible-mode/v1'   # 例如：https://dashscope.aliyuncs.com/compatible-mode/v1\n# 初始化大模型\nmodel = ChatOpenAI(\n    # model=os.getenv('DEEPSEEK_MODEL'),\n    # api_key=os.getenv('DEEPSEEK_API_KEY'),\n    # base_url=os.getenv('DEEPSEEK_URL')\n    model = \"qwen-plus\",\n    api_key =  os.getenv('OPENAI_API_KEY'),\n    base_url = os.getenv('OPENAI_BASE_URL')",
+        "detail": "python_use.agent.memory.langchain_memory",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"OPENAI_BASE_URL\"]",
+        "kind": 5,
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
+        "peekOfCode": "os.environ[\"OPENAI_BASE_URL\"] = 'https://dashscope.aliyuncs.com/compatible-mode/v1'   # 例如：https://dashscope.aliyuncs.com/compatible-mode/v1\n# 初始化大模型\nmodel = ChatOpenAI(\n    # model=os.getenv('DEEPSEEK_MODEL'),\n    # api_key=os.getenv('DEEPSEEK_API_KEY'),\n    # base_url=os.getenv('DEEPSEEK_URL')\n    model = \"qwen-plus\",\n    api_key =  os.getenv('OPENAI_API_KEY'),\n    base_url = os.getenv('OPENAI_BASE_URL')\n)",
+        "detail": "python_use.agent.memory.langchain_memory",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
+        "peekOfCode": "model = ChatOpenAI(\n    # model=os.getenv('DEEPSEEK_MODEL'),\n    # api_key=os.getenv('DEEPSEEK_API_KEY'),\n    # base_url=os.getenv('DEEPSEEK_URL')\n    model = \"qwen-plus\",\n    api_key =  os.getenv('OPENAI_API_KEY'),\n    base_url = os.getenv('OPENAI_BASE_URL')\n)\n# Define the function that calls the model\ndef call_model(state: MessagesState):",
+        "detail": "python_use.agent.memory.langchain_memory",
+        "documentation": {}
+    },
+    {
+        "label": "memory",
+        "kind": 5,
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
+        "peekOfCode": "memory = MemorySaver()\napp = workflow.compile(\n    checkpointer=memory\n)\n# The thread id is a unique key that identifies\n# this particular conversation.\n# We'll just generate a random uuid here.\n# This enables a single application to manage conversations among multiple users.\nthread_id = uuid.uuid4()\nconfig = {\"configurable\": {\"thread_id\": thread_id}}",
+        "detail": "python_use.agent.memory.langchain_memory",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
         "peekOfCode": "app = workflow.compile(\n    checkpointer=memory\n)\n# The thread id is a unique key that identifies\n# this particular conversation.\n# We'll just generate a random uuid here.\n# This enables a single application to manage conversations among multiple users.\nthread_id = uuid.uuid4()\nconfig = {\"configurable\": {\"thread_id\": thread_id}}\ninput_message = HumanMessage(content=\"hi! I'm bob\")",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "detail": "python_use.agent.memory.langchain_memory",
         "documentation": {}
     },
     {
         "label": "thread_id",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
         "peekOfCode": "thread_id = uuid.uuid4()\nconfig = {\"configurable\": {\"thread_id\": thread_id}}\ninput_message = HumanMessage(content=\"hi! I'm bob\")\nfor event in app.stream({\"messages\": [input_message]}, config, stream_mode=\"values\"):\n    event[\"messages\"][-1].pretty_print()\n# Here, let's confirm that the AI remembers our name!\ninput_message = HumanMessage(content=\"what was my name?\")\nfor event in app.stream({\"messages\": [input_message]}, config, stream_mode=\"values\"):\n    event[\"messages\"][-1].pretty_print()\nsnapstate = app.get_state(config)",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "detail": "python_use.agent.memory.langchain_memory",
         "documentation": {}
     },
     {
         "label": "config",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
         "peekOfCode": "config = {\"configurable\": {\"thread_id\": thread_id}}\ninput_message = HumanMessage(content=\"hi! I'm bob\")\nfor event in app.stream({\"messages\": [input_message]}, config, stream_mode=\"values\"):\n    event[\"messages\"][-1].pretty_print()\n# Here, let's confirm that the AI remembers our name!\ninput_message = HumanMessage(content=\"what was my name?\")\nfor event in app.stream({\"messages\": [input_message]}, config, stream_mode=\"values\"):\n    event[\"messages\"][-1].pretty_print()\nsnapstate = app.get_state(config)\nprint(snapstate.values)",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "detail": "python_use.agent.memory.langchain_memory",
         "documentation": {}
     },
     {
         "label": "input_message",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
         "peekOfCode": "input_message = HumanMessage(content=\"hi! I'm bob\")\nfor event in app.stream({\"messages\": [input_message]}, config, stream_mode=\"values\"):\n    event[\"messages\"][-1].pretty_print()\n# Here, let's confirm that the AI remembers our name!\ninput_message = HumanMessage(content=\"what was my name?\")\nfor event in app.stream({\"messages\": [input_message]}, config, stream_mode=\"values\"):\n    event[\"messages\"][-1].pretty_print()\nsnapstate = app.get_state(config)\nprint(snapstate.values)",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "detail": "python_use.agent.memory.langchain_memory",
         "documentation": {}
     },
     {
         "label": "input_message",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
         "peekOfCode": "input_message = HumanMessage(content=\"what was my name?\")\nfor event in app.stream({\"messages\": [input_message]}, config, stream_mode=\"values\"):\n    event[\"messages\"][-1].pretty_print()\nsnapstate = app.get_state(config)\nprint(snapstate.values)",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "detail": "python_use.agent.memory.langchain_memory",
         "documentation": {}
     },
     {
         "label": "snapstate",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory.langchain_memory",
-        "description": "python_use.agent_use.memory.langchain_memory",
+        "importPath": "python_use.agent.memory.langchain_memory",
+        "description": "python_use.agent.memory.langchain_memory",
         "peekOfCode": "snapstate = app.get_state(config)\nprint(snapstate.values)",
-        "detail": "python_use.agent_use.memory.langchain_memory",
+        "detail": "python_use.agent.memory.langchain_memory",
         "documentation": {}
     },
     {
         "label": "llm",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "llm = ChatOllama(model=\"qwen2.5:7b\")\nconfig = {\n    \"vector_store\": {\n        \"provider\": \"qdrant\",\n        \"config\": {\n            \"collection_name\": \"test\",\n            \"host\": \"localhost\",\n            \"port\": 6333,\n            \"embedding_model_dims\": 1024  # 修改为实际模型维度\n        },",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "config",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "config = {\n    \"vector_store\": {\n        \"provider\": \"qdrant\",\n        \"config\": {\n            \"collection_name\": \"test\",\n            \"host\": \"localhost\",\n            \"port\": 6333,\n            \"embedding_model_dims\": 1024  # 修改为实际模型维度\n        },\n    },",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "m",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "m = Memory.from_config(config)\nprint(\"加载完成\")\nmessages = [\n    {\"role\": \"user\", \"content\": \"Could you tell me what 1 plus 1111 equals?\"},\n    {\"role\": \"assistant\", \"content\": \"1112\"},\n    {\"role\": \"user\", \"content\": \"What is that answer plus 1?\"},\n    {\"role\": \"assistant\", \"content\": \"1113\"}\n]\nprompt = PromptTemplate(\n    input_variables=[\"history\", \"question\"],",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "messages",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "messages = [\n    {\"role\": \"user\", \"content\": \"Could you tell me what 1 plus 1111 equals?\"},\n    {\"role\": \"assistant\", \"content\": \"1112\"},\n    {\"role\": \"user\", \"content\": \"What is that answer plus 1?\"},\n    {\"role\": \"assistant\", \"content\": \"1113\"}\n]\nprompt = PromptTemplate(\n    input_variables=[\"history\", \"question\"],\n    template = \"\"\"\n结合上述参考历史对话记录:{history}",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "prompt",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "prompt = PromptTemplate(\n    input_variables=[\"history\", \"question\"],\n    template = \"\"\"\n结合上述参考历史对话记录:{history}\n回答:{question}\"\"\"\n)\nquestion = \"最近的一个数学问题是什么\"\nmyPrompt = prompt.format_prompt(\n    history=messages,\n    question=question",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "question",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "question = \"最近的一个数学问题是什么\"\nmyPrompt = prompt.format_prompt(\n    history=messages,\n    question=question\n)\nres = llm.invoke(myPrompt)\nprint(res.content)\nmessages.append({\"role\": \"user\", \"content\": question })\nmessages.append({\"role\": \"assistant\", \"content\": res.content})\n# 确保 user_id 一致",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "myPrompt",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "myPrompt = prompt.format_prompt(\n    history=messages,\n    question=question\n)\nres = llm.invoke(myPrompt)\nprint(res.content)\nmessages.append({\"role\": \"user\", \"content\": question })\nmessages.append({\"role\": \"assistant\", \"content\": res.content})\n# 确保 user_id 一致\nm.add(messages, user_id=\"damn\", metadata={\"type\": \"math_qa\"})",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "res",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "res = llm.invoke(myPrompt)\nprint(res.content)\nmessages.append({\"role\": \"user\", \"content\": question })\nmessages.append({\"role\": \"assistant\", \"content\": res.content})\n# 确保 user_id 一致\nm.add(messages, user_id=\"damn\", metadata={\"type\": \"math_qa\"})\nrelated_memories = m.search(query=\"waht's the last questions？\", user_id=\"damn\", filters={\"type\": \"math_qa\"})\nprint(related_memories )",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "related_memories",
         "kind": 5,
-        "importPath": "python_use.agent_use.memory._mem0",
-        "description": "python_use.agent_use.memory._mem0",
+        "importPath": "python_use.agent.memory._mem0",
+        "description": "python_use.agent.memory._mem0",
         "peekOfCode": "related_memories = m.search(query=\"waht's the last questions？\", user_id=\"damn\", filters={\"type\": \"math_qa\"})\nprint(related_memories )",
-        "detail": "python_use.agent_use.memory._mem0",
+        "detail": "python_use.agent.memory._mem0",
         "documentation": {}
     },
     {
         "label": "loader",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_map_reduce",
-        "description": "python_use.agent_use.split.summary_map_reduce",
+        "importPath": "python_use.agent.split.summary_map_reduce",
+        "description": "python_use.agent.split.summary_map_reduce",
         "peekOfCode": "loader = TextLoader(\"./chineseJH.txt\", encoding=\"utf-8\")\ntext_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=50)\ndocs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 创建链式处理器\nchain = load_summarize_chain(\n    llm,\n    chain_type=\"refine\",\n    verbose=True,",
-        "detail": "python_use.agent_use.split.summary_map_reduce",
+        "detail": "python_use.agent.split.summary_map_reduce",
         "documentation": {}
     },
     {
         "label": "text_splitter",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_map_reduce",
-        "description": "python_use.agent_use.split.summary_map_reduce",
+        "importPath": "python_use.agent.split.summary_map_reduce",
+        "description": "python_use.agent.split.summary_map_reduce",
         "peekOfCode": "text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=50)\ndocs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 创建链式处理器\nchain = load_summarize_chain(\n    llm,\n    chain_type=\"refine\",\n    verbose=True,\n    map_prompt=PromptTemplate.from_template(\"总结本段内容：\\n{text}\"),  # 自定义Map提示词",
-        "detail": "python_use.agent_use.split.summary_map_reduce",
+        "detail": "python_use.agent.split.summary_map_reduce",
         "documentation": {}
     },
     {
         "label": "docs",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_map_reduce",
-        "description": "python_use.agent_use.split.summary_map_reduce",
+        "importPath": "python_use.agent.split.summary_map_reduce",
+        "description": "python_use.agent.split.summary_map_reduce",
         "peekOfCode": "docs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 创建链式处理器\nchain = load_summarize_chain(\n    llm,\n    chain_type=\"refine\",\n    verbose=True,\n    map_prompt=PromptTemplate.from_template(\"总结本段内容：\\n{text}\"),  # 自定义Map提示词\n    combine_prompt=PromptTemplate.from_template(\"合并以下摘要：\\n{text}\") # 自定义Reduce提示词",
-        "detail": "python_use.agent_use.split.summary_map_reduce",
+        "detail": "python_use.agent.split.summary_map_reduce",
         "documentation": {}
     },
     {
         "label": "llm",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_map_reduce",
-        "description": "python_use.agent_use.split.summary_map_reduce",
+        "importPath": "python_use.agent.split.summary_map_reduce",
+        "description": "python_use.agent.split.summary_map_reduce",
         "peekOfCode": "llm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 创建链式处理器\nchain = load_summarize_chain(\n    llm,\n    chain_type=\"refine\",\n    verbose=True,\n    map_prompt=PromptTemplate.from_template(\"总结本段内容：\\n{text}\"),  # 自定义Map提示词\n    combine_prompt=PromptTemplate.from_template(\"合并以下摘要：\\n{text}\") # 自定义Reduce提示词\n)\n# 执行总结（处理前5块）",
-        "detail": "python_use.agent_use.split.summary_map_reduce",
+        "detail": "python_use.agent.split.summary_map_reduce",
         "documentation": {}
     },
     {
         "label": "chain",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_map_reduce",
-        "description": "python_use.agent_use.split.summary_map_reduce",
+        "importPath": "python_use.agent.split.summary_map_reduce",
+        "description": "python_use.agent.split.summary_map_reduce",
         "peekOfCode": "chain = load_summarize_chain(\n    llm,\n    chain_type=\"refine\",\n    verbose=True,\n    map_prompt=PromptTemplate.from_template(\"总结本段内容：\\n{text}\"),  # 自定义Map提示词\n    combine_prompt=PromptTemplate.from_template(\"合并以下摘要：\\n{text}\") # 自定义Reduce提示词\n)\n# 执行总结（处理前5块）\nresult = chain.invoke(docs[:2])\nprint(result)",
-        "detail": "python_use.agent_use.split.summary_map_reduce",
+        "detail": "python_use.agent.split.summary_map_reduce",
         "documentation": {}
     },
     {
         "label": "result",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_map_reduce",
-        "description": "python_use.agent_use.split.summary_map_reduce",
+        "importPath": "python_use.agent.split.summary_map_reduce",
+        "description": "python_use.agent.split.summary_map_reduce",
         "peekOfCode": "result = chain.invoke(docs[:2])\nprint(result)\nprint(\"===\"*50)\nprint(docs[:2])",
-        "detail": "python_use.agent_use.split.summary_map_reduce",
+        "detail": "python_use.agent.split.summary_map_reduce",
         "documentation": {}
     },
     {
         "label": "loader",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "loader = TextLoader(\"./chineseJH.txt\", encoding=\"utf-8\")\ntext_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=50)\ndocs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 修正后的提示模板\nquestion_prompt = PromptTemplate(\n    template=\"根据新内容完善总结：{text}\",\n    input_variables=[\"text\"]\n)",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "text_splitter",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=50)\ndocs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 修正后的提示模板\nquestion_prompt = PromptTemplate(\n    template=\"根据新内容完善总结：{text}\",\n    input_variables=[\"text\"]\n)\nrefine_prompt = PromptTemplate(",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "docs",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "docs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 修正后的提示模板\nquestion_prompt = PromptTemplate(\n    template=\"根据新内容完善总结：{text}\",\n    input_variables=[\"text\"]\n)\nrefine_prompt = PromptTemplate(\n    template=\"当前总结：{existing_answer}\\n新增内容：{text}\\n生成更新后的总结：\",",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "llm",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "llm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 修正后的提示模板\nquestion_prompt = PromptTemplate(\n    template=\"根据新内容完善总结：{text}\",\n    input_variables=[\"text\"]\n)\nrefine_prompt = PromptTemplate(\n    template=\"当前总结：{existing_answer}\\n新增内容：{text}\\n生成更新后的总结：\",\n    input_variables=[\"existing_answer\", \"text\"]\n)",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "question_prompt",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "question_prompt = PromptTemplate(\n    template=\"根据新内容完善总结：{text}\",\n    input_variables=[\"text\"]\n)\nrefine_prompt = PromptTemplate(\n    template=\"当前总结：{existing_answer}\\n新增内容：{text}\\n生成更新后的总结：\",\n    input_variables=[\"existing_answer\", \"text\"]\n)\n# 创建链式处理器\nrefine_chain = load_summarize_chain(",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "refine_prompt",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "refine_prompt = PromptTemplate(\n    template=\"当前总结：{existing_answer}\\n新增内容：{text}\\n生成更新后的总结：\",\n    input_variables=[\"existing_answer\", \"text\"]\n)\n# 创建链式处理器\nrefine_chain = load_summarize_chain(\n    llm,\n    chain_type=\"refine\",\n    verbose=True,\n    question_prompt=question_prompt,",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "refine_chain",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "refine_chain = load_summarize_chain(\n    llm,\n    chain_type=\"refine\",\n    verbose=True,\n    question_prompt=question_prompt,\n    refine_prompt=refine_prompt\n)\n# 正确调用方式\ninputs = {\n    \"input_documents\": docs[:3],",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "inputs",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "inputs = {\n    \"input_documents\": docs[:3],\n    \"question\": \"请总结以下内容\"  # 自定义问题（可选）\n}\nrefined_summary = refine_chain.invoke(inputs)\nprint(refined_summary)",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "refined_summary",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_refine",
-        "description": "python_use.agent_use.split.summary_refine",
+        "importPath": "python_use.agent.split.summary_refine",
+        "description": "python_use.agent.split.summary_refine",
         "peekOfCode": "refined_summary = refine_chain.invoke(inputs)\nprint(refined_summary)",
-        "detail": "python_use.agent_use.split.summary_refine",
+        "detail": "python_use.agent.split.summary_refine",
         "documentation": {}
     },
     {
         "label": "loader",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_stuff",
-        "description": "python_use.agent_use.split.summary_stuff",
+        "importPath": "python_use.agent.split.summary_stuff",
+        "description": "python_use.agent.split.summary_stuff",
         "peekOfCode": "loader = TextLoader(\"./chineseJH.txt\", encoding=\"utf-8\")\ntext_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=50)\ndocs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 创建链式处理器\nchain = load_summarize_chain(\n    llm,\n    verbose=True,\n)",
-        "detail": "python_use.agent_use.split.summary_stuff",
+        "detail": "python_use.agent.split.summary_stuff",
         "documentation": {}
     },
     {
         "label": "text_splitter",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_stuff",
-        "description": "python_use.agent_use.split.summary_stuff",
+        "importPath": "python_use.agent.split.summary_stuff",
+        "description": "python_use.agent.split.summary_stuff",
         "peekOfCode": "text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=50)\ndocs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 创建链式处理器\nchain = load_summarize_chain(\n    llm,\n    verbose=True,\n)\n# 执行总结（处理前5块）",
-        "detail": "python_use.agent_use.split.summary_stuff",
+        "detail": "python_use.agent.split.summary_stuff",
         "documentation": {}
     },
     {
         "label": "docs",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_stuff",
-        "description": "python_use.agent_use.split.summary_stuff",
+        "importPath": "python_use.agent.split.summary_stuff",
+        "description": "python_use.agent.split.summary_stuff",
         "peekOfCode": "docs = loader.load_and_split(text_splitter)\n# 初始化模型\nllm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 创建链式处理器\nchain = load_summarize_chain(\n    llm,\n    verbose=True,\n)\n# 执行总结（处理前5块）\nresult = chain.invoke(docs[:2])",
-        "detail": "python_use.agent_use.split.summary_stuff",
+        "detail": "python_use.agent.split.summary_stuff",
         "documentation": {}
     },
     {
         "label": "llm",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_stuff",
-        "description": "python_use.agent_use.split.summary_stuff",
+        "importPath": "python_use.agent.split.summary_stuff",
+        "description": "python_use.agent.split.summary_stuff",
         "peekOfCode": "llm = ChatOpenAI(model=\"qwen:7b\", base_url=\"http://127.0.0.1:10087/v1\", api_key=\"vllm\")\n# 创建链式处理器\nchain = load_summarize_chain(\n    llm,\n    verbose=True,\n)\n# 执行总结（处理前5块）\nresult = chain.invoke(docs[:2])\nprint(result)\nprint(\"===\"*50)",
-        "detail": "python_use.agent_use.split.summary_stuff",
+        "detail": "python_use.agent.split.summary_stuff",
         "documentation": {}
     },
     {
         "label": "chain",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_stuff",
-        "description": "python_use.agent_use.split.summary_stuff",
+        "importPath": "python_use.agent.split.summary_stuff",
+        "description": "python_use.agent.split.summary_stuff",
         "peekOfCode": "chain = load_summarize_chain(\n    llm,\n    verbose=True,\n)\n# 执行总结（处理前5块）\nresult = chain.invoke(docs[:2])\nprint(result)\nprint(\"===\"*50)\nprint(docs[:2])",
-        "detail": "python_use.agent_use.split.summary_stuff",
+        "detail": "python_use.agent.split.summary_stuff",
         "documentation": {}
     },
     {
         "label": "result",
         "kind": 5,
-        "importPath": "python_use.agent_use.split.summary_stuff",
-        "description": "python_use.agent_use.split.summary_stuff",
+        "importPath": "python_use.agent.split.summary_stuff",
+        "description": "python_use.agent.split.summary_stuff",
         "peekOfCode": "result = chain.invoke(docs[:2])\nprint(result)\nprint(\"===\"*50)\nprint(docs[:2])",
-        "detail": "python_use.agent_use.split.summary_stuff",
+        "detail": "python_use.agent.split.summary_stuff",
         "documentation": {}
     },
     {
