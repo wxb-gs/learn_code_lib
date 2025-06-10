@@ -964,6 +964,39 @@
         "documentation": {}
     },
     {
+        "label": "huggingface_hub",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "huggingface_hub",
+        "description": "huggingface_hub",
+        "detail": "huggingface_hub",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "huggingface_hub",
+        "description": "huggingface_hub",
+        "isExtraImport": true,
+        "detail": "huggingface_hub",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "datasets",
+        "description": "datasets",
+        "isExtraImport": true,
+        "detail": "datasets",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataset",
+        "importPath": "datasets",
+        "description": "datasets",
+        "isExtraImport": true,
+        "detail": "datasets",
+        "documentation": {}
+    },
+    {
         "label": "getModel",
         "importPath": "chatbot.core.load_model.get_model",
         "description": "chatbot.core.load_model.get_model",
@@ -1325,6 +1358,14 @@
         "description": "langchain_core.runnables.history",
         "isExtraImport": true,
         "detail": "langchain_core.runnables.history",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "ast",
+        "description": "ast",
+        "isExtraImport": true,
+        "detail": "ast",
         "documentation": {}
     },
     {
@@ -1880,14 +1921,6 @@
         "documentation": {}
     },
     {
-        "label": "load_dataset",
-        "importPath": "datasets",
-        "description": "datasets",
-        "isExtraImport": true,
-        "detail": "datasets",
-        "documentation": {}
-    },
-    {
         "label": "random",
         "kind": 6,
         "isExtraImport": true,
@@ -2227,15 +2260,6 @@
         "importPath": "pkg_resources",
         "description": "pkg_resources",
         "detail": "pkg_resources",
-        "documentation": {}
-    },
-    {
-        "label": "huggingface_hub",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "huggingface_hub",
-        "description": "huggingface_hub",
-        "detail": "huggingface_hub",
         "documentation": {}
     },
     {
@@ -3087,6 +3111,15 @@
         "documentation": {}
     },
     {
+        "label": "ds",
+        "kind": 5,
+        "importPath": "python_use.eval.gaia",
+        "description": "python_use.eval.gaia",
+        "peekOfCode": "ds = load_dataset(\"gaia-benchmark/GAIA\", '2023_all', cache_dir=\"./cache\", trust_remote_code=True)\n# 查看数据集结构\nprint(ds['validation'][0])  # 验证集含答案，用于本地调试\nprint(ds['test'][0])        # 测试集无答案，仅提交结果",
+        "detail": "python_use.eval.gaia",
+        "documentation": {}
+    },
+    {
         "label": "getBg",
         "kind": 2,
         "importPath": "python_use.import_use.src.chatbot.bg.bg",
@@ -3408,6 +3441,15 @@
         "description": "python_use.role_bot.src.main",
         "peekOfCode": "runnable = RunnableWithMessageHistory(\n    chain,\n    get_session_history,\n    input_messages_key=\"input\",\n    history_messages_key=\"history\"\n)\n# 4. 响应生成函数（保持不变）\ndef respond(message: str, history: list):\n    session_id = \"default_session\"\n    response = \"\"",
         "detail": "python_use.role_bot.src.main",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "questions.test",
+        "description": "questions.test",
+        "peekOfCode": "class Solution:\n    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:\n        # 1 4 11\n        # 2 3 6\n        n1 = len(nums1)\n        n2 = len(nums2)\n        f = [0] * n1\n        f[0] = 1\n        ans = []\n        need = k",
+        "detail": "questions.test",
         "documentation": {}
     },
     {
