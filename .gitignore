@@ -8,3 +8,5 @@ chineseJH_chroma_db/
 .vscode/*
 .env
 cache/
+.deepeval/
+.pytest_cache/
