@@ -7,7 +7,6 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                              QTextEdit, QPushButton, QLabel, QFrame, QListWidgetItem,QMenu,QAction)
 from PyQt5.QtCore import Qt, QTimer, pyqtSignal
 from PyQt5.QtGui import QFont, QPixmap, QPainter, QBrush, QColor
-from chat_window2 import ChatInterface2
 import random
 
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel, QFrame, QTextEdit
@@ -28,7 +27,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 
 # 后端代码
-from source2 import ChatBot
+from main import ChatBot
+from chat_window2 import ChatInterface2
 
 
 chatbot = ChatBot()
@@ -367,21 +367,22 @@ class StreamingMessageWidget(QWidget):
         """追加文本（用于流式输出）"""
         self.current_message += text
         
-        if not self.is_user:
-            # 对于系统消息，实时分离主内容和参考文献
-            main_content, references = self.split_message_and_references(self.current_message)
-            self.message_edit.setPlainText(main_content)
+        # if not self.is_user:
+        #     # 对于系统消息，实时分离主内容和参考文献
+        #     main_content, references = self.split_message_and_references(self.current_message)
+        #     self.message_edit.setPlainText(main_content)
             
-            if references and self.reference_edit:
-                self.reference_edit.setPlainText(references)
-                if hasattr(self, 'reference_container') and self.reference_container.isHidden():
-                    self.reference_container.show()
-            elif hasattr(self, 'reference_container') and not self.reference_container.isHidden():
-                self.reference_container.hide()
-        else:
-            # 用户消息直接显示
-            self.message_edit.setPlainText(self.current_message)
-        
+        #     if references and self.reference_edit:
+        #         self.reference_edit.setPlainText(references)
+        #         if hasattr(self, 'reference_container') and self.reference_container.isHidden():
+        #             self.reference_container.show()
+        #     elif hasattr(self, 'reference_container') and not self.reference_container.isHidden():
+        #         self.reference_container.hide()
+        # else:
+        # 用户消息直接显示
+        # self.message_edit.setPlainText(self.current_message)
+        self.message_edit.moveCursor(self.message_edit.textCursor().End)
+        self.message_edit.insertPlainText(text)
         # 滚动到底部以显示最新内容
         cursor = self.message_edit.textCursor()
         cursor.movePosition(QTextCursor.End)
@@ -965,32 +966,32 @@ class ChatInterface(QMainWindow):
             }
             """)
 
-        # 作战方案生成按钮
-        openchat_btn = QPushButton("作战方案生成")
-        openchat_btn.setFixedHeight(36)
-        openchat_btn.setStyleSheet("""
-            QPushButton {
-                background-color: #1a73e8;
-                color: white;
-                border: none;
-                padding: 0px 16px;
-                border-radius: 18px;
-                font-size: 14px;
-                font-weight: 500;
-                font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
-            }
-            QPushButton:hover {
-                background-color: #1557b0;
-            }
-            QPushButton:pressed {
-                background-color: #1144a3;
-            }
-            """)
-        openchat_btn.clicked.connect(self.open_second_window)
+        # # 作战方案生成按钮
+        # openchat_btn = QPushButton("作战方案生成")
+        # openchat_btn.setFixedHeight(36)
+        # openchat_btn.setStyleSheet("""
+        #     QPushButton {
+        #         background-color: #1a73e8;
+        #         color: white;
+        #         border: none;
+        #         padding: 0px 16px;
+        #         border-radius: 18px;
+        #         font-size: 14px;
+        #         font-weight: 500;
+        #         font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
+        #     }
+        #     QPushButton:hover {
+        #         background-color: #1557b0;
+        #     }
+        #     QPushButton:pressed {
+        #         background-color: #1144a3;
+        #     }
+        #     """)
+        # openchat_btn.clicked.connect(self.open_second_window)
 
         toolbar.addWidget(self.status_label)
         toolbar.addStretch()
-        toolbar.addWidget(openchat_btn)
+        # toolbar.addWidget(openchat_btn)
         toolbar_widget.setLayout(toolbar)
 
         # 聊天显示区域
@@ -1453,23 +1454,36 @@ class ChatInterface(QMainWindow):
                 self.conversations[self.current_conversation_index]["modified"] = True
     
         # 模拟AI流式回复
-        QTimer.singleShot(500, lambda: self.start_streaming_response(message))
+        # QTimer.singleShot(500, lambda: self.start_streaming_response(message))
+        print("=============================输入=======================")
+        QTimer.singleShot(500, lambda: self.start_response(message))
+
+    def start_response(self, usr_message: str):
+        print("====================开始流式输出===================")
+        streaming_widget = StreamingMessageWidget("", False)
+        self.chat_layout.addWidget(streaming_widget)
+        print("====================添加成功===================")
+        chatbot.connect(streaming_widget.append_text)
+        self.full_response = chatbot.answer(usr_message)
+        chatbot.disconnect()
+        self.finish_ai_response()
 
     def start_streaming_response(self, user_message):
         """开始流式回复"""
-        self.full_response, self.source = chatbot.answer(user_message)  # 接收两个返回值
+        # self.full_response, self.source = chatbot.answer(user_message)  # 接收两个返回值
+        self.full_response = chatbot.answer(user_message)  # 接收两个返回值
 
         # 创建流式输出的消息组件
         self.streaming_widget = StreamingMessageWidget("", False)
         self.chat_layout.addWidget(self.streaming_widget)
 
-        # 开始逐字输出
-        self.response_index = 0
-        self.streaming_timer = QTimer()
-        self.streaming_timer.timeout.connect(self.stream_next_char)
-        self.streaming_timer.start(1)  # 每1毫秒输出一个字符
+        # # 开始逐字输出
+        # self.response_index = 0
+        # self.streaming_timer = QTimer()
+        # self.streaming_timer.timeout.connect(self.stream_next_char)
+        # self.streaming_timer.start(1)  # 每1毫秒输出一个字符
 
-        self.scroll_to_bottom()
+        # self.scroll_to_bottom()
 
     def stream_next_char(self):
         """输出下一个字符"""
@@ -1510,6 +1524,7 @@ class ChatInterface(QMainWindow):
             "source": self.source if hasattr(self, 'source') else None,  # 单独保存source
             "timestamp": datetime.now().isoformat()
         })
+
 
         # 更新当前会话的消息记录
         if self.current_conversation_index >= 0:

@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                              QTextEdit, QPushButton, QLabel, QFrame, QListWidgetItem)
 from PyQt5.QtCore import Qt, QTimer, pyqtSignal
 from PyQt5.QtGui import QFont, QPixmap, QPainter, QBrush, QColor
-from source2 import ChatBot
+from main import ChatBot
 
 chatbot = ChatBot()
 
