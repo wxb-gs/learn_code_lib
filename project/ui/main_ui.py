@@ -1,42 +1,25 @@
-import sys
 import json
 import os
-from datetime import datetime
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
-                             QHBoxLayout, QSplitter, QListWidget, QScrollArea, 
-                             QTextEdit, QPushButton, QLabel, QFrame, QListWidgetItem,QMenu,QAction)
-from PyQt5.QtCore import Qt, QTimer, pyqtSignal
-from PyQt5.QtGui import QFont, QPixmap, QPainter, QBrush, QColor
 import random
-
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel, QFrame, QTextEdit
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap
-
-
-from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout, QLabel, 
-                             QFrame, QTextEdit, QSizePolicy)
-from PyQt5.QtCore import Qt, QTimer
-from PyQt5.QtGui import QPixmap, QTextCursor
-from PyQt5.QtWidgets import QMessageBox  # 如果还没有导入的话
-from PyQt5.QtWidgets import QPushButton, QWidget  # 你现有的导入
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QSize
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLabel, QTextEdit
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap
-
+import re
+import sys
+from datetime import datetime
+import mistune
+# import markdown
 # 后端代码
-from main import ChatBot
-from chat_window2 import ChatInterface2
-
+from chatbot import ChatBot, ChatBotThread
+from PyQt5.QtCore import QSize, Qt, QTimer, pyqtSignal
+from PyQt5.QtGui import (QBrush, QColor, QFont, QIcon, QPainter, QPixmap,
+                        QTextCursor)
+from PyQt5.QtWidgets import QMessageBox  # 如果还没有导入的话
+from PyQt5.QtWidgets import (QAction, QApplication, QFrame,  # 你现有的导入
+                            QHBoxLayout, QLabel, QListWidget, QListWidgetItem,
+                            QMainWindow, QMenu, QPushButton, QScrollArea,
+                            QSizePolicy, QSplitter, QTextEdit, QVBoxLayout,
+                            QWidget)
 
 chatbot = ChatBot()
 
-import re
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
 
 class StreamingMessageWidget(QWidget):
     """支持流式输出的消息气泡组件"""
@@ -120,7 +103,6 @@ class StreamingMessageWidget(QWidget):
                     border: 2px solid #d1d5db;
                     padding: 0px;
                     margin: 0px;
-                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
                 }
             """)
         
@@ -154,7 +136,6 @@ class StreamingMessageWidget(QWidget):
                 border: 2px solid #e5e7eb;
                 border-radius: 12px;
                 padding: 6px;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             }
             QMenu::item {
                 background-color: transparent;
@@ -237,14 +218,11 @@ class StreamingMessageWidget(QWidget):
                     padding: 14px 16px;
                     margin: 0px;
                     selection-background-color: #e0e7ff;
-                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
                 }
                 
                 QTextEdit:focus {
                     border: 1px solid #3b82f6;
                     outline: none;
-                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05), 
-                               0 0 0 3px rgba(59, 130, 246, 0.1);
                 }
                 
                 QTextEdit:hover {
@@ -366,28 +344,38 @@ class StreamingMessageWidget(QWidget):
     def append_text(self, text):
         """追加文本（用于流式输出）"""
         self.current_message += text
-        
-        # if not self.is_user:
-        #     # 对于系统消息，实时分离主内容和参考文献
-        #     main_content, references = self.split_message_and_references(self.current_message)
-        #     self.message_edit.setPlainText(main_content)
-            
-        #     if references and self.reference_edit:
-        #         self.reference_edit.setPlainText(references)
-        #         if hasattr(self, 'reference_container') and self.reference_container.isHidden():
-        #             self.reference_container.show()
-        #     elif hasattr(self, 'reference_container') and not self.reference_container.isHidden():
-        #         self.reference_container.hide()
-        # else:
-        # 用户消息直接显示
-        # self.message_edit.setPlainText(self.current_message)
-        self.message_edit.moveCursor(self.message_edit.textCursor().End)
-        self.message_edit.insertPlainText(text)
-        # 滚动到底部以显示最新内容
-        cursor = self.message_edit.textCursor()
-        cursor.movePosition(QTextCursor.End)
-        self.message_edit.setTextCursor(cursor)
-        
+
+        html =  mistune.html(self.current_message)
+        html = f"""
+        <html>
+        <head>
+        <style>
+            body {{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 14px;
+                background-color: #F9FAFB;
+                color: #333;
+            }}
+            pre code {{
+                background-color: #f4f4f4;
+                border: 1px solid #ccc;
+                padding: 5px;
+                display: block;
+            }}
+            code {{
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                font-family: Consolas, monospace;
+                color: #c7254e;
+            }}
+        </style>
+        </head>
+        <body>{html}</body>
+        </html>
+        """
+        self.message_edit.setHtml(html)
+        self.message_edit.moveCursor(QTextCursor.End)
+    
         # 调整高度
         self.adjust_height()
 
@@ -488,7 +476,6 @@ class MessageWidget(QWidget):
                     border: 2px solid #d1d5db;
                     padding: 0px;
                     margin: 0px;
-                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
                 }
             """)
         
@@ -529,7 +516,6 @@ class MessageWidget(QWidget):
                 border: 2px solid #e5e7eb;
                 border-radius: 12px;
                 padding: 6px;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             }
             QMenu::item {
                 background-color: transparent;
@@ -613,14 +599,11 @@ class MessageWidget(QWidget):
                     padding: 14px 16px;
                     margin: 0px;
                     selection-background-color: #e0e7ff;
-                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
                 }
                 
                 QTextEdit:focus {
                     border: 1px solid #3b82f6;
                     outline: none;
-                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05), 
-                               0 0 0 3px rgba(59, 130, 246, 0.1);
                 }
                 
                 QTextEdit:hover {
@@ -1159,7 +1142,6 @@ class ChatInterface(QMainWindow):
                 border-radius: 8px;
                 padding: 6px;
                 font-family: "Microsoft YaHei UI", "PingFang SC", "SF Pro Display", sans-serif;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 min-width: 140px;
             }
             
@@ -1454,48 +1436,26 @@ class ChatInterface(QMainWindow):
                 self.conversations[self.current_conversation_index]["modified"] = True
     
         # 模拟AI流式回复
-        # QTimer.singleShot(500, lambda: self.start_streaming_response(message))
-        print("=============================输入=======================")
         QTimer.singleShot(500, lambda: self.start_response(message))
 
     def start_response(self, usr_message: str):
         print("====================开始流式输出===================")
         streaming_widget = StreamingMessageWidget("", False)
         self.chat_layout.addWidget(streaming_widget)
-        print("====================添加成功===================")
-        chatbot.connect(streaming_widget.append_text)
-        self.full_response = chatbot.answer(usr_message)
-        chatbot.disconnect()
-        self.finish_ai_response()
 
-    def start_streaming_response(self, user_message):
-        """开始流式回复"""
-        # self.full_response, self.source = chatbot.answer(user_message)  # 接收两个返回值
-        self.full_response = chatbot.answer(user_message)  # 接收两个返回值
-
-        # 创建流式输出的消息组件
-        self.streaming_widget = StreamingMessageWidget("", False)
-        self.chat_layout.addWidget(self.streaming_widget)
-
-        # # 开始逐字输出
-        # self.response_index = 0
-        # self.streaming_timer = QTimer()
-        # self.streaming_timer.timeout.connect(self.stream_next_char)
-        # self.streaming_timer.start(1)  # 每1毫秒输出一个字符
-
-        # self.scroll_to_bottom()
-
-    def stream_next_char(self):
-        """输出下一个字符"""
-        if self.response_index < len(self.full_response):
-            char = self.full_response[self.response_index]
-            self.streaming_widget.append_text(char)
-            self.response_index += 1
-            self.scroll_to_bottom()
-        else:
-            # 流式输出完成
-            self.streaming_timer.stop()
+        # 线程结束后emit
+        def finished(token):
+            print("==================finished===========================")
+            self.full_response = token
+            chatbot.disconnect()
             self.finish_ai_response()
+
+        # 开辟一个线程运行对话链
+        print("==================start-tread-use-langchain===========================")
+        chatbot.connect(streaming_widget.append_text)
+        self.bot_thread = ChatBotThread(usr_message, chatbot)
+        self.bot_thread.finished.connect(finished) 
+        self.bot_thread.start()
 
     def finish_ai_response(self):
         """完成AI回复"""
@@ -1780,11 +1740,12 @@ class ChatInterface(QMainWindow):
         event.accept()
 
     def open_second_window(self):
-        if not self.second_window or not self.second_window.isVisible():
-            self.second_window = ChatInterface2()
-            self.second_window.show()
-        else:
-            self.second_window.activateWindow()
+        # if not self.second_window or not self.second_window.isVisible():
+        #     self.second_window = ChatInterface2()
+        #     self.second_window.show()
+        # else:
+        #     self.second_window.activateWindow()
+        return
 
 def main():
     app = QApplication(sys.argv)

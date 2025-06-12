@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
 from PyQt5.QtCore import Qt, QTimer, QThread, pyqtSignal
 from PyQt5.QtGui import QFont, QPixmap, QPainter, QBrush, QColor, QPalette
 from PyQt5.QtCore import QPropertyAnimation, QEasingCurve
-from chat_window1 import ChatInterface
+from main_ui import ChatInterface
 
 class LoadingWorker(QThread):
     """加载工作线程"""

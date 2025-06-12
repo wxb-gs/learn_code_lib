@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTextEdit, QPushButton
-from PyQt5.QtCore import QObject, pyqtSignal
+from PyQt5.QtCore import QObject, pyqtSignal, QThread
 from langchain_ollama import ChatOllama
 from langchain.schema.messages import HumanMessage
 
@@ -35,40 +35,17 @@ class ChatBot(QObject):
             self.update_text.emit(token)
         return full_token
 
+class ChatBotThread(QThread):
+    # 增加线程结束信号
+    finished = pyqtSignal(str)
 
-
-
-class ChatApp(QWidget):
-    def __init__(self):
+    def __init__(self, question: str, bot: ChatBot):
         super().__init__()
-        self.setWindowTitle("LangChain ChatOllama 流式输出")
-        self.resize(600, 400)
+        self.question = question
+        self.bot = bot
 
-        self.layout = QVBoxLayout()
-        self.output_area = QTextEdit()
-        self.output_area.setReadOnly(True)
-        self.layout.addWidget(self.output_area)
+    def run(self):
+        full_content = self.bot.answer(self.question)
+        # 完成后发出 finished 信号
+        self.finished.emit(full_content)
 
-        self.send_button = QPushButton("发送消息")
-        self.send_button.clicked.connect(self.send_message)
-        self.layout.addWidget(self.send_button)
-
-        self.setLayout(self.layout)
-
-    def send_message(self):
-        self.output_area.clear()
-        message = "如何学习人工智能？"
-
-        bot = ChatBot(message)
-        bot.update_text.connect(self.append_output)
-
-
-    def append_output(self, text):
-        self.output_area.moveCursor(self.output_area.textCursor().End)
-        self.output_area.insertPlainText(text)
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = ChatApp()
-    window.show()
-    sys.exit(app.exec_())
