@@ -1,42 +1,34 @@
 [
     {
-        "label": "StateGraph",
-        "importPath": "langgraph.graph",
-        "description": "langgraph.graph",
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
         "isExtraImport": true,
-        "detail": "langgraph.graph",
+        "detail": "langchain_ollama",
         "documentation": {}
     },
     {
-        "label": "END",
-        "importPath": "langgraph.graph",
-        "description": "langgraph.graph",
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
         "isExtraImport": true,
-        "detail": "langgraph.graph",
+        "detail": "langchain_ollama",
         "documentation": {}
     },
     {
-        "label": "START",
-        "importPath": "langgraph.graph",
-        "description": "langgraph.graph",
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
         "isExtraImport": true,
-        "detail": "langgraph.graph",
+        "detail": "langchain_ollama",
         "documentation": {}
     },
     {
-        "label": "MessagesState",
-        "importPath": "langgraph.graph",
-        "description": "langgraph.graph",
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
         "isExtraImport": true,
-        "detail": "langgraph.graph",
-        "documentation": {}
-    },
-    {
-        "label": "StateGraph",
-        "importPath": "langgraph.graph",
-        "description": "langgraph.graph",
-        "isExtraImport": true,
-        "detail": "langgraph.graph",
+        "detail": "langchain_ollama",
         "documentation": {}
     },
     {
@@ -104,6 +96,22 @@
         "documentation": {}
     },
     {
+        "label": "AIMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
         "label": "HumanMessage",
         "importPath": "langchain_core.messages",
         "description": "langchain_core.messages",
@@ -160,12 +168,28 @@
         "documentation": {}
     },
     {
-        "label": "asyncio",
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "asyncio",
-        "description": "asyncio",
-        "detail": "asyncio",
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
         "documentation": {}
     },
     {
@@ -191,6 +215,893 @@
         "description": "time",
         "isExtraImport": true,
         "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain.schema.messages",
+        "description": "langchain.schema.messages",
+        "isExtraImport": true,
+        "detail": "langchain.schema.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain.schema.messages",
+        "description": "langchain.schema.messages",
+        "isExtraImport": true,
+        "detail": "langchain.schema.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain.schema.messages",
+        "description": "langchain.schema.messages",
+        "isExtraImport": true,
+        "detail": "langchain.schema.messages",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "importPath": "st_chat_message",
+        "description": "st_chat_message",
+        "isExtraImport": true,
+        "detail": "st_chat_message",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QHBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QProgressBar",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMainWindow",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMessageBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QAction",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFrame",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "# 你现有的导入\r\n                            QHBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QListWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QListWidgetItem",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMainWindow",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMenu",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QScrollArea",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSizePolicy",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSplitter",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSpacerItem",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSizePolicy",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSizePolicy",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QDesktopWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QGraphicsDropShadowEffect",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSpacerItem",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QObject",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QThread",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTimer",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QThread",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QPropertyAnimation",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QEasingCurve",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QSize",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTimer",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QThread",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QObject",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QThread",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QBasicTimer",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPainter",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QBrush",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPalette",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QBrush",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QIcon",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPainter",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTextCursor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTextCursor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "ChatInterface",
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "isExtraImport": true,
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "mistune",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mistune",
+        "description": "mistune",
+        "detail": "mistune",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBot",
+        "importPath": "chatbot",
+        "description": "chatbot",
+        "isExtraImport": true,
+        "detail": "chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBotThread",
+        "importPath": "chatbot",
+        "description": "chatbot",
+        "isExtraImport": true,
+        "detail": "chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "scrollbar_style",
+        "importPath": "styles.qeditor",
+        "description": "styles.qeditor",
+        "isExtraImport": true,
+        "detail": "styles.qeditor",
+        "documentation": {}
+    },
+    {
+        "label": "qeditor_qss",
+        "importPath": "styles.qeditor",
+        "description": "styles.qeditor",
+        "isExtraImport": true,
+        "detail": "styles.qeditor",
+        "documentation": {}
+    },
+    {
+        "label": "StateGraph",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "END",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "START",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "MessagesState",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "StateGraph",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
         "documentation": {}
     },
     {
@@ -347,6 +1258,22 @@
         "documentation": {}
     },
     {
+        "label": "assert_test",
+        "importPath": "deepeval",
+        "description": "deepeval",
+        "isExtraImport": true,
+        "detail": "deepeval",
+        "documentation": {}
+    },
+    {
+        "label": "LLMTestCase",
+        "importPath": "deepeval.test_case",
+        "description": "deepeval.test_case",
+        "isExtraImport": true,
+        "detail": "deepeval.test_case",
+        "documentation": {}
+    },
+    {
         "label": "LLMTestCase",
         "importPath": "deepeval.test_case",
         "description": "deepeval.test_case",
@@ -364,6 +1291,14 @@
     },
     {
         "label": "HallucinationMetric",
+        "importPath": "deepeval.metrics",
+        "description": "deepeval.metrics",
+        "isExtraImport": true,
+        "detail": "deepeval.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "AnswerRelevancyMetric",
         "importPath": "deepeval.metrics",
         "description": "deepeval.metrics",
         "isExtraImport": true,
@@ -432,15 +1367,6 @@
         "description": "langgraph.prebuilt",
         "isExtraImport": true,
         "detail": "langgraph.prebuilt",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
         "documentation": {}
     },
     {
@@ -1037,15 +1963,6 @@
         "documentation": {}
     },
     {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
         "label": "get_model",
         "importPath": "chatbot.core.load_model",
         "description": "chatbot.core.load_model",
@@ -1134,118 +2051,6 @@
         "documentation": {}
     },
     {
-        "label": "QSpacerItem",
-        "importPath": "PyQt5.QtWidgets",
-        "description": "PyQt5.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QSizePolicy",
-        "importPath": "PyQt5.QtWidgets",
-        "description": "PyQt5.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QWidget",
-        "importPath": "PyQt5.QtWidgets",
-        "description": "PyQt5.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QApplication",
-        "importPath": "PyQt5.QtWidgets",
-        "description": "PyQt5.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QSizePolicy",
-        "importPath": "PyQt5.QtWidgets",
-        "description": "PyQt5.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QDesktopWidget",
-        "importPath": "PyQt5.QtWidgets",
-        "description": "PyQt5.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QGraphicsDropShadowEffect",
-        "importPath": "PyQt5.QtWidgets",
-        "description": "PyQt5.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QSpacerItem",
-        "importPath": "PyQt5.QtWidgets",
-        "description": "PyQt5.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QPixmap",
-        "importPath": "PyQt5.QtGui",
-        "description": "PyQt5.QtGui",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QColor",
-        "importPath": "PyQt5.QtGui",
-        "description": "PyQt5.QtGui",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "Qt",
-        "importPath": "PyQt5.QtCore",
-        "description": "PyQt5.QtCore",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "pyqtSignal",
-        "importPath": "PyQt5.QtCore",
-        "description": "PyQt5.QtCore",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QThread",
-        "importPath": "PyQt5.QtCore",
-        "description": "PyQt5.QtCore",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QBasicTimer",
-        "importPath": "PyQt5.QtCore",
-        "description": "PyQt5.QtCore",
-        "isExtraImport": true,
-        "detail": "PyQt5.QtCore",
-        "documentation": {}
-    },
-    {
         "label": "Ui_loadwin",
         "importPath": "loadwin_ui",
         "description": "loadwin_ui",
@@ -1283,6 +2088,208 @@
         "description": "dotenv",
         "isExtraImport": true,
         "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationDataset",
+        "importPath": "deepeval.dataset",
+        "description": "deepeval.dataset",
+        "isExtraImport": true,
+        "detail": "deepeval.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationDataset",
+        "importPath": "deepeval.dataset",
+        "description": "deepeval.dataset",
+        "isExtraImport": true,
+        "detail": "deepeval.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "Golden",
+        "importPath": "deepeval.dataset",
+        "description": "deepeval.dataset",
+        "isExtraImport": true,
+        "detail": "deepeval.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "StorageContext",
+        "importPath": "llama_index.core",
+        "description": "llama_index.core",
+        "isExtraImport": true,
+        "detail": "llama_index.core",
+        "documentation": {}
+    },
+    {
+        "label": "load_index_from_storage",
+        "importPath": "llama_index.core",
+        "description": "llama_index.core",
+        "isExtraImport": true,
+        "detail": "llama_index.core",
+        "documentation": {}
+    },
+    {
+        "label": "Settings",
+        "importPath": "llama_index.core",
+        "description": "llama_index.core",
+        "isExtraImport": true,
+        "detail": "llama_index.core",
+        "documentation": {}
+    },
+    {
+        "label": "VectorStoreIndex",
+        "importPath": "llama_index.core",
+        "description": "llama_index.core",
+        "isExtraImport": true,
+        "detail": "llama_index.core",
+        "documentation": {}
+    },
+    {
+        "label": "SimpleDirectoryReader",
+        "importPath": "llama_index.core",
+        "description": "llama_index.core",
+        "isExtraImport": true,
+        "detail": "llama_index.core",
+        "documentation": {}
+    },
+    {
+        "label": "Settings",
+        "importPath": "llama_index.core",
+        "description": "llama_index.core",
+        "isExtraImport": true,
+        "detail": "llama_index.core",
+        "documentation": {}
+    },
+    {
+        "label": "SimpleDirectoryReader",
+        "importPath": "llama_index.core",
+        "description": "llama_index.core",
+        "isExtraImport": true,
+        "detail": "llama_index.core",
+        "documentation": {}
+    },
+    {
+        "label": "OllamaModel",
+        "importPath": "deepeval.models.llms.ollama_model",
+        "description": "deepeval.models.llms.ollama_model",
+        "isExtraImport": true,
+        "detail": "deepeval.models.llms.ollama_model",
+        "documentation": {}
+    },
+    {
+        "label": "Ollama",
+        "importPath": "llama_index.llms.ollama",
+        "description": "llama_index.llms.ollama",
+        "isExtraImport": true,
+        "detail": "llama_index.llms.ollama",
+        "documentation": {}
+    },
+    {
+        "label": "Ollama",
+        "importPath": "llama_index.llms.ollama",
+        "description": "llama_index.llms.ollama",
+        "isExtraImport": true,
+        "detail": "llama_index.llms.ollama",
+        "documentation": {}
+    },
+    {
+        "label": "OllamaEmbedding",
+        "importPath": "llama_index.embeddings.ollama",
+        "description": "llama_index.embeddings.ollama",
+        "isExtraImport": true,
+        "detail": "llama_index.embeddings.ollama",
+        "documentation": {}
+    },
+    {
+        "label": "TitleExtractor",
+        "importPath": "llama_index.core.extractors",
+        "description": "llama_index.core.extractors",
+        "isExtraImport": true,
+        "detail": "llama_index.core.extractors",
+        "documentation": {}
+    },
+    {
+        "label": "SummaryExtractor",
+        "importPath": "llama_index.core.extractors",
+        "description": "llama_index.core.extractors",
+        "isExtraImport": true,
+        "detail": "llama_index.core.extractors",
+        "documentation": {}
+    },
+    {
+        "label": "TokenTextSplitter",
+        "importPath": "llama_index.core.node_parser",
+        "description": "llama_index.core.node_parser",
+        "isExtraImport": true,
+        "detail": "llama_index.core.node_parser",
+        "documentation": {}
+    },
+    {
+        "label": "IngestionPipeline",
+        "importPath": "llama_index.core.ingestion",
+        "description": "llama_index.core.ingestion",
+        "isExtraImport": true,
+        "detail": "llama_index.core.ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessage",
+        "importPath": "llama_index.core.llms",
+        "description": "llama_index.core.llms",
+        "isExtraImport": true,
+        "detail": "llama_index.core.llms",
+        "documentation": {}
+    },
+    {
+        "label": "pprint",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "ImageReader",
+        "importPath": "llama_index.readers.file",
+        "description": "llama_index.readers.file",
+        "isExtraImport": true,
+        "detail": "llama_index.readers.file",
         "documentation": {}
     },
     {
@@ -1805,29 +2812,11 @@
         "documentation": {}
     },
     {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
-        "documentation": {}
-    },
-    {
         "label": "PeftModel",
         "importPath": "peft",
         "description": "peft",
         "isExtraImport": true,
         "detail": "peft",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
         "documentation": {}
     },
     {
@@ -1918,15 +2907,6 @@
         "description": "Eval.metrics",
         "isExtraImport": true,
         "detail": "Eval.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "random",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
         "documentation": {}
     },
     {
@@ -2025,38 +3005,6 @@
         "description": "qwen_vl_utils",
         "isExtraImport": true,
         "detail": "qwen_vl_utils",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
         "documentation": {}
     },
     {
@@ -2218,15 +3166,6 @@
         "importPath": "regex",
         "description": "regex",
         "detail": "regex",
-        "documentation": {}
-    },
-    {
-        "label": "pytest",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pytest",
-        "description": "pytest",
-        "detail": "pytest",
         "documentation": {}
     },
     {
@@ -2444,14 +3383,6 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "Task",
         "importPath": "preprocess",
         "description": "preprocess",
@@ -2541,6 +3472,195 @@
         "description": "RAG.Embeddings",
         "isExtraImport": true,
         "detail": "RAG.Embeddings",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "kind": 5,
+        "importPath": "project.stream_lit_ui.stream_output",
+        "description": "project.stream_lit_ui.stream_output",
+        "peekOfCode": "llm = ChatOllama(model=\"qwen2.5:7b\", streaming=True)\n# 初始化会话状态\nif \"messages\" not in st.session_state:\n    st.session_state.messages = []\n# 注入自定义CSS样式\nst.markdown(\"\"\"\n<style>\n/* 用户消息样式 - 头像靠右，气泡在左 */\n.st-emotion-cache-janbn0 {\n    flex-direction: row-reverse;  /* 反转布局使头像在右侧 */",
+        "detail": "project.stream_lit_ui.stream_output",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "kind": 5,
+        "importPath": "project.stream_lit_ui.ui",
+        "description": "project.stream_lit_ui.ui",
+        "peekOfCode": "llm = ChatOllama(model=\"qwen2.5:7b\", streaming=True)\nwith st.sidebar:\n    with st.echo():\n        st.write(\"This code will be printed to the sidebar.\")\n    with st.spinner(\"Loading...\"):\n        time.sleep(5)\n    st.success(\"Done!\")\nwith st.container():\n    st.write(\"年后\")\n    usr_img = Image.open(\"./icon/user.png\")",
+        "detail": "project.stream_lit_ui.ui",
+        "documentation": {}
+    },
+    {
+        "label": "scrollbar_style",
+        "kind": 5,
+        "importPath": "project.ui.styles.qeditor",
+        "description": "project.ui.styles.qeditor",
+        "peekOfCode": "scrollbar_style = \"\"\"\n    /* 垂直滚动条整体样式 */\n    QScrollBar:vertical {\n        border: none;\n        background: #F9FAFB;\n        width: 2px;\n    }\n    /* 水平滚动条整体样式 */\n    QScrollBar:horizontal {\n        border: none;",
+        "detail": "project.ui.styles.qeditor",
+        "documentation": {}
+    },
+    {
+        "label": "qeditor_qss",
+        "kind": 5,
+        "importPath": "project.ui.styles.qeditor",
+        "description": "project.ui.styles.qeditor",
+        "peekOfCode": "qeditor_qss = \"\"\"\n    QTextEdit {\n        background: transparent;\n        color: #374151;\n        font-size: 14px;\n        font-family: \"SF Pro Text\", \"PingFang SC\", \"Microsoft YaHei\", -apple-system, BlinkMacSystemFont, sans-serif;\n        line-height: 1.6;\n        font-weight: 400;\n        border: none;\n        margin: 0px;",
+        "detail": "project.ui.styles.qeditor",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBot",
+        "kind": 6,
+        "importPath": "project.ui.chatbot",
+        "description": "project.ui.chatbot",
+        "peekOfCode": "class ChatBot(QObject):\n    # 通过信号通知界面新加token\n    update_text = pyqtSignal(str)\n    # gen_end = pyqtSignal(bool)\n    def __init__(self) -> None:\n        super().__init__() #必须要调用的\n        return \n    def connect(self, func_update):\n        self.update_text.connect(func_update)\n    def disconnect(self):",
+        "detail": "project.ui.chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBotThread",
+        "kind": 6,
+        "importPath": "project.ui.chatbot",
+        "description": "project.ui.chatbot",
+        "peekOfCode": "class ChatBotThread(QThread):\n    # 增加线程结束信号\n    finished = pyqtSignal(str)\n    def __init__(self, question: str, bot: ChatBot):\n        super().__init__()\n        self.question = question\n        self.bot = bot\n    def run(self):\n        full_content = self.bot.answer(self.question)\n        # 完成后发出 finished 信号",
+        "detail": "project.ui.chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "kind": 5,
+        "importPath": "project.ui.chatbot",
+        "description": "project.ui.chatbot",
+        "peekOfCode": "llm = ChatOllama(model=\"qwen2.5:7b\", streaming=True)\nclass ChatBot(QObject):\n    # 通过信号通知界面新加token\n    update_text = pyqtSignal(str)\n    # gen_end = pyqtSignal(bool)\n    def __init__(self) -> None:\n        super().__init__() #必须要调用的\n        return \n    def connect(self, func_update):\n        self.update_text.connect(func_update)",
+        "detail": "project.ui.chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "LoadingWorker",
+        "kind": 6,
+        "importPath": "project.ui.load",
+        "description": "project.ui.load",
+        "peekOfCode": "class LoadingWorker(QThread):\n    \"\"\"加载工作线程\"\"\"\n    progress_updated = pyqtSignal(int)\n    loading_finished = pyqtSignal()\n    def run(self):\n        \"\"\"模拟加载过程\"\"\"\n        for i in range(101):\n            time.sleep(0.05)  # 模拟加载时间\n            self.progress_updated.emit(i)\n        self.loading_finished.emit()",
+        "detail": "project.ui.load",
+        "documentation": {}
+    },
+    {
+        "label": "LoadingScreen",
+        "kind": 6,
+        "importPath": "project.ui.load",
+        "description": "project.ui.load",
+        "peekOfCode": "class LoadingScreen(QWidget):\n    \"\"\"加载界面类\"\"\"\n    def __init__(self):\n        super().__init__()\n        self.main_window = None\n        self.background_pixmap = None\n        self.loadBackground()\n        self.initUI()\n        self.startLoading()\n    def loadBackground(self):",
+        "detail": "project.ui.load",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "project.ui.load",
+        "description": "project.ui.load",
+        "peekOfCode": "def main():\n    \"\"\"主函数\"\"\"\n    app = QApplication(sys.argv)\n    # 设置应用程序属性\n    app.setApplicationName('智能问答系统')\n    app.setApplicationVersion('1.0')\n    # 创建并显示加载界面\n    loading_screen = LoadingScreen()\n    loading_screen.show()\n    sys.exit(app.exec_())",
+        "detail": "project.ui.load",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingMessageWidget",
+        "kind": 6,
+        "importPath": "project.ui.main_ui",
+        "description": "project.ui.main_ui",
+        "peekOfCode": "class StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message\n        self.current_message = \"\"\n        self.setup_ui()\n    def setup_ui(self):\n        # 设置组件的尺寸策略",
+        "detail": "project.ui.main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "ChatInterface",
+        "kind": 6,
+        "importPath": "project.ui.main_ui",
+        "description": "project.ui.main_ui",
+        "peekOfCode": "class ChatInterface(QMainWindow):\n    \"\"\"主聊天界面\"\"\"\n    def __init__(self):\n        super().__init__()\n        self.conversations_dir = \"chat_conversations\"  # 对话文件夹\n        self.current_conversation = []\n        self.conversations = []  # 包含已保存和未保存的会话\n        self.current_conversation_index = -1  # 当前对话在历史列表中的索引，-1表示新对话\n        self.current_conversation_file = None  # 当前对话的文件名\n        self.is_ai_responding = False  # AI是否正在回复",
+        "detail": "project.ui.main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "project.ui.main_ui",
+        "description": "project.ui.main_ui",
+        "peekOfCode": "def main():\n    app = QApplication(sys.argv)\n    # 设置应用程序样式\n    app.setStyle('Fusion')\n    window = ChatInterface()\n    window.show()\n    sys.exit(app.exec_())\nif __name__ == '__main__':\n    main()",
+        "detail": "project.ui.main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "chatbot",
+        "kind": 5,
+        "importPath": "project.ui.main_ui",
+        "description": "project.ui.main_ui",
+        "peekOfCode": "chatbot = ChatBot()\nMAX_HEIGHT = 650\nMIN_HEIGHT = 28\nUSER_MAX_WIDTH =300\nAI_MAX_WIDTH = 680\nclass StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user",
+        "detail": "project.ui.main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_HEIGHT",
+        "kind": 5,
+        "importPath": "project.ui.main_ui",
+        "description": "project.ui.main_ui",
+        "peekOfCode": "MAX_HEIGHT = 650\nMIN_HEIGHT = 28\nUSER_MAX_WIDTH =300\nAI_MAX_WIDTH = 680\nclass StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message",
+        "detail": "project.ui.main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "MIN_HEIGHT",
+        "kind": 5,
+        "importPath": "project.ui.main_ui",
+        "description": "project.ui.main_ui",
+        "peekOfCode": "MIN_HEIGHT = 28\nUSER_MAX_WIDTH =300\nAI_MAX_WIDTH = 680\nclass StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message\n        self.current_message = \"\"",
+        "detail": "project.ui.main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "AI_MAX_WIDTH",
+        "kind": 5,
+        "importPath": "project.ui.main_ui",
+        "description": "project.ui.main_ui",
+        "peekOfCode": "AI_MAX_WIDTH = 680\nclass StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message\n        self.current_message = \"\"\n        self.setup_ui()\n    def setup_ui(self):",
+        "detail": "project.ui.main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBot",
+        "kind": 6,
+        "importPath": "project.ui.stream_demo",
+        "description": "project.ui.stream_demo",
+        "peekOfCode": "class ChatBot(QObject):\n    update_text = pyqtSignal(str)\n    def __init__(self):\n        super().__init__()\n    def connect(self, func_update):\n        self.update_text.connect(func_update)\n    def disconnect(self):\n        self.update_text.disconnect()\n    def answer(self, question: str):\n        human_msg = HumanMessage(content=question)",
+        "detail": "project.ui.stream_demo",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBotThread",
+        "kind": 6,
+        "importPath": "project.ui.stream_demo",
+        "description": "project.ui.stream_demo",
+        "peekOfCode": "class ChatBotThread(QThread):\n    finished = pyqtSignal()\n    def __init__(self, question: str, bot: ChatBot):\n        super().__init__()\n        self.question = question\n        self.bot = bot\n    def run(self):\n        self.bot.answer(self.question)\n        self.finished.emit()\nclass ChatApp(QWidget):",
+        "detail": "project.ui.stream_demo",
+        "documentation": {}
+    },
+    {
+        "label": "ChatApp",
+        "kind": 6,
+        "importPath": "project.ui.stream_demo",
+        "description": "project.ui.stream_demo",
+        "peekOfCode": "class ChatApp(QWidget):\n    def __init__(self):\n        super().__init__()\n        self.setWindowTitle(\"LangChain ChatOllama 流式输出\")\n        self.resize(700, 500)\n        self.layout = QVBoxLayout()\n        self.output_area = QTextEdit()\n        self.output_area.setReadOnly(True)\n        self.output_area.setStyleSheet(\"\"\"\n            QTextEdit {",
+        "detail": "project.ui.stream_demo",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "kind": 5,
+        "importPath": "project.ui.stream_demo",
+        "description": "project.ui.stream_demo",
+        "peekOfCode": "llm = ChatOllama(model=\"qwen2.5:7b\", streaming=True)\nclass ChatBot(QObject):\n    update_text = pyqtSignal(str)\n    def __init__(self):\n        super().__init__()\n    def connect(self, func_update):\n        self.update_text.connect(func_update)\n    def disconnect(self):\n        self.update_text.disconnect()\n    def answer(self, question: str):",
+        "detail": "project.ui.stream_demo",
         "documentation": {}
     },
     {
@@ -3243,6 +4363,150 @@
         "description": "python_use.pyqt_use.loading_screen.Ui_mainwin",
         "peekOfCode": "class Ui_mainwin(object):\n    def setupUi(self, mainwin):\n        mainwin.setObjectName(\"mainwin\")\n        mainwin.resize(609, 432)\n        self.calendarWidget = QtWidgets.QCalendarWidget(mainwin)\n        self.calendarWidget.setGeometry(QtCore.QRect(170, 80, 248, 197))\n        self.calendarWidget.setObjectName(\"calendarWidget\")\n        self.lineEdit = QtWidgets.QLineEdit(mainwin)\n        self.lineEdit.setGeometry(QtCore.QRect(180, 320, 231, 21))\n        self.lineEdit.setObjectName(\"lineEdit\")",
         "detail": "python_use.pyqt_use.loading_screen.Ui_mainwin",
+        "documentation": {}
+    },
+    {
+        "label": "your_llm_app",
+        "kind": 2,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "def your_llm_app(input: str):\n    response = \"\"\n    streaming_response = rag_chat.stream_chat(input)\n    for token in streaming_response.response_gen:  # 正确访问响应生成器[2](@ref)\n        print(token, end=\"\", flush=True)  # 实时输出\n        response += token\n    return response\n# 配置日志\nlogging.basicConfig(\n    level=logging.INFO,",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "test_llm_app",
+        "kind": 2,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "def test_llm_app(golden: Golden):\n    logging.info(f\"🚀 开始测试用例: {golden.input}\")\n    # 执行LLM调用\n    response = your_llm_app(golden.input)  \n    logging.info(f\"✅ LLM响应: {response[:100]}...\")  # 记录前100字符\n    test_case = LLMTestCase(\n        input=golden.input, \n        actual_output=response\n    )\n    # 执行评估",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "Settings.llm",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "Settings.llm = Ollama(model=\"qwen2.5:7b\", request_timeout=360.0)\n# 设置嵌入模型（如 nomic-embed-text）\nSettings.embed_model = OllamaEmbedding(model_name=\"bge-m3\")\nstorage_context = StorageContext.from_defaults(persist_dir=\"storage\")\nindex = load_index_from_storage(\n    storage_context,\n    # we can optionally override the embed_model here\n    # it's important to use the same embed_model as the one used to build the index\n)\neval_model = OllamaModel(model=\"qwen2.5:32b\")",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "Settings.embed_model",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "Settings.embed_model = OllamaEmbedding(model_name=\"bge-m3\")\nstorage_context = StorageContext.from_defaults(persist_dir=\"storage\")\nindex = load_index_from_storage(\n    storage_context,\n    # we can optionally override the embed_model here\n    # it's important to use the same embed_model as the one used to build the index\n)\neval_model = OllamaModel(model=\"qwen2.5:32b\")\ndataset = EvaluationDataset()\ndataset.pull(alias=\"af\")",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "storage_context",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "storage_context = StorageContext.from_defaults(persist_dir=\"storage\")\nindex = load_index_from_storage(\n    storage_context,\n    # we can optionally override the embed_model here\n    # it's important to use the same embed_model as the one used to build the index\n)\neval_model = OllamaModel(model=\"qwen2.5:32b\")\ndataset = EvaluationDataset()\ndataset.pull(alias=\"af\")\nrag_chat = index.as_chat_engine()",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "index = load_index_from_storage(\n    storage_context,\n    # we can optionally override the embed_model here\n    # it's important to use the same embed_model as the one used to build the index\n)\neval_model = OllamaModel(model=\"qwen2.5:32b\")\ndataset = EvaluationDataset()\ndataset.pull(alias=\"af\")\nrag_chat = index.as_chat_engine()\ndef your_llm_app(input: str):",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "eval_model",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "eval_model = OllamaModel(model=\"qwen2.5:32b\")\ndataset = EvaluationDataset()\ndataset.pull(alias=\"af\")\nrag_chat = index.as_chat_engine()\ndef your_llm_app(input: str):\n    response = \"\"\n    streaming_response = rag_chat.stream_chat(input)\n    for token in streaming_response.response_gen:  # 正确访问响应生成器[2](@ref)\n        print(token, end=\"\", flush=True)  # 实时输出\n        response += token",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "dataset",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "dataset = EvaluationDataset()\ndataset.pull(alias=\"af\")\nrag_chat = index.as_chat_engine()\ndef your_llm_app(input: str):\n    response = \"\"\n    streaming_response = rag_chat.stream_chat(input)\n    for token in streaming_response.response_gen:  # 正确访问响应生成器[2](@ref)\n        print(token, end=\"\", flush=True)  # 实时输出\n        response += token\n    return response",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "rag_chat",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "description": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "peekOfCode": "rag_chat = index.as_chat_engine()\ndef your_llm_app(input: str):\n    response = \"\"\n    streaming_response = rag_chat.stream_chat(input)\n    for token in streaming_response.response_gen:  # 正确访问响应生成器[2](@ref)\n        print(token, end=\"\", flush=True)  # 实时输出\n        response += token\n    return response\n# 配置日志\nlogging.basicConfig(",
+        "detail": "python_use.rag.llamindex_use.eval.test_deep_eval",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "kind": 6,
+        "importPath": "python_use.rag.llamindex_use.load_data.extractor",
+        "description": "python_use.rag.llamindex_use.load_data.extractor",
+        "peekOfCode": "class Response(BaseModel):\n    \"\"\"The Response of the question\"\"\"\n    answer: int = Field(\n        description=\"The answer of the math calculation\"\n    )\ncustom_llm = Ollama(\n    model=\"qwen2.5:7b\",\n    base_url=\"http://localhost:11434\",  # 明确指定本地地址\n    request_timeout=60.0  # 延长超时时间\n)",
+        "detail": "python_use.rag.llamindex_use.load_data.extractor",
+        "documentation": {}
+    },
+    {
+        "label": "custom_llm",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.load_data.extractor",
+        "description": "python_use.rag.llamindex_use.load_data.extractor",
+        "peekOfCode": "custom_llm = Ollama(\n    model=\"qwen2.5:7b\",\n    base_url=\"http://localhost:11434\",  # 明确指定本地地址\n    request_timeout=60.0  # 延长超时时间\n)\nstructured_llm = custom_llm.as_structured_llm(Response)\nres = structured_llm.chat(messages=[ChatMessage(content=\"计算12+33=?\")])\npprint(res.raw)",
+        "detail": "python_use.rag.llamindex_use.load_data.extractor",
+        "documentation": {}
+    },
+    {
+        "label": "structured_llm",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.load_data.extractor",
+        "description": "python_use.rag.llamindex_use.load_data.extractor",
+        "peekOfCode": "structured_llm = custom_llm.as_structured_llm(Response)\nres = structured_llm.chat(messages=[ChatMessage(content=\"计算12+33=?\")])\npprint(res.raw)",
+        "detail": "python_use.rag.llamindex_use.load_data.extractor",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.load_data.extractor",
+        "description": "python_use.rag.llamindex_use.load_data.extractor",
+        "peekOfCode": "res = structured_llm.chat(messages=[ChatMessage(content=\"计算12+33=?\")])\npprint(res.raw)",
+        "detail": "python_use.rag.llamindex_use.load_data.extractor",
+        "documentation": {}
+    },
+    {
+        "label": "image_reader",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.load_data.extractor_img",
+        "description": "python_use.rag.llamindex_use.load_data.extractor_img",
+        "peekOfCode": "image_reader = ImageReader(parse_text=True) \nreader = SimpleDirectoryReader(\n    input_dir=\"imgs/\",\n    file_extractor={\".png\": image_reader}\n)\ninput_files = reader.load_data()\nprint(input_files[0].image)",
+        "detail": "python_use.rag.llamindex_use.load_data.extractor_img",
+        "documentation": {}
+    },
+    {
+        "label": "reader",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.load_data.extractor_img",
+        "description": "python_use.rag.llamindex_use.load_data.extractor_img",
+        "peekOfCode": "reader = SimpleDirectoryReader(\n    input_dir=\"imgs/\",\n    file_extractor={\".png\": image_reader}\n)\ninput_files = reader.load_data()\nprint(input_files[0].image)",
+        "detail": "python_use.rag.llamindex_use.load_data.extractor_img",
+        "documentation": {}
+    },
+    {
+        "label": "input_files",
+        "kind": 5,
+        "importPath": "python_use.rag.llamindex_use.load_data.extractor_img",
+        "description": "python_use.rag.llamindex_use.load_data.extractor_img",
+        "peekOfCode": "input_files = reader.load_data()\nprint(input_files[0].image)",
+        "detail": "python_use.rag.llamindex_use.load_data.extractor_img",
         "documentation": {}
     },
     {

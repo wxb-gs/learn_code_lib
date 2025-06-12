@@ -17,9 +17,16 @@ from PyQt5.QtWidgets import (QAction, QApplication, QFrame,  # 你现有的导�
                             QMainWindow, QMenu, QPushButton, QScrollArea,
                             QSizePolicy, QSplitter, QTextEdit, QVBoxLayout,
                             QWidget)
+from styles.qeditor import scrollbar_style, qeditor_qss
 
 chatbot = ChatBot()
 
+
+MAX_HEIGHT = 650
+MIN_HEIGHT = 28
+
+USER_MAX_WIDTH =300
+AI_MAX_WIDTH = 680
 
 class StreamingMessageWidget(QWidget):
     """支持流式输出的消息气泡组件"""
@@ -65,9 +72,10 @@ class StreamingMessageWidget(QWidget):
         message_container = QWidget()
         if self.is_user:
             message_container.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
+            message_container.setMaximumWidth(USER_MAX_WIDTH)
         else:
             message_container.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
-            message_container.setMaximumWidth(680)
+            message_container.setMaximumWidth(AI_MAX_WIDTH)
         container_layout = QVBoxLayout()
         container_layout.setContentsMargins(0, 0, 0, 0)
         container_layout.setSpacing(0)
@@ -105,9 +113,8 @@ class StreamingMessageWidget(QWidget):
                     margin: 0px;
                 }
             """)
-        
         bubble_layout = QVBoxLayout()
-        bubble_layout.setContentsMargins(18, 14, 18, 14)
+        bubble_layout.setContentsMargins(10, 14, 1, 14)
         bubble_layout.setSpacing(12)  # 增大间距以更好分离主内容和参考文献
         
         # 创建主要内容区域
@@ -115,52 +122,18 @@ class StreamingMessageWidget(QWidget):
         self.message_edit.setPlainText(self.current_message)
         self.message_edit.setReadOnly(True)
         self.message_edit.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-        
-        # 设置QTextEdit样式 - 更明显的文字对比
-        text_color = "#1e40af" if self.is_user else "#374151"
-        self.message_edit.setStyleSheet("""
-            QTextEdit {
-                background: transparent;
-                color: %s;
-                font-size: 14px;
-                font-family: "SF Pro Text", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
-                line-height: 1.6;
-                font-weight: %s;
-                border: none;
-                padding: 0px;
-                margin: 0px;
-                selection-background-color: #bfdbfe;
-            }
-            QMenu {
-                background-color: #ffffff;
-                border: 2px solid #e5e7eb;
-                border-radius: 12px;
-                padding: 6px;
-            }
-            QMenu::item {
-                background-color: transparent;
-                padding: 10px 18px;
-                margin: 3px;
-                border-radius: 8px;
-                color: #374151;
-                font-size: 13px;
-                font-weight: 500;
-            }
-            QMenu::item:hover {
-                background-color: #f3f4f6;
-                color: #111827;
-            }
-            QMenu::item:selected {
-                background-color: #e5e7eb;
-                color: #111827;
-            }
-        """ % (text_color, "500" if self.is_user else "400"))
-        
+
+        # 设置QTextEdit样式 - 更明显的文字对比      
+        self.message_edit.setStyleSheet(scrollbar_style + qeditor_qss)
+
         # 设置QTextEdit属性
-        self.message_edit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.message_edit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.message_edit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # 根据需要显示垂直滚动条
+        self.message_edit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # 始终隐藏水平滚动条
         self.message_edit.setLineWrapMode(QTextEdit.WidgetWidth)
-        
+
+        self.message_edit.insertHtml(self.full_message)
+
+
         # 创建参考文献区域（只对非用户消息显示）
         self.reference_edit = None
         if not self.is_user:
@@ -170,31 +143,16 @@ class StreamingMessageWidget(QWidget):
             reference_container_layout.setContentsMargins(0, 8, 0, 0)
             reference_container_layout.setSpacing(8)
             
-            # 添加分隔线
-            # separator = QFrame()
-            # separator.setFrameShape(QFrame.HLine)
-            # separator.setStyleSheet("""
-            #     QFrame {
-            #         color: #e5e7eb;
-            #         background-color: #e5e7eb;
-            #         border: none;
-            #         height: 1px;
-            #         margin: 4px 0px;
-            #     }
-            # """)
-            
             # 创建参考文献标题
             ref_title = QLabel("📚 参考文献")
             ref_title.setStyleSheet("""
-                QLabel {
-                    
+                QLabel {    
                     font-size: 12px;
                     font-weight: 600;
                     font-family: "SF Pro Text", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
                     padding: 0px;
                     margin: 0px;
                     border:none;
-                    
                 }
             """)
             
@@ -252,7 +210,6 @@ class StreamingMessageWidget(QWidget):
             bubble_layout.addWidget(self.reference_container)
         
         message_bubble.setLayout(bubble_layout)
-        
         container_layout.addWidget(message_bubble)
         message_container.setLayout(container_layout)
         
@@ -304,8 +261,8 @@ class StreamingMessageWidget(QWidget):
             ideal_height = int(doc_height + extra_height)
             
             # 设置最小和最大高度限制
-            min_height = 28
-            max_height = 400
+            min_height = MIN_HEIGHT
+            max_height = MAX_HEIGHT
             final_height = max(min_height, min(ideal_height, max_height))
             
             edit_widget.setFixedHeight(final_height)
@@ -375,311 +332,8 @@ class StreamingMessageWidget(QWidget):
         """
         self.message_edit.setHtml(html)
         self.message_edit.moveCursor(QTextCursor.End)
-    
         # 调整高度
         self.adjust_height()
-
-
-class MessageWidget(QWidget):
-    """普通消息气泡组件"""
-    def __init__(self, message, is_user=True, parent=None):
-        super().__init__(parent)
-        self.message = message
-        self.is_user = is_user
-        self.setup_ui()
-    
-    def split_message_and_references(self, message):
-        """分离消息主体和参考文献部分"""
-        # 使用正则表达式匹配"参考文献："开头的部分
-        pattern = r'(.*?)(\n参考文献：.*?)$'
-        match = re.match(pattern, message, re.DOTALL)
-        
-        if match:
-            main_content = match.group(1).strip()
-            references = match.group(2).strip()
-            # 移除"参考文献："标题，因为我们有自己的标题样式
-            references = re.sub(r'^参考文献：\s*', '', references)
-            return main_content, references
-        else:
-            # 如果没有找到参考文献，返回原消息和空字符串
-            return message, ""
-    
-    def setup_ui(self):
-        # 设置组件的尺寸策略
-        self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-        
-        layout = QHBoxLayout()
-        layout.setContentsMargins(16, 8, 16, 8)
-        layout.setSpacing(12)
-        layout.setAlignment(Qt.AlignTop)
-        
-        # 创建头像
-        avatar = QLabel()
-        avatar.setFixedSize(36, 36)
-        avatar.setScaledContents(True)
-        avatar.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-
-        # 设置头像图片
-        if self.is_user:
-            pixmap = QPixmap("./icon/user.png")
-        else:
-            pixmap = QPixmap("./icon/sys.png")
-        
-        avatar.setPixmap(pixmap)
-        avatar.setStyleSheet("""
-            QLabel {
-                border-radius: 18px;
-                border: 2px solid #e5e7eb;
-                background-color: white;
-            }
-        """)
-        
-        # 创建消息气泡容器
-        message_container = QWidget()
-        if self.is_user:
-            message_container.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-        else:
-            message_container.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
-            message_container.setMaximumWidth(680)
-        container_layout = QVBoxLayout()
-        container_layout.setContentsMargins(0, 0, 0, 0)
-        container_layout.setSpacing(0)
-        
-        # 创建消息气泡
-        message_bubble = QFrame()
-        if self.is_user:
-            message_bubble.setMaximumWidth(460)
-        else:
-            message_bubble.setMaximumWidth(620)
-        message_bubble.setMinimumWidth(100)
-        message_bubble.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-        
-        # 消息气泡样式 - 更明显的背景对比，类似GPT风格
-        if self.is_user:
-            # 用户消息：蓝色渐变背景
-            message_bubble.setStyleSheet("""
-                QFrame {
-                    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                        stop:0 #dbeafe, stop:1 #bfdbfe);
-                    border-radius: 18px;
-                    border: 2px solid #93c5fd;
-                    padding: 0px;
-                    margin: 0px;
-                }
-            """)
-        else:
-            # AI消息：灰色背景，更明显的边框
-            message_bubble.setStyleSheet("""
-                QFrame {
-                    background-color: #f9fafb;
-                    border-radius: 18px;
-                    border: 2px solid #d1d5db;
-                    padding: 0px;
-                    margin: 0px;
-                }
-            """)
-        
-        bubble_layout = QVBoxLayout()
-        bubble_layout.setContentsMargins(18, 14, 18, 14)
-        bubble_layout.setSpacing(12)  # 增大间距以更好分离主内容和参考文献
-        
-        # 分离主内容和参考文献
-        if not self.is_user:
-            main_content, references = self.split_message_and_references(self.message)
-        else:
-            main_content = self.message
-            references = ""
-        
-        # 创建主消息内容
-        message_edit = QTextEdit()
-        message_edit.setPlainText(main_content)
-        message_edit.setReadOnly(True)
-        message_edit.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-        
-        # 设置QTextEdit样式 - 更明显的文字对比
-        text_color = "#1e40af" if self.is_user else "#374151"
-        message_edit.setStyleSheet("""
-            QTextEdit {
-                background: transparent;
-                color: %s;
-                font-size: 14px;
-                font-family: "SF Pro Text", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
-                line-height: 1.6;
-                font-weight: %s;
-                border: none;
-                padding: 0px;
-                margin: 0px;
-                selection-background-color: #bfdbfe;
-            }
-            QMenu {
-                background-color: #ffffff;
-                border: 2px solid #e5e7eb;
-                border-radius: 12px;
-                padding: 6px;
-            }
-            QMenu::item {
-                background-color: transparent;
-                padding: 10px 18px;
-                margin: 3px;
-                border-radius: 8px;
-                color: #374151;
-                font-size: 13px;
-                font-weight: 500;
-            }
-            QMenu::item:hover {
-                background-color: #f3f4f6;
-                color: #111827;
-            }
-            QMenu::item:selected {
-                background-color: #e5e7eb;
-                color: #111827;
-            }
-        """ % (text_color, "500" if self.is_user else "400"))
-        
-        # 设置QTextEdit属性
-        message_edit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        message_edit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        message_edit.setLineWrapMode(QTextEdit.WidgetWidth)
-        
-        # 创建参考文献区域（如果有的话）
-        reference_container = None
-        reference_edit = None
-        if references:
-            # 创建参考文献容器
-            reference_container = QWidget()
-            reference_container_layout = QVBoxLayout()
-            reference_container_layout.setContentsMargins(0, 8, 0, 0)
-            reference_container_layout.setSpacing(8)
-            
-            # 添加分隔线
-            # separator = QFrame()
-            # separator.setFrameShape(QFrame.HLine)
-            # separator.setStyleSheet("""
-            #     QFrame {
-            #         color: #e5e7eb;
-            #         background-color: #e5e7eb;
-            #         border: none;
-            #         height: 1px;
-            #         margin: 4px 0px;
-            #     }
-            # """)
-            
-            # 创建参考文献标题
-            ref_title = QLabel("📚 参考文献")
-            ref_title.setStyleSheet("""
-                QLabel {
-
-                    font-size: 12px;
-                    font-weight: 600;
-                    font-family: "SF Pro Text", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
-                    padding: 0px;
-                    margin: 0px;
-                    
-                    border:none;
-                }
-            """)
-            
-            reference_edit = QTextEdit()
-            reference_edit.setPlainText(references)
-            reference_edit.setReadOnly(True)
-            reference_edit.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-            
-            # 美化参考文献样式 - 更加现代化和优雅
-            reference_edit.setStyleSheet("""
-                QTextEdit {
-                    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                        stop:0 #f8fafc, stop:1 #f1f5f9);
-                    border: 1px solid #cbd5e1;
-                    border-radius: 12px;
-                    color: #475569;
-                    font-size: 12px;
-                    font-family: "SF Mono", "Monaco", "Cascadia Code", "Roboto Mono", "Consolas", monospace;
-                    line-height: 1.5;
-                    font-weight: 400;
-                    padding: 14px 16px;
-                    margin: 0px;
-                    selection-background-color: #e0e7ff;
-                }
-                
-                QTextEdit:focus {
-                    border: 1px solid #3b82f6;
-                    outline: none;
-                }
-                
-                QTextEdit:hover {
-                    border: 1px solid #94a3b8;
-                    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                        stop:0 #ffffff, stop:1 #f8fafc);
-                }
-            """)
-            
-            reference_edit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-            reference_edit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-            reference_edit.setLineWrapMode(QTextEdit.WidgetWidth)
-            
-            # 组装参考文献容器
-            # reference_container_layout.addWidget(separator)
-            reference_container_layout.addWidget(ref_title)
-            reference_container_layout.addWidget(reference_edit)
-            reference_container.setLayout(reference_container_layout)
-        
-        # 根据内容自动调整高度
-        def adjust_height():
-            def adjust_single_edit(edit_widget):
-                if not edit_widget:
-                    return
-                    
-                # 获取文档的理想高度
-                doc = edit_widget.document()
-                doc.setTextWidth(edit_widget.width())
-                doc_height = doc.size().height()
-                
-                # 计算合适的高度
-                margins = edit_widget.contentsMargins()
-                extra_height = margins.top() + margins.bottom() + 8
-                ideal_height = int(doc_height + extra_height)
-                
-                # 设置最小和最大高度限制
-                min_height = 28
-                max_height = 400
-                final_height = max(min_height, min(ideal_height, max_height))
-                
-                edit_widget.setFixedHeight(final_height)
-            
-            # 调整主消息区域高度
-            adjust_single_edit(message_edit)
-            
-            # 调整参考文献区域高度
-            if reference_edit:
-                adjust_single_edit(reference_edit)
-        
-        message_edit.textChanged.connect(adjust_height)
-        if reference_edit:
-            reference_edit.textChanged.connect(adjust_height)
-        
-        bubble_layout.addWidget(message_edit)
-        if reference_container:
-            bubble_layout.addWidget(reference_container)
-        
-        message_bubble.setLayout(bubble_layout)
-        
-        container_layout.addWidget(message_bubble)
-        message_container.setLayout(container_layout)
-        
-        # 布局设置
-        if self.is_user:
-            layout.addStretch(1)
-            layout.addWidget(message_container, 0, Qt.AlignTop)
-            layout.addWidget(avatar, 0, Qt.AlignTop)
-        else:
-            layout.addWidget(avatar, 0, Qt.AlignTop)
-            layout.addWidget(message_container, 2, Qt.AlignTop)
-            layout.addStretch(1)
-        
-        self.setLayout(layout)
-        
-        # 延迟调整高度，确保组件完全初始化
-        QTimer.singleShot(10, adjust_height)
 
 class ChatInterface(QMainWindow):
     """主聊天界面"""
@@ -1400,6 +1054,7 @@ class ChatInterface(QMainWindow):
         else:
             QTextEdit.keyPressEvent(self.input_text, event)
 
+    # 发送消息，触发对话
     def send_message(self):
         """发送消息"""
         if self.is_ai_responding:  # 如果AI正在回复，禁止发送
@@ -1447,12 +1102,17 @@ class ChatInterface(QMainWindow):
         def finished(token):
             print("==================finished===========================")
             self.full_response = token
+            # 断开与chatbot的连接关系
             chatbot.disconnect()
             self.finish_ai_response()
+            streaming_widget.message_edit.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
 
         # 开辟一个线程运行对话链
         print("==================start-tread-use-langchain===========================")
-        chatbot.connect(streaming_widget.append_text)
+        def process_chunk(chunk):
+            streaming_widget.append_text(chunk)
+            self.scroll_to_bottom()
+        chatbot.connect(process_chunk)
         self.bot_thread = ChatBotThread(usr_message, chatbot)
         self.bot_thread.finished.connect(finished) 
         self.bot_thread.start()
@@ -1496,9 +1156,10 @@ class ChatInterface(QMainWindow):
         # 重新聚焦到输入框
         self.input_text.setFocus()
 
+    # 添加到聊天区域
     def add_message(self, message, is_user):
         """添加消息到聊天区域"""
-        message_widget = MessageWidget(message, is_user)
+        message_widget = StreamingMessageWidget(message, is_user)
         self.chat_layout.addWidget(message_widget)
     
         # 滚动到底部
