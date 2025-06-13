@@ -3,7 +3,6 @@ from langchain.schema.messages import HumanMessage
 from pathlib import Path
 import streamlit as st
 import time
-from st_chat_message import message
 from PIL import Image
 llm = ChatOllama(model="qwen2.5:7b", streaming=True)
 
@@ -18,7 +17,6 @@ with st.sidebar:
     st.success("Done!")
 
 with st.container():
-    st.write("年后")
     usr_img = Image.open("./icon/user.png")
     sys_img = Image.open("./icon/sys.png")
     # usr_img = st.image("./icon/user.png")
