@@ -1,55 +1,82 @@
+# qeditor.py
 
 # 滚动条设置margin可能会消失
 scrollbar_style = """
-    /* 垂直滚动条整体样式 */
-    QScrollBar:vertical {
-        border: none;
-        background: #F9FAFB;
-        width: 2px;
-    }
+/* 垂直滚动条整体样式 - 默认隐藏 */
+QTextEdit QScrollBar:vertical {
+    border: none;
+    background: #F9FAFB; /* 修改背景色 */
+    width: 0px;
+    margin: 2px 0;
+}
 
-    /* 水平滚动条整体样式 */
-    QScrollBar:horizontal {
-        border: none;
-        background: #F9FAFB;
-        height: 8px;
-        margin: 0px;
-    }
+/* 水平滚动条整体样式 - 默认隐藏 */
+QTextEdit QScrollBar:horizontal {
+    border: none;
+    background: #F9FAFB; /* 修改背景色 */
+    height: 0px;
+    margin: 0 2px;
+}
 
-    /* 垂直滑块样式 */
-    QScrollBar::handle:vertical {
-        background: #d1d5ff;   
-        border-radius: 4px;
-        min-height: 20px;
-        max-height:80px;
-    }
+/* 当QTextEdit被悬停时，显示滚动条 */
+QTextEdit:hover QScrollBar:vertical {
+    width: 5px;
+}
 
-    /* 水平滑块样式 */
-    QScrollBar::handle:horizontal {
-        background: #d1d5ff;
-        border-radius: 4px;
-        min-width: 20px;
-    }
+QTextEdit:hover QScrollBar:horizontal {
+    height: 6px;
+}
 
-    /* 滑块悬停样式 */
-    QScrollBar::handle:vertical:hover {
-        background: #9ca3af;
-    }
+/* 垂直滑块样式 */
+QScrollBar::handle:vertical {
+    background: rgba(156, 163, 175, 0.7);
+    border-radius: 3px;
+    min-height: 20px;
+    margin: 0 1px;
+}
 
-    QScrollBar::handle:horizontal:hover {
-        background: #9ca3af;
-    }
+/* 水平滑块样式 */
+QScrollBar::handle:horizontal {
+    background: rgba(156, 163, 175, 0.7);
+    border-radius: 3px;
+    min-width: 20px;
+    margin: 1px 0;
+}
 
-    /* 滑块按下样式 */
-    QScrollBar::handle:vertical:pressed {
-        background: #6B7280;
-    }
+/* 滑块悬停样式 */
+QScrollBar::handle:vertical:hover {
+    background: rgba(107, 114, 128, 0.9);
+}
 
-    QScrollBar::handle:horizontal:pressed {
-        background: #6B7280;
-    }
+QScrollBar::handle:horizontal:hover {
+    background: rgba(107, 114, 128, 0.9);
+}
+
+/* 滑块按下样式 */
+QScrollBar::handle:vertical:pressed {
+    background: rgba(75, 85, 99, 0.95);
+}
+
+QScrollBar::handle:horizontal:pressed {
+    background: rgba(75, 85, 99, 0.95);
+}
+
+/* 滚动条轨道样式 */
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    height: 0px;
+    width: 0px;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
 """
-
 
 ### QMenu是右键菜单
 qeditor_qss = """
@@ -63,8 +90,7 @@ qeditor_qss = """
         border: none;
         margin: 0px;
         selection-background-color: #bfdbfe;
-        selection-color: balck;
-    
+        selection-color: black;
     }
     QMenu {
         background-color: #ffffff;

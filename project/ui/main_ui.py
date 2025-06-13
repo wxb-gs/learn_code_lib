@@ -18,11 +18,12 @@ from PyQt5.QtWidgets import (QAction, QApplication, QFrame,  # 你现有的导�
                              QMainWindow, QMenu, QPushButton, QScrollArea,
                              QSizePolicy, QSplitter, QTextEdit, QVBoxLayout,
                              QWidget, QDialog)
-from styles.qeditor import scrollbar_style, qeditor_qss
+
 from styles.btn_qss import blue_btn_qss, simple_btn_qss, delete_btn_qss
 from components.search_dialog import SearchDialog
 from components.params_dialog import ConversationEditDialog
 from db.database import ConversationDatabase
+from streaming_message_widget import StreamingMessageWidget
 
 chatbot = ChatBot()
 db = ConversationDatabase()
@@ -32,323 +33,6 @@ MIN_HEIGHT = 28
 
 USER_MAX_WIDTH = 300
 AI_MAX_WIDTH = 680
-
-
-class StreamingMessageWidget(QWidget):
-    """支持流式输出的消息气泡组件"""
-
-    def __init__(self, message="", is_user=True, parent=None):
-        super().__init__(parent)
-        self.is_user = is_user
-        self.full_message = message
-        self.current_message = ""
-        self.setup_ui()
-
-    def setup_ui(self):
-        # 设置组件的尺寸策略
-        self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        layout = QHBoxLayout()
-        layout.setContentsMargins(16, 8, 16, 8)
-        layout.setSpacing(12)
-        layout.setAlignment(Qt.AlignTop)
-
-        # 创建头像
-        avatar = QLabel()
-        avatar.setFixedSize(36, 36)
-        avatar.setScaledContents(True)
-        avatar.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-
-        # 设置头像图片
-        if self.is_user:
-            pixmap = QPixmap("./icon/user.png")
-        else:
-            pixmap = QPixmap("./icon/sys.png")
-
-        # 如果图片加载失败，设置默认背景
-        avatar.setPixmap(pixmap)
-        avatar.setStyleSheet("""
-            QLabel {
-                border-radius: 18px;
-                border: 2px solid #e5e7eb;
-                background-color: white;
-            }
-        """)
-
-        # 创建消息气泡容器
-        message_container = QWidget()
-        if self.is_user:
-            message_container.setSizePolicy(
-                QSizePolicy.Preferred, QSizePolicy.Minimum)
-            message_container.setMaximumWidth(USER_MAX_WIDTH)
-        else:
-            message_container.setSizePolicy(
-                QSizePolicy.Expanding, QSizePolicy.Minimum)
-            message_container.setMaximumWidth(AI_MAX_WIDTH)
-        container_layout = QVBoxLayout()
-        container_layout.setContentsMargins(0, 0, 0, 0)
-        container_layout.setSpacing(0)
-
-        # 创建消息气泡
-        message_bubble = QFrame()
-        if self.is_user:
-            message_bubble.setMaximumWidth(460)
-        else:
-            message_bubble.setMaximumWidth(620)
-        message_bubble.setMinimumWidth(100)
-        message_bubble.setSizePolicy(
-            QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        # 消息气泡样式 - 更明显的背景对比，类似GPT风格
-        if self.is_user:
-            # 用户消息：蓝色渐变背景
-            message_bubble.setStyleSheet("""
-                QFrame {
-                    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                        stop:0 #dbeafe, stop:1 #bfdbfe);
-                    border-radius: 18px;
-                    border: 2px solid #93c5fd;
-                    padding: 0px;
-                    margin: 0px;
-                }
-            """)
-        else:
-            # AI消息：灰色背景，更明显的边框
-            message_bubble.setStyleSheet("""
-                QFrame {
-                    background-color: #f9fafb;
-                    border-radius: 18px;
-                    border: 2px solid #d1d5db;
-                    padding: 0px;
-                    margin: 0px;
-                }
-            """)
-        bubble_layout = QVBoxLayout()
-        bubble_layout.setContentsMargins(10, 14, 1, 14)
-        bubble_layout.setSpacing(12)  # 增大间距以更好分离主内容和参考文献
-
-        # 创建主要内容区域
-        self.message_edit = QTextEdit()
-        self.message_edit.setPlainText(self.current_message)
-        self.message_edit.setReadOnly(True)
-        self.message_edit.setSizePolicy(
-            QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        # 设置QTextEdit样式 - 更明显的文字对比
-        self.message_edit.setStyleSheet(scrollbar_style + qeditor_qss)
-
-        self.message_edit.setHorizontalScrollBarPolicy(
-            Qt.ScrollBarAlwaysOff)  # 始终隐藏水平滚动条
-        self.message_edit.setLineWrapMode(QTextEdit.WidgetWidth)
-
-        self.message_edit.insertHtml(self.html_text(self.full_message))
-
-        # 创建参考文献区域（只对非用户消息显示）
-        self.reference_edit = None
-        if not self.is_user:
-            # 创建参考文献容器，带有分隔线
-            self.reference_container = QWidget()
-            reference_container_layout = QVBoxLayout()
-            reference_container_layout.setContentsMargins(0, 8, 0, 0)
-            reference_container_layout.setSpacing(8)
-
-            # 创建参考文献标题
-            ref_title = QLabel("📚 参考文献")
-            ref_title.setStyleSheet("""
-                QLabel {    
-                    font-size: 12px;
-                    font-weight: 600;
-                    font-family: "SF Pro Text", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
-                    padding: 0px;
-                    margin: 0px;
-                    border:none;
-                }
-            """)
-
-            self.reference_edit = QTextEdit()
-            self.reference_edit.setReadOnly(True)
-            self.reference_edit.setSizePolicy(
-                QSizePolicy.Preferred, QSizePolicy.Minimum)
-            self.reference_container.hide()  # 初始隐藏整个容器
-
-            # 美化参考文献样式 - 更加现代化和优雅
-            self.reference_edit.setStyleSheet("""
-                QTextEdit {
-                    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                        stop:0 #f8fafc, stop:1 #f1f5f9);
-                    border: 1px solid #cbd5e1;
-                    border-radius: 12px;
-                    color: #475569;
-                    font-size: 12px;
-                    font-family: "SF Mono", "Monaco", "Cascadia Code", "Roboto Mono", "Consolas", monospace;
-                    line-height: 1.5;
-                    font-weight: 400;
-                    padding: 14px 16px;
-                    margin: 0px;
-                    selection-background-color: #e0e7ff;
-                }
-                
-                QTextEdit:focus {
-                    border: 1px solid #3b82f6;
-                    outline: none;
-                }
-                
-                QTextEdit:hover {
-                    border: 1px solid #94a3b8;
-                    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                        stop:0 #ffffff, stop:1 #f8fafc);
-                }
-            """)
-
-            self.reference_edit.setVerticalScrollBarPolicy(
-                Qt.ScrollBarAlwaysOff)
-            self.reference_edit.setHorizontalScrollBarPolicy(
-                Qt.ScrollBarAlwaysOff)
-            self.reference_edit.setLineWrapMode(QTextEdit.WidgetWidth)
-
-            # 组装参考文献容器
-            # reference_container_layout.addWidget(separator)
-            reference_container_layout.addWidget(ref_title)
-            reference_container_layout.addWidget(self.reference_edit)
-            self.reference_container.setLayout(reference_container_layout)
-
-        # 连接信号，自动调整高度
-        self.message_edit.textChanged.connect(self.adjust_height)
-        if self.reference_edit:
-            self.reference_edit.textChanged.connect(self.adjust_height)
-
-        bubble_layout.addWidget(self.message_edit)
-        if hasattr(self, 'reference_container'):
-            bubble_layout.addWidget(self.reference_container)
-
-        message_bubble.setLayout(bubble_layout)
-        container_layout.addWidget(message_bubble)
-        message_container.setLayout(container_layout)
-
-        # 布局设置
-        if self.is_user:
-            layout.addStretch(1)
-            layout.addWidget(message_container, 0, Qt.AlignTop)
-            layout.addWidget(avatar, 0, Qt.AlignTop)
-        else:
-            layout.addWidget(avatar, 0, Qt.AlignTop)
-            layout.addWidget(message_container, 2, Qt.AlignTop)
-            layout.addStretch(1)
-
-        self.setLayout(layout)
-
-        # 延迟调整高度，确保组件完全初始化
-        QTimer.singleShot(10, self.adjust_height)
-
-    def split_message_and_references(self, message):
-        """分离消息主体和参考文献部分"""
-        # 使用正则表达式匹配"参考文献："开头的部分
-        pattern = r'(.*?)(\n参考文献：.*?)$'
-        match = re.match(pattern, message, re.DOTALL)
-
-        if match:
-            main_content = match.group(1).strip()
-            references = match.group(2).strip()
-            # 移除"参考文献："标题，因为我们有自己的标题样式
-            references = re.sub(r'^参考文献：\s*', '', references)
-            return main_content, references
-        else:
-            # 如果没有找到参考文献，返回原消息和空字符串
-            return message, ""
-
-    def adjust_height(self):
-        """根据内容自动调整QTextEdit高度"""
-        def adjust_single_edit(edit_widget):
-            if not edit_widget:
-                return
-
-            # 获取文档的理想高度
-            doc = edit_widget.document()
-            doc.setTextWidth(edit_widget.width())
-            doc_height = doc.size().height()
-
-            # 计算合适的高度
-            margins = edit_widget.contentsMargins()
-            extra_height = margins.top() + margins.bottom() + 8
-            ideal_height = int(doc_height + extra_height)
-
-            # 设置最小和最大高度限制
-            min_height = MIN_HEIGHT
-            max_height = MAX_HEIGHT
-            final_height = max(min_height, min(ideal_height, max_height))
-
-            edit_widget.setFixedHeight(final_height)
-
-        # 调整主消息区域高度
-        adjust_single_edit(self.message_edit)
-
-        # 调整参考文献区域高度
-        if self.reference_edit and hasattr(self, 'reference_container') and not self.reference_container.isHidden():
-            adjust_single_edit(self.reference_edit)
-
-        # 更新父级组件
-        self.updateGeometry()
-
-    def set_message(self, message):
-        """设置消息内容"""
-        self.current_message = message
-        if not self.is_user:
-            # 对于系统消息，分离主内容和参考文献
-            main_content, references = self.split_message_and_references(message)
-            self.message_edit.setHtml(self.html_text(main_content))
-
-            if references and self.reference_edit:
-                self.reference_edit.setPlainText(references)
-                self.reference_container.show()
-            elif hasattr(self, 'reference_container'):
-                self.reference_container.hide()
-        else:
-            # 用户消息直接显示
-            self.message_edit.setHtml(self.html_text(message))
-            # self.message_edit.setPlainText(message)
-
-        # 延迟调整高度
-        QTimer.singleShot(10, self.adjust_height)
-
-    def html_text(self, text):
-            html = mistune.html(text)
-            html = f"""
-            <html>
-            <head>
-            <style>
-                body {{
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    font-size: 14px;
-                    background-color: #F9FAFB;
-                    color: #333;
-                }}
-                pre code {{
-                    background-color: #f4f4f4;
-                    border: 1px solid #ccc;
-                    padding: 5px;
-                    display: block;
-                }}
-                code {{
-                    background-color: #f4f4f4;
-                    padding: 2px 4px;
-                    font-family: Consolas, monospace;
-                    color: #c7254e;
-                }}
-            </style>
-            </head>
-            <body>{html}</body>
-            </html>
-            """
-            return html
-
-    def append_text(self, text):
-        """追加文本（用于流式输出）"""
-        self.current_message += text
-        html = self.html_text(self.current_message)
-        self.message_edit.setHtml(html)
-        self.message_edit.moveCursor(QTextCursor.End)
-        # 调整高度
-        self.adjust_height()
 
 
 class ChatInterface(QMainWindow):
@@ -448,7 +132,7 @@ class ChatInterface(QMainWindow):
         """)
 
     def pre_hot(self):
-        self.thread1 = ChatBotThread("你好1", chatbot)
+        # self.thread1 = ChatBotThread("你好1", chatbot)
         # self.thread2 = ChatBotThread("你好2", chatbot)
         # self.thread3 = ChatBotThread("你好3", chatbot)
         # self.thread1.start()
@@ -640,14 +324,14 @@ class ChatInterface(QMainWindow):
             }
         """)
 
-        # 保存会话选项
-        save_action = QAction("💾 保存会话", self)
-        save_action.triggered.connect(
-            lambda: self.save_session_from_menu(item))
-        menu.addAction(save_action)
+        # # 保存会话选项
+        # save_action = QAction("💾 保存会话", self)
+        # save_action.triggered.connect(
+        #     lambda: self.save_session_from_menu(item))
+        # menu.addAction(save_action)
 
-        # 添加分隔符
-        menu.addSeparator()
+        # # 添加分隔符
+        # menu.addSeparator()
 
         # 编辑会话选项
         edit_action = QAction("✏️ 编辑会话", self)
@@ -683,7 +367,7 @@ class ChatInterface(QMainWindow):
                 print(f"  {key}: {value}")
 
             conversations[index]["name"] = params["name"]
-            conversations[index]["start_mode"] = params["smart_mode"]
+            conversations[index]["smart_mode"] = params["smart_mode"]
             conversations[index]["wake_words"] = params["wake_words"]
             # 写入
             self.db.update_conversation_settings(
@@ -763,7 +447,6 @@ class ChatInterface(QMainWindow):
             # 保存到数据库
             if self.db.save_conversation(conversation):
                 # 更新内存中的数据
-                conversation['is_saved'] = True
                 conversation['modified'] = False
                 print(f"保存会话: {conversation.get('name', '未知对话')}")
                 
@@ -796,44 +479,6 @@ class ChatInterface(QMainWindow):
                 print(f"删除会话: {conversation.get('name', '未知对话')}")
             else:
                 print(f"删除会话失败: {conversation.get('name', '未知对话')}")
-
-    def save_conversation_to_file(self, conversation, index):
-        """将会话保存到文件"""
-        if not conversation.get("messages"):
-            return False
-        
-        # 更新会话数据
-        conversation_data = conversation.copy()
-        conversation_data['last_updated'] = datetime.now().isoformat()
-        conversation_data['is_saved'] = True
-        
-        # 如果是新对话（没有保存过），生成标题
-        if not conversation_data.get('is_saved', False):
-            save_time = datetime.now().strftime("%Y-%m-%d %H:%M")
-            title_suffix = "新会话"
-            for msg in conversation["messages"]:
-                if msg["role"] == "user":
-                    title_suffix = msg["content"][:20] + \
-                        ("..." if len(msg["content"]) > 20 else "")
-                    break
-            conversation_data['name'] = f"{save_time} - {title_suffix}"
-        
-        # 保存到数据库
-        if self.db.save_conversation(conversation_data):
-            # 更新内存中的会话数据
-            if index < len(self.conversations):
-                self.conversations[index] = conversation_data
-                
-                # 如果这是当前会话，更新相关信息
-                if self.current_conversation_index == index:
-                    self.current_conversation_id = conversation_data['id']
-            
-            # 更新历史列表显示
-            self.update_history_list()
-            return True
-        else:
-            print(f"保存对话到数据库失败")
-            return False
 
     def create_initial_session(self):
         """创建初始会话"""
@@ -1004,14 +649,14 @@ class ChatInterface(QMainWindow):
             # 显示对话名称
             display_text = conv['name']
 
-            # # 如果有修改标记，在名称后添加标识
+            # # # 如果有修改标记，在名称后添加标识
             # if conv.get("modified", False):
             #     display_text += " *"
 
             item = QListWidgetItem(display_text)
 
             # 设置工具提示
-            save_status = "已保存" if conv.get("is_saved", False) else "未保存"
+            save_status = ""
             if conv.get("modified", False):
                 save_status += " (已修改)"
             filename = conv.get("name", "无文件")
@@ -1029,11 +674,9 @@ class ChatInterface(QMainWindow):
 
             item.setToolTip(tooltip_text)
 
-            # 为未保存的会话设置不同的样式
-            if not conv.get("is_saved", False):
-                item.setForeground(QColor("#666666"))  # 灰色字体表示未保存
-            elif conv.get("modified", False):
-                item.setForeground(QColor("#ff6600"))  # 橙色字体表示已修改
+            # # 为未保存的会话设置不同的样式
+            # if conv.get("modified", False):
+            #     item.setForeground(QColor("#ff6600"))  # 橙色字体表示已修改
 
             self.history_list.addItem(item)
 
@@ -1234,6 +877,7 @@ class ChatInterface(QMainWindow):
         else:
             QTextEdit.keyPressEvent(self.input_text, event)
 
+    # ===================================sendmessage all logic=============================================
     # 发送消息，触发对话
     def send_message(self):
         """发送消息"""
@@ -1265,11 +909,8 @@ class ChatInterface(QMainWindow):
 
         # 更新当前会话的消息记录
         if self.current_conversation_index >= 0:
-            self.conversations[self.current_conversation_index]["messages"] = self.current_conversation.copy(
-            )
-            # 标记为已修改（如果是已保存的对话，需要重新保存）
-            if self.conversations[self.current_conversation_index].get("is_saved", False):
-                self.conversations[self.current_conversation_index]["modified"] = True
+            self.conversations[self.current_conversation_index]["messages"] = self.current_conversation.copy()
+            self.conversations[self.current_conversation_index]["modified"] = True
 
         # 模拟AI流式回复
         QTimer.singleShot(500, lambda: self.start_response(message))
@@ -1304,12 +945,12 @@ class ChatInterface(QMainWindow):
     def finish_ai_response(self):
         """完成AI回复"""
         # 如果有source，将其添加到流式输出的末尾
-        if hasattr(self, 'source') and self.source:
-            source_text = f"\n\n参考文献：{self.source}"
-            # 继续流式输出source部分
-            for char in source_text:
-                self.streaming_widget.append_text(char)
-            self.scroll_to_bottom()
+        # if hasattr(self, 'source') and self.source:
+        #     source_text = f"\n\n参考文献：{self.source}"
+        #     # 继续流式输出source部分
+        #     for char in source_text:
+        #         self.streaming_widget.append_text(char)
+        #     self.scroll_to_bottom()
 
         # 恢复发送状态
         self.is_ai_responding = False
@@ -1318,10 +959,6 @@ class ChatInterface(QMainWindow):
         self.status_label.setText("")
 
         # 保存完整回复到对话记录（包含source）
-        full_content = self.full_response
-        if hasattr(self, 'source') and self.source:
-            full_content += f"\n\n参考文献：{self.source}"
-
         self.current_conversation.append({
             "role": "assistant",
             "content": self.full_response,  # 原始内容
@@ -1332,11 +969,9 @@ class ChatInterface(QMainWindow):
 
         # 更新当前会话的消息记录
         if self.current_conversation_index >= 0:
-            self.conversations[self.current_conversation_index]["messages"] = self.current_conversation.copy(
-            )
+            self.conversations[self.current_conversation_index]["messages"] = self.current_conversation.copy()
             # 标记为已修改（如果是已保存的对话，需要重新保存）
-            if self.conversations[self.current_conversation_index].get("is_saved", False):
-                self.conversations[self.current_conversation_index]["modified"] = True
+            self.conversations[self.current_conversation_index]["modified"] = True
 
         # 重新聚焦到输入框
         self.input_text.setFocus()

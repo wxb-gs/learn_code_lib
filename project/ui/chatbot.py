@@ -26,7 +26,7 @@ class ChatBot(QObject):
     def answer(self, question: str):
         # 发送用户消息
         human_msg = HumanMessage(content=question)
-
+        print([human_msg])
         # 逐步处理 token 并发信号更新 GUI
         full_token = ""
         for chunk in llm.stream([human_msg]):

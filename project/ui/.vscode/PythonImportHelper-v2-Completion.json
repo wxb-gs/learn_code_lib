@@ -1,0 +1,1898 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QDialog",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QHBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFormLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLineEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSpinBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QDoubleSpinBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QCheckBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QComboBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QGroupBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFrame",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSlider",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QProgressBar",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QDialog",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QHBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFormLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLineEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QCheckBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QGroupBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QListWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QListWidgetItem",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMessageBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFrame",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSizePolicy",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMainWindow",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QDialog",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QHBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLineEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QScrollArea",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFrame",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSpacerItem",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSizePolicy",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QHBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QProgressBar",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMainWindow",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMessageBox",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QAction",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFrame",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "# 你现有的导入\r\n                             QHBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QListWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QListWidgetItem",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMainWindow",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMenu",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QScrollArea",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSizePolicy",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSplitter",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QDialog",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QHBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTextEdit",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFrame",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSizePolicy",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QScrollArea",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTimer",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTimer",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QThread",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QObject",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QObject",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QThread",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTimer",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QThread",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QPropertyAnimation",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QEasingCurve",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QSize",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTimer",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QSize",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QThread",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "pyqtSignal",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTextStream",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QIODevice",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QSize",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTimer",
+        "importPath": "PyQt5.QtCore",
+        "description": "PyQt5.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPalette",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QIcon",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QIcon",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPalette",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QIcon",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTextCursor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPainter",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QBrush",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPalette",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QBrush",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QIcon",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPainter",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTextCursor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTextCursor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTextDocument",
+        "importPath": "PyQt5.QtGui",
+        "description": "PyQt5.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "ConversationDatabase",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "mistune",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mistune",
+        "description": "mistune",
+        "detail": "mistune",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOllama",
+        "importPath": "langchain_ollama",
+        "description": "langchain_ollama",
+        "isExtraImport": true,
+        "detail": "langchain_ollama",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain.schema.messages",
+        "description": "langchain.schema.messages",
+        "isExtraImport": true,
+        "detail": "langchain.schema.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain.schema.messages",
+        "description": "langchain.schema.messages",
+        "isExtraImport": true,
+        "detail": "langchain.schema.messages",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "ChatInterface",
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "isExtraImport": true,
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBot",
+        "importPath": "chatbot",
+        "description": "chatbot",
+        "isExtraImport": true,
+        "detail": "chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBotThread",
+        "importPath": "chatbot",
+        "description": "chatbot",
+        "isExtraImport": true,
+        "detail": "chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "blue_btn_qss",
+        "importPath": "styles.btn_qss",
+        "description": "styles.btn_qss",
+        "isExtraImport": true,
+        "detail": "styles.btn_qss",
+        "documentation": {}
+    },
+    {
+        "label": "simple_btn_qss",
+        "importPath": "styles.btn_qss",
+        "description": "styles.btn_qss",
+        "isExtraImport": true,
+        "detail": "styles.btn_qss",
+        "documentation": {}
+    },
+    {
+        "label": "delete_btn_qss",
+        "importPath": "styles.btn_qss",
+        "description": "styles.btn_qss",
+        "isExtraImport": true,
+        "detail": "styles.btn_qss",
+        "documentation": {}
+    },
+    {
+        "label": "SearchDialog",
+        "importPath": "components.search_dialog",
+        "description": "components.search_dialog",
+        "isExtraImport": true,
+        "detail": "components.search_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "ConversationEditDialog",
+        "importPath": "components.params_dialog",
+        "description": "components.params_dialog",
+        "isExtraImport": true,
+        "detail": "components.params_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "ConversationDatabase",
+        "importPath": "db.database",
+        "description": "db.database",
+        "isExtraImport": true,
+        "detail": "db.database",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingMessageWidget",
+        "importPath": "streaming_message_widget",
+        "description": "streaming_message_widget",
+        "isExtraImport": true,
+        "detail": "streaming_message_widget",
+        "documentation": {}
+    },
+    {
+        "label": "scrollbar_style",
+        "importPath": "styles.qeditor",
+        "description": "styles.qeditor",
+        "isExtraImport": true,
+        "detail": "styles.qeditor",
+        "documentation": {}
+    },
+    {
+        "label": "qeditor_qss",
+        "importPath": "styles.qeditor",
+        "description": "styles.qeditor",
+        "isExtraImport": true,
+        "detail": "styles.qeditor",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pyaudio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyaudio",
+        "description": "pyaudio",
+        "detail": "pyaudio",
+        "documentation": {}
+    },
+    {
+        "label": "wave",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "wave",
+        "description": "wave",
+        "detail": "wave",
+        "documentation": {}
+    },
+    {
+        "label": "WhisperModel",
+        "importPath": "faster_whisper",
+        "description": "faster_whisper",
+        "isExtraImport": true,
+        "detail": "faster_whisper",
+        "documentation": {}
+    },
+    {
+        "label": "ModernParameterDialog",
+        "kind": 6,
+        "importPath": "components.dialog",
+        "description": "components.dialog",
+        "peekOfCode": "class ModernParameterDialog(QDialog):\n    \"\"\"现代化的参数设置对话框\"\"\"\n    def __init__(self, title=\"参数设置\", parent=None):\n        super().__init__(parent)\n        self.setWindowTitle(title)\n        self.setModal(True)\n        self.resize(450, 600)\n        # 存储参数值\n        self.parameters = {}\n        self.widgets = {}",
+        "detail": "components.dialog",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "components.dialog",
+        "description": "components.dialog",
+        "peekOfCode": "def main():\n    app = QApplication(sys.argv)\n    # 创建对话框\n    dialog = ModernParameterDialog(\"系统配置\")\n    # 可选：设置初始参数\n    initial_params = {\n        'project_name': '测试项目',\n        'max_count': 200,\n        'precision': 0.05,\n        'mode': '自动模式',",
+        "detail": "components.dialog",
+        "documentation": {}
+    },
+    {
+        "label": "WakeWordsList",
+        "kind": 6,
+        "importPath": "components.params_dialog",
+        "description": "components.params_dialog",
+        "peekOfCode": "class WakeWordsList(QFrame):\n    \"\"\"唤醒词列表组件\"\"\"\n    def __init__(self, parent=None):\n        super().__init__(parent)\n        self.setup_ui()\n    def setup_ui(self):\n        \"\"\"设置UI\"\"\"\n        self.setStyleSheet(\"\"\"\n            QFrame {\n                background-color: white;",
+        "detail": "components.params_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "ConversationEditDialog",
+        "kind": 6,
+        "importPath": "components.params_dialog",
+        "description": "components.params_dialog",
+        "peekOfCode": "class ConversationEditDialog(QDialog):\n    \"\"\"会话编辑对话框\"\"\"\n    def __init__(self, conversation_data=None, parent=None):\n        super().__init__(parent)\n        print(\"====================open edit===================\")\n        self.conversation_data = conversation_data or {}\n        self.setWindowTitle(\"编辑会话\")\n        self.setModal(True)\n        self.resize(500, 650)\n        # 存储参数值",
+        "detail": "components.params_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "components.params_dialog",
+        "description": "components.params_dialog",
+        "peekOfCode": "def main():\n    app = QApplication(sys.argv)\n    # 测试数据 - 使用不同格式的时间戳\n    test_data = {\n        'id': '111111111111114',\n        'name': '生活顾问',\n        'create_time': 1710072000,  # 整数时间戳\n        'last_used_time': '1717977000.123',  # 字符串格式的浮点时间戳\n        'wake_words': ['生活', '建议', '推荐'],\n        'smart_mode': False",
+        "detail": "components.params_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "ConversationItem",
+        "kind": 6,
+        "importPath": "components.search_dialog",
+        "description": "components.search_dialog",
+        "peekOfCode": "class ConversationItem(QFrame):\n    \"\"\"会话项目组件\"\"\"\n    clicked = pyqtSignal(dict)\n    def __init__(self, conversation_data):\n        super().__init__()\n        self.conversation_data = conversation_data\n        self.setup_ui()\n    def setup_ui(self):\n        self.setFrameStyle(QFrame.StyledPanel)\n        self.setStyleSheet(\"\"\"",
+        "detail": "components.search_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "SearchDialog",
+        "kind": 6,
+        "importPath": "components.search_dialog",
+        "description": "components.search_dialog",
+        "peekOfCode": "class SearchDialog(QDialog):\n    \"\"\"ChatGPT风格的搜索对话框\"\"\"\n    conversation_selected = pyqtSignal(dict)\n    def __init__(self, conversations, parent=None):\n        super().__init__(parent)\n        self.conversations = conversations\n        self.filtered_conversations = conversations.copy()\n        self.setup_ui()\n        self.setup_search()\n    def setup_ui(self):",
+        "detail": "components.search_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "MainWindow",
+        "kind": 6,
+        "importPath": "components.search_dialog",
+        "description": "components.search_dialog",
+        "peekOfCode": "class MainWindow(QMainWindow):\n    \"\"\"主窗口\"\"\"\n    def __init__(self):\n        super().__init__()\n        self.setup_sample_data()\n        self.setup_ui()\n    def setup_sample_data(self):\n        \"\"\"设置示例数据\"\"\"\n        self.conversations = [\n            {",
+        "detail": "components.search_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "components.search_dialog",
+        "description": "components.search_dialog",
+        "peekOfCode": "def main():\n    app = QApplication(sys.argv)\n    # 设置应用样式\n    app.setStyle('Fusion')\n    window = MainWindow()\n    window.show()\n    sys.exit(app.exec_())\nif __name__ == '__main__':\n    main()",
+        "detail": "components.search_dialog",
+        "documentation": {}
+    },
+    {
+        "label": "ConversationDatabase",
+        "kind": 6,
+        "importPath": "db.database",
+        "description": "db.database",
+        "peekOfCode": "class ConversationDatabase:\n    \"\"\"对话数据库管理类\"\"\"\n    def __init__(self, db_path=\"conversations.db\"):\n        \"\"\"\n        初始化数据库连接\n        Args:\n            db_path (str): 数据库文件路径\n        \"\"\"\n        self.db_path = db_path\n        self.init_database()",
+        "detail": "db.database",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "db.test_db",
+        "description": "db.test_db",
+        "peekOfCode": "def main():\n    \"\"\"主函数：演示数据库操作\"\"\"\n    # 初始化数据库\n    print(\"=== 初始化数据库 ===\")\n    db = ConversationDatabase(\"test_conversations.db\")\n    # 创建示例对话\n    print(\"\\n=== 创建示例对话 ===\")\n    # 创建学习伙伴对话\n    learning_partner = db.create_new_conversation(\n        name=\"学习伙伴\",",
+        "detail": "db.test_db",
+        "documentation": {}
+    },
+    {
+        "label": "export_conversation_to_file",
+        "kind": 2,
+        "importPath": "db.test_db",
+        "description": "db.test_db",
+        "peekOfCode": "def export_conversation_to_file(db, conversation_id, export_path):\n    \"\"\"导出对话到文件\"\"\"\n    try:\n        conversation = db.load_conversation(conversation_id)\n        if conversation:\n            import json\n            with open(export_path, 'w', encoding='utf-8') as f:\n                json.dump(conversation, f, ensure_ascii=False, indent=2)\n            return True\n        return False",
+        "detail": "db.test_db",
+        "documentation": {}
+    },
+    {
+        "label": "rename_conversation",
+        "kind": 2,
+        "importPath": "db.test_db",
+        "description": "db.test_db",
+        "peekOfCode": "def rename_conversation(db, conversation_id, new_name):\n    \"\"\"重命名对话\"\"\"\n    try:\n        conversation = db.load_conversation(conversation_id)\n        if conversation:\n            conversation['name'] = new_name\n            conversation['last_updated'] = datetime.now().isoformat()\n            return db.save_conversation(conversation)\n        return False\n    except Exception as e:",
+        "detail": "db.test_db",
+        "documentation": {}
+    },
+    {
+        "label": "duplicate_conversation",
+        "kind": 2,
+        "importPath": "db.test_db",
+        "description": "db.test_db",
+        "peekOfCode": "def duplicate_conversation(db, conversation_id):\n    \"\"\"复制对话\"\"\"\n    try:\n        original = db.load_conversation(conversation_id)\n        if original:\n            duplicate = original.copy()\n            duplicate['id'] = db.generate_uuid()\n            duplicate['name'] = f\"{original['name']} - 副本\"\n            duplicate['create_time'] = datetime.now().timestamp()\n            duplicate['last_used_time'] = datetime.now().timestamp()",
+        "detail": "db.test_db",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBot",
+        "kind": 6,
+        "importPath": "demo.stream_demo",
+        "description": "demo.stream_demo",
+        "peekOfCode": "class ChatBot(QObject):\n    update_text = pyqtSignal(str)\n    def __init__(self):\n        super().__init__()\n    def connect(self, func_update):\n        self.update_text.connect(func_update)\n    def disconnect(self):\n        self.update_text.disconnect()\n    def answer(self, question: str):\n        human_msg = HumanMessage(content=question)",
+        "detail": "demo.stream_demo",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBotThread",
+        "kind": 6,
+        "importPath": "demo.stream_demo",
+        "description": "demo.stream_demo",
+        "peekOfCode": "class ChatBotThread(QThread):\n    finished = pyqtSignal()\n    def __init__(self, question: str, bot: ChatBot):\n        super().__init__()\n        self.question = question\n        self.bot = bot\n    def run(self):\n        self.bot.answer(self.question)\n        self.finished.emit()\nclass ChatApp(QWidget):",
+        "detail": "demo.stream_demo",
+        "documentation": {}
+    },
+    {
+        "label": "ChatApp",
+        "kind": 6,
+        "importPath": "demo.stream_demo",
+        "description": "demo.stream_demo",
+        "peekOfCode": "class ChatApp(QWidget):\n    def __init__(self):\n        super().__init__()\n        self.setWindowTitle(\"LangChain ChatOllama 流式输出\")\n        self.resize(700, 500)\n        self.layout = QVBoxLayout()\n        self.output_area = QTextEdit()\n        self.output_area.setReadOnly(True)\n        self.output_area.setStyleSheet(\"\"\"\n            QTextEdit {",
+        "detail": "demo.stream_demo",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "kind": 5,
+        "importPath": "demo.stream_demo",
+        "description": "demo.stream_demo",
+        "peekOfCode": "llm = ChatOllama(model=\"qwen2.5:7b\", streaming=True)\nclass ChatBot(QObject):\n    update_text = pyqtSignal(str)\n    def __init__(self):\n        super().__init__()\n    def connect(self, func_update):\n        self.update_text.connect(func_update)\n    def disconnect(self):\n        self.update_text.disconnect()\n    def answer(self, question: str):",
+        "detail": "demo.stream_demo",
+        "documentation": {}
+    },
+    {
+        "label": "blue_btn_qss",
+        "kind": 5,
+        "importPath": "styles.btn_qss",
+        "description": "styles.btn_qss",
+        "peekOfCode": "blue_btn_qss = \"\"\"\n            QPushButton {\n                background-color: #1a73e8;\n                border: none;\n                border-radius: 18px;\n                color: white;\n                padding: 0px 16px;\n                font-size: 14px;\n                font-weight: 500;\n                font-family: \"Microsoft YaHei UI\", \"PingFang SC\", sans-serif;",
+        "detail": "styles.btn_qss",
+        "documentation": {}
+    },
+    {
+        "label": "delete_btn_qss",
+        "kind": 5,
+        "importPath": "styles.btn_qss",
+        "description": "styles.btn_qss",
+        "peekOfCode": "delete_btn_qss = \"\"\"\n            QPushButton {\n                background-color: #f8f9fa;\n                border: 1px solid #e8eaed;\n                color: #5f6368;\n                border-radius: 18px;\n                font-size: 16px;\n                font-weight: bold;\n                font-family: \"Microsoft YaHei UI\", \"PingFang SC\", sans-serif;\n            }",
+        "detail": "styles.btn_qss",
+        "documentation": {}
+    },
+    {
+        "label": "scrollbar_style",
+        "kind": 5,
+        "importPath": "styles.qeditor",
+        "description": "styles.qeditor",
+        "peekOfCode": "scrollbar_style = \"\"\"\n/* 垂直滚动条整体样式 - 默认隐藏 */\nQTextEdit QScrollBar:vertical {\n    border: none;\n    background: #F9FAFB; /* 修改背景色 */\n    width: 0px;\n    margin: 2px 0;\n}\n/* 水平滚动条整体样式 - 默认隐藏 */\nQTextEdit QScrollBar:horizontal {",
+        "detail": "styles.qeditor",
+        "documentation": {}
+    },
+    {
+        "label": "qeditor_qss",
+        "kind": 5,
+        "importPath": "styles.qeditor",
+        "description": "styles.qeditor",
+        "peekOfCode": "qeditor_qss = \"\"\"\n    QTextEdit {\n        background: transparent;\n        color: #374151;\n        font-size: 14px;\n        font-family: \"SF Pro Text\", \"PingFang SC\", \"Microsoft YaHei\", -apple-system, BlinkMacSystemFont, sans-serif;\n        line-height: 1.6;\n        font-weight: 400;\n        border: none;\n        margin: 0px;",
+        "detail": "styles.qeditor",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBot",
+        "kind": 6,
+        "importPath": "chatbot",
+        "description": "chatbot",
+        "peekOfCode": "class ChatBot(QObject):\n    # 通过信号通知界面新加token\n    update_text = pyqtSignal(str)\n    # gen_end = pyqtSignal(bool)\n    def __init__(self) -> None:\n        super().__init__() #必须要调用的\n        return \n    def connect(self, func_update):\n        self.update_text.connect(func_update)\n    def disconnect(self):",
+        "detail": "chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "ChatBotThread",
+        "kind": 6,
+        "importPath": "chatbot",
+        "description": "chatbot",
+        "peekOfCode": "class ChatBotThread(QThread):\n    # 增加线程结束信号\n    finished = pyqtSignal(str)\n    def __init__(self, question: str, bot: ChatBot):\n        super().__init__()\n        self.question = question\n        self.bot = bot\n    def run(self):\n        full_content = self.bot.answer(self.question)\n        # 完成后发出 finished 信号",
+        "detail": "chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "llm",
+        "kind": 5,
+        "importPath": "chatbot",
+        "description": "chatbot",
+        "peekOfCode": "llm = ChatOllama(model=\"qwen2.5:7b\", streaming=True)\nclass ChatBot(QObject):\n    # 通过信号通知界面新加token\n    update_text = pyqtSignal(str)\n    # gen_end = pyqtSignal(bool)\n    def __init__(self) -> None:\n        super().__init__() #必须要调用的\n        return \n    def connect(self, func_update):\n        self.update_text.connect(func_update)",
+        "detail": "chatbot",
+        "documentation": {}
+    },
+    {
+        "label": "LoadingWorker",
+        "kind": 6,
+        "importPath": "load",
+        "description": "load",
+        "peekOfCode": "class LoadingWorker(QThread):\n    \"\"\"加载工作线程\"\"\"\n    progress_updated = pyqtSignal(int)\n    loading_finished = pyqtSignal()\n    def run(self):\n        \"\"\"模拟加载过程\"\"\"\n        for i in range(101):\n            time.sleep(0.05)  # 模拟加载时间\n            self.progress_updated.emit(i)\n        self.loading_finished.emit()",
+        "detail": "load",
+        "documentation": {}
+    },
+    {
+        "label": "LoadingScreen",
+        "kind": 6,
+        "importPath": "load",
+        "description": "load",
+        "peekOfCode": "class LoadingScreen(QWidget):\n    \"\"\"加载界面类\"\"\"\n    def __init__(self):\n        super().__init__()\n        self.main_window = None\n        self.background_pixmap = None\n        self.loadBackground()\n        self.initUI()\n        self.startLoading()\n    def loadBackground(self):",
+        "detail": "load",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "load",
+        "description": "load",
+        "peekOfCode": "def main():\n    \"\"\"主函数\"\"\"\n    app = QApplication(sys.argv)\n    # 设置应用程序属性\n    app.setApplicationName('智能问答系统')\n    app.setApplicationVersion('1.0')\n    # 创建并显示加载界面\n    loading_screen = LoadingScreen()\n    loading_screen.show()\n    sys.exit(app.exec_())",
+        "detail": "load",
+        "documentation": {}
+    },
+    {
+        "label": "ChatInterface",
+        "kind": 6,
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "peekOfCode": "class ChatInterface(QMainWindow):\n    \"\"\"主聊天界面\"\"\"\n    def __init__(self):\n        super().__init__()\n        # self.conversations_dir = \"chat_conversations\"  # 对话文件夹\n        self.current_conversation = []\n        self.conversations = []  # 包含已保存和未保存的会话\n        self.current_conversation_index = -1  # 当前对话在历史列表中的索引，-1表示新对话\n        self.current_conversation_file = None  # 当前对话的文件名\n        self.is_ai_responding = False  # AI是否正在回复",
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "peekOfCode": "def main():\n    app = QApplication(sys.argv)\n    # 设置应用程序样式\n    app.setStyle('Fusion')\n    window = ChatInterface()\n    window.show()\n    sys.exit(app.exec_())\nif __name__ == '__main__':\n    main()",
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "chatbot",
+        "kind": 5,
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "peekOfCode": "chatbot = ChatBot()\ndb = ConversationDatabase()\nMAX_HEIGHT = 650\nMIN_HEIGHT = 28\nUSER_MAX_WIDTH = 300\nAI_MAX_WIDTH = 680\nclass ChatInterface(QMainWindow):\n    \"\"\"主聊天界面\"\"\"\n    def __init__(self):\n        super().__init__()",
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "peekOfCode": "db = ConversationDatabase()\nMAX_HEIGHT = 650\nMIN_HEIGHT = 28\nUSER_MAX_WIDTH = 300\nAI_MAX_WIDTH = 680\nclass ChatInterface(QMainWindow):\n    \"\"\"主聊天界面\"\"\"\n    def __init__(self):\n        super().__init__()\n        # self.conversations_dir = \"chat_conversations\"  # 对话文件夹",
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_HEIGHT",
+        "kind": 5,
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "peekOfCode": "MAX_HEIGHT = 650\nMIN_HEIGHT = 28\nUSER_MAX_WIDTH = 300\nAI_MAX_WIDTH = 680\nclass ChatInterface(QMainWindow):\n    \"\"\"主聊天界面\"\"\"\n    def __init__(self):\n        super().__init__()\n        # self.conversations_dir = \"chat_conversations\"  # 对话文件夹\n        self.current_conversation = []",
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "MIN_HEIGHT",
+        "kind": 5,
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "peekOfCode": "MIN_HEIGHT = 28\nUSER_MAX_WIDTH = 300\nAI_MAX_WIDTH = 680\nclass ChatInterface(QMainWindow):\n    \"\"\"主聊天界面\"\"\"\n    def __init__(self):\n        super().__init__()\n        # self.conversations_dir = \"chat_conversations\"  # 对话文件夹\n        self.current_conversation = []\n        self.conversations = []  # 包含已保存和未保存的会话",
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "USER_MAX_WIDTH",
+        "kind": 5,
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "peekOfCode": "USER_MAX_WIDTH = 300\nAI_MAX_WIDTH = 680\nclass ChatInterface(QMainWindow):\n    \"\"\"主聊天界面\"\"\"\n    def __init__(self):\n        super().__init__()\n        # self.conversations_dir = \"chat_conversations\"  # 对话文件夹\n        self.current_conversation = []\n        self.conversations = []  # 包含已保存和未保存的会话\n        self.current_conversation_index = -1  # 当前对话在历史列表中的索引，-1表示新对话",
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "AI_MAX_WIDTH",
+        "kind": 5,
+        "importPath": "main_ui",
+        "description": "main_ui",
+        "peekOfCode": "AI_MAX_WIDTH = 680\nclass ChatInterface(QMainWindow):\n    \"\"\"主聊天界面\"\"\"\n    def __init__(self):\n        super().__init__()\n        # self.conversations_dir = \"chat_conversations\"  # 对话文件夹\n        self.current_conversation = []\n        self.conversations = []  # 包含已保存和未保存的会话\n        self.current_conversation_index = -1  # 当前对话在历史列表中的索引，-1表示新对话\n        self.current_conversation_file = None  # 当前对话的文件名",
+        "detail": "main_ui",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingMessageWidget",
+        "kind": 6,
+        "importPath": "streaming_message_widget",
+        "description": "streaming_message_widget",
+        "peekOfCode": "class StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message\n        self.current_message = \"\"\n        self.setup_ui()\n    def setup_ui(self):\n        # 设置组件的尺寸策略",
+        "detail": "streaming_message_widget",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_HEIGHT",
+        "kind": 5,
+        "importPath": "streaming_message_widget",
+        "description": "streaming_message_widget",
+        "peekOfCode": "MAX_HEIGHT = 650\nMIN_HEIGHT = 28\nUSER_MAX_WIDTH = 460\nAI_MAX_WIDTH = 680\nclass StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message",
+        "detail": "streaming_message_widget",
+        "documentation": {}
+    },
+    {
+        "label": "MIN_HEIGHT",
+        "kind": 5,
+        "importPath": "streaming_message_widget",
+        "description": "streaming_message_widget",
+        "peekOfCode": "MIN_HEIGHT = 28\nUSER_MAX_WIDTH = 460\nAI_MAX_WIDTH = 680\nclass StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message\n        self.current_message = \"\"",
+        "detail": "streaming_message_widget",
+        "documentation": {}
+    },
+    {
+        "label": "USER_MAX_WIDTH",
+        "kind": 5,
+        "importPath": "streaming_message_widget",
+        "description": "streaming_message_widget",
+        "peekOfCode": "USER_MAX_WIDTH = 460\nAI_MAX_WIDTH = 680\nclass StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message\n        self.current_message = \"\"\n        self.setup_ui()",
+        "detail": "streaming_message_widget",
+        "documentation": {}
+    },
+    {
+        "label": "AI_MAX_WIDTH",
+        "kind": 5,
+        "importPath": "streaming_message_widget",
+        "description": "streaming_message_widget",
+        "peekOfCode": "AI_MAX_WIDTH = 680\nclass StreamingMessageWidget(QWidget):\n    \"\"\"支持流式输出的消息气泡组件\"\"\"\n    def __init__(self, message=\"\", is_user=True, parent=None):\n        super().__init__(parent)\n        self.is_user = is_user\n        self.full_message = message\n        self.current_message = \"\"\n        self.setup_ui()\n    def setup_ui(self):",
+        "detail": "streaming_message_widget",
+        "documentation": {}
+    },
+    {
+        "label": "VAD_Whisper",
+        "kind": 6,
+        "importPath": "vad_fast_whisper",
+        "description": "vad_fast_whisper",
+        "peekOfCode": "class VAD_Whisper:\n    def __init__(self, model_size=\"large-v3-turbo-ct2\", beam_size=5, language='zh', \n                 initial_prompt=\"这是一条控制指令，A机A机，B机B机，平飞，偏置飞行，直线加速，小角度盘旋，拉起发射，俯仰角10度，速度100马赫。\"):\n        self.model_size = model_size\n        self.beam_size = beam_size\n        self.language = language\n        self.initial_prompt = initial_prompt\n        self.condition_on_previous_text = True\n        # 加载模型和工具函数\n        self.model, self.utils = torch.hub.load(",
+        "detail": "vad_fast_whisper",
+        "documentation": {}
+    }
+]

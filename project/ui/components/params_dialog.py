@@ -179,6 +179,7 @@ class ConversationEditDialog(QDialog):
     
     def __init__(self, conversation_data=None, parent=None):
         super().__init__(parent)
+        print("====================open edit===================")
         self.conversation_data = conversation_data or {}
         self.setWindowTitle("编辑会话")
         self.setModal(True)
