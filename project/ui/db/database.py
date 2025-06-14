@@ -158,7 +158,7 @@ class ConversationDatabase:
                 SELECT id, name, create_time, last_used_time, wake_words, 
                        smart_mode, messages, modified, last_updated
                 FROM conversations 
-                ORDER BY last_used_time DESC
+                ORDER BY create_time DESC
             ''')
 
             rows = cursor.fetchall()

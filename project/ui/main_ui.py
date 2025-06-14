@@ -1,11 +1,15 @@
 import json
 import os
+import pprint
 import random
 import re
 import sys
 from datetime import datetime
 import mistune
 import uuid
+import sys
+import threading
+import time
 # import markdown
 # 后端代码
 from chatbot import ChatBot, ChatBotThread
@@ -18,12 +22,16 @@ from PyQt5.QtWidgets import (QAction, QApplication, QFrame,  # 你现有的导�
                              QMainWindow, QMenu, QPushButton, QScrollArea,
                              QSizePolicy, QSplitter, QTextEdit, QVBoxLayout,
                              QWidget, QDialog)
+import speech_recognition as sr
+import pyaudio
 
 from styles.btn_qss import blue_btn_qss, simple_btn_qss, delete_btn_qss
+from styles.history_list_qss import history_list_styles
 from components.search_dialog import SearchDialog
 from components.params_dialog import ConversationEditDialog
 from db.database import ConversationDatabase
-from streaming_message_widget import StreamingMessageWidget
+from components.streaming_message_widget import StreamingMessageWidget
+from components.record_audio import VoiceRecorder, AnimatedRecordButton
 
 chatbot = ChatBot()
 db = ConversationDatabase()
@@ -50,15 +58,56 @@ class ChatInterface(QMainWindow):
         self.db = db
         self.init_ui()
         self.load_all_conversations()
+        # 录音组件加载
+        self.voice_recorder = VoiceRecorder()
+        self.setup_voice_signals()
+        
         # 启动时自动创建新会话
         if len(self.conversations) <= 0:
             self.create_initial_session()
         else:
             self.load_conversation(index=0)
             self.update_history_list()
+        count = self.chat_layout.count()
+        if count == 0:
+            self.show_empty_chat_hint()
+
         self.second_window = None
         self.source = None
+    
     # ==============================================main windows ========================================
+    def show_empty_chat_hint(self):
+        """显示空聊天提示"""
+        if not hasattr(self, 'empty_chat_label'):
+            # 创建默认提示标签
+            self.empty_chat_label = QLabel("请开始聊天吧")
+            self.empty_chat_label.setAlignment(Qt.AlignCenter)
+            self.empty_chat_label.setStyleSheet("""
+                QLabel {
+                    font-size: 16px;
+                    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+                    color: #9aa0a6;
+                    background-color: transparent;
+                    padding: 40px;
+                    border: none;
+                }
+                """)
+            # 添加到布局的开头
+            self.chat_layout.insertWidget(0, self.empty_chat_label)
+        else:
+            self.empty_chat_label.show()
+    
+    def hide_empty_chat_hint(self):
+        """隐藏空聊天提示"""
+        if hasattr(self, 'empty_chat_label'):
+            self.empty_chat_label.hide()
+
+    def setup_voice_signals(self):
+        """设置语音识别信号连接"""
+        self.voice_recorder.text_recognized.connect(self.append_voice_text)
+        self.voice_recorder.recording_started.connect(self.on_recording_started)
+        self.voice_recorder.recording_stopped.connect(self.on_recording_stopped)
+        self.voice_recorder.error_occurred.connect(self.on_voice_error)
 
     def init_ui(self):
         self.setWindowTitle("智能助手")
@@ -139,7 +188,7 @@ class ChatInterface(QMainWindow):
         # self.thread2.start()
         # self.thread3.start()
         return
-
+    
     # ===================================left all logic=============================================
     def create_left_panel(self):
         """创建左侧历史会话面板"""
@@ -174,15 +223,6 @@ class ChatInterface(QMainWindow):
         self.search_btn.setStyleSheet(simple_btn_qss)
         self.search_btn.clicked.connect(self.open_search_dialog)
 
-        # # 删除所有对话按钮
-        # self.delete_all_btn = QPushButton("")
-        # self.delete_all_btn.setFixedSize(36, 36)
-        # self.delete_all_btn.setIcon(QIcon("./icon/del2.png"))  # 设置图标
-        # self.delete_all_btn.setIconSize(QSize(16, 16))  # 设置图标大小
-        # self.delete_all_btn.setToolTip("更多选项")
-        # self.delete_all_btn.setStyleSheet(delete_btn_qss)
-        # self.delete_all_btn.clicked.connect(self.delete_all_conversations)
-
         top_layout.addWidget(self.new_chat_btn)
         top_layout.addWidget(self.search_btn)
         top_layout.addStretch()
@@ -191,61 +231,7 @@ class ChatInterface(QMainWindow):
 
         # 历史对话列表
         self.history_list = QListWidget()
-        self.history_list.setStyleSheet("""
-            QListWidget {
-                background-color: #ffffff;
-                border: none;
-                border-top: 1px solid #e8eaed;
-                padding: 8px 0px;
-                font-family: "Microsoft YaHei UI", "PingFang SC", "SF Pro Display", sans-serif;
-                outline: none;
-            }
-
-            QListWidget::item {
-                background-color: transparent;
-                border: none;
-                border-radius: 8px;
-                padding: 12px 16px;
-                margin: 2px 8px;
-                font-size: 14px;
-                color: #3c4043;
-                min-height: 20px;
-            }
-
-            QListWidget::item:hover {
-                background-color: #f8f9fa;
-            }
-
-            QListWidget::item:selected {
-                background-color: #e8f0fe;
-                color: #1a73e8;
-                font-weight: 500;
-            }
-
-            QScrollBar:vertical {
-                background-color: transparent;
-                width: 6px;
-                border-radius: 3px;
-                margin: 0px;
-                border: none;
-            }
-
-            QScrollBar::handle:vertical {
-                background-color: #dadce0;
-                border-radius: 3px;
-                min-height: 20px;
-                border: none;
-            }
-
-            QScrollBar::handle:vertical:hover {
-                background-color: #bdc1c6;
-            }
-
-            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
-                background: none;
-                border: none;
-            }
-            """)
+        self.history_list.setStyleSheet(history_list_styles)
         self.history_list.itemClicked.connect(self.load_conversation)
 
         # 设置右键菜单
@@ -284,6 +270,14 @@ class ChatInterface(QMainWindow):
         print(f"唤醒词: {conversation_data['wake_words']}")
         print(f"智能模式: {'开启' if conversation_data['smart_mode'] else '关闭'}")
         print("-" * 40)
+        id = conversation_data['id']
+        index = 0
+        for i, conv in enumerate(self.conversations):
+            if conv['id'] == id:
+                index = i
+                break
+        self.load_conversation(index = index)
+        self.update_history_list()
 
     def show_context_menu(self, position):
         """显示右键菜单"""
@@ -600,7 +594,10 @@ class ChatInterface(QMainWindow):
         if index == None:
             # 加载选中的对话
             index = self.history_list.row(item)
-        
+
+        # 设置当前index
+        self.current_conversation_index = index
+
         print(f"切换到对话索引: {index}")
         if index < len(self.conversations):
             conversation = self.conversations[index]
@@ -632,6 +629,11 @@ class ChatInterface(QMainWindow):
             
             print(
                 f"加载对话: {conversation.get('name', '未知对话')}, 消息数: {len(self.current_conversation)}")
+
+            # if self.chat_layout.count() == 0:
+            #     self.show_empty_chat_hint()
+            # else:
+            #     self.hide_empty_chat_hint()
 
     def load_all_conversations(self):
         saved_conversations =  self.db.load_all_conversations()
@@ -685,7 +687,6 @@ class ChatInterface(QMainWindow):
             self.history_list.setCurrentRow(self.current_conversation_index)
 
     # ===================================right all logic=============================================
-
     def create_right_panel(self):
         """创建右侧聊天面板"""
         right_widget = QWidget()
@@ -708,14 +709,14 @@ class ChatInterface(QMainWindow):
                 font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
                 padding: 6px 12px;
                 border-radius: 12px;
-                color: #5f6368;
+                color: #3f6368;
                 background-color: #f8f9fa;
+                min-width:100px;
             }
             """)
 
         toolbar.addWidget(self.status_label)
         toolbar.addStretch()
-        # toolbar.addWidget(openchat_btn)
         toolbar_widget.setLayout(toolbar)
 
         # 聊天显示区域
@@ -756,65 +757,100 @@ class ChatInterface(QMainWindow):
         self.chat_widget.setLayout(self.chat_layout)
         self.chat_scroll.setWidget(self.chat_widget)
 
-        # 输入区域
+        # 美化的输入区域
         input_container = QWidget()
-        input_container.setFixedHeight(100)
+        input_container.setFixedHeight(120)
         input_container.setStyleSheet("""
             QWidget {
-                background-color: #ffffff;
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #fafafa, stop:1 #ffffff);
                 border-top: 1px solid #e8eaed;
-                padding: 0px;
+                border-bottom: 1px solid #f0f0f0;
             }
             """)
 
+        # 主输入布局
+        main_input_layout = QVBoxLayout()
+        main_input_layout.setContentsMargins(24, 16, 24, 16)
+        main_input_layout.addStretch()
+        
+        # 输入控件的水平布局
         input_layout = QHBoxLayout()
-        input_layout.setSpacing(12)
-        input_layout.setContentsMargins(20, 16, 20, 16)
+        input_layout.setSpacing(16)
+        input_layout.setContentsMargins(0, 0, 0, 0)
+
+        # 输入框容器
+        input_wrapper = QWidget()
+        input_wrapper.setStyleSheet("""
+            QWidget {
+                background-color: #ffffff;
+                border: 1px solid #e8eaed;
+                border-radius: 26px;
+            }
+            QWidget:hover {
+                border-color: #dadce0;
+            }
+            """)
+        
+        input_wrapper_layout = QHBoxLayout()
+        input_wrapper_layout.setContentsMargins(16, 4, 16, 4)
+        input_wrapper_layout.setSpacing(0)
 
         self.input_text = QTextEdit()
-        self.input_text.setMaximumHeight(80)
-        self.input_text.setPlaceholderText("⌨️ 请输入您的消息...")
+        self.input_text.setMaximumHeight(52)
+        self.input_text.setMinimumHeight(52)
+        self.input_text.setPlaceholderText("💬 输入您的消息...")
         self.input_text.setStyleSheet("""
             QTextEdit {
-                border: 1px solid #e8eaed;
-                border-radius: 24px;
-                padding: 12px 16px;
+                border: none;
+                padding: 12px 4px;
                 font-size: 14px;
                 font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
-                background-color: #f8f9fa;
+                background-color: transparent;
                 color: #3c4043;
-                line-height: 1.4;
+                line-height: 1.5;
+                selection-background-color: #1a73e8;
+                selection-color: white;
             }
             QTextEdit:focus {
-                border-color: #1a73e8;
-                background-color: #ffffff;
+                background-color: transparent;
                 outline: none;
             }
             """)
 
+        input_wrapper_layout.addWidget(self.input_text)
+        input_wrapper.setLayout(input_wrapper_layout)
+
+        # 使用新的动画录音按钮
+        self.record_btn = AnimatedRecordButton()
+        self.record_btn.clicked.connect(self.toggle_recording)
+
         # 发送按钮
         self.send_btn = QPushButton("")
-        self.send_btn.setFixedSize(64, 48)
-        self.send_btn.setIcon(QIcon("./icon/send.png"))  # 设置图标
-        self.send_btn.setIconSize(QSize(32, 32))  # 设置图标大小
+        self.send_btn.setFixedSize(52, 52)
+        self.send_btn.setIcon(QIcon("./icon/send.png"))
+        self.send_btn.setIconSize(QSize(24, 24))
         self.send_btn.setStyleSheet("""
             QPushButton {
-                background-color: #1a73e8;
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #4285f4, stop:1 #1a73e8);
                 color: white;
                 border: none;
-                border-radius: 24px;
+                border-radius: 26px;
                 font-size: 14px;
-                font-weight: 500;
+                font-weight: 600;
                 font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
             }
             QPushButton:hover {
-                background-color: #1557b0;
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #5a95f5, stop:1 #1557b0);
             }
             QPushButton:pressed {
-                background-color: #1144a3;
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #1557b0, stop:1 #1144a3);
             }
             QPushButton:disabled {
-                background-color: #dadce0;
+                background-color: #f1f3f4;
                 color: #9aa0a6;
             }
             """)
@@ -822,36 +858,42 @@ class ChatInterface(QMainWindow):
 
         # 清除记录按钮
         clear_btn = QPushButton("")
-        clear_btn.setFixedSize(64, 48)
-        clear_btn.setIcon(QIcon("./icon/del1.png"))  # 设置图标
-        clear_btn.setIconSize(QSize(32, 32))  # 设置图标大小
-        clear_btn.setToolTip("清除记录")
+        clear_btn.setFixedSize(52, 52)
+        clear_btn.setIcon(QIcon("./icon/del1.png"))
+        clear_btn.setIconSize(QSize(22, 22))
+        clear_btn.setToolTip("清除聊天记录")
         clear_btn.setStyleSheet("""
             QPushButton {
-                background-color: #f8f9fa;
+                background-color: #ffffff;
                 color: #5f6368;
                 border: 1px solid #e8eaed;
-                border-radius: 24px;
+                border-radius: 26px;
                 font-size: 14px;
                 font-weight: 500;
                 font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
             }
             QPushButton:hover {
-                background-color: #f1f3f4;
+                background-color: #f8f9fa;
                 border: 1px solid #dadce0;
+                color: #d93025;
             }
             QPushButton:pressed {
-                background-color: #e8eaed;
+                background-color: #f1f3f4;
             }
             """)
         clear_btn.clicked.connect(self.clear_current_chat)
 
-        input_layout.addWidget(self.input_text)
+        # 添加控件到布局
+        input_layout.addWidget(input_wrapper, 1)
+        input_layout.addWidget(self.record_btn)
         input_layout.addWidget(self.send_btn)
         input_layout.addWidget(clear_btn)
-        input_layout.addWidget(self.send_btn)
-        input_container.setLayout(input_layout)
 
+        main_input_layout.addLayout(input_layout)
+        main_input_layout.addStretch()
+        input_container.setLayout(main_input_layout)
+
+        # 组装右侧面板
         right_layout.addWidget(toolbar_widget)
         right_layout.addWidget(self.chat_scroll, 1)
         right_layout.addWidget(input_container)
@@ -869,10 +911,79 @@ class ChatInterface(QMainWindow):
 
         return right_widget
 
+    def toggle_recording(self):
+        """切换录音状态"""
+        if not self.voice_recorder.is_recording:
+            self.voice_recorder.start_recording()
+        else:
+            self.voice_recorder.stop_recording()
+
+    def on_recording_started(self):
+        """录音开始回调"""
+        self.record_btn.start_recording_animation()
+        self.status_label.setText("🎙️ 正在录音...")
+        self.status_label.setStyleSheet("""
+            QLabel {
+                font-size: 13px;
+                font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+                padding: 6px 12px;
+                border-radius: 12px;
+                color: #ea4335;
+                background-color: #fef7f7;
+                border: 1px solid #fce8e6;
+            }
+            """)
+
+    def on_recording_stopped(self):
+        """录音停止回调"""
+        self.record_btn.stop_recording_animation()
+        self.status_label.setText("")
+        self.status_label.setStyleSheet("""
+            QLabel {
+                font-size: 13px;
+                font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+                padding: 6px 12px;
+                border-radius: 12px;
+                color: #5f6368;
+                background-color: #f8f9fa;
+            }
+            """)
+
+    def on_voice_error(self, error_msg):
+        """语音错误回调"""
+        print(f"语音错误: {error_msg}")
+        self.status_label.setText("❌ 语音识别出错")
+        self.status_label.setStyleSheet("""
+            QLabel {
+                font-size: 13px;
+                font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+                padding: 6px 12px;
+                border-radius: 12px;
+                color: #d93025;
+                background-color: #fce8e6;
+                border: 1px solid #fce8e6;
+            }
+            """)
+
+    def append_voice_text(self, text):
+        """将识别的文本追加到输入框"""
+        current_text = self.input_text.toPlainText()
+        if current_text and not current_text.endswith(' '):
+            new_text = current_text + " " + text
+        else:
+            new_text = current_text + text
+            
+        self.input_text.setPlainText(new_text)
+        
+        # 将光标移到最后
+        cursor = self.input_text.textCursor()
+        cursor.movePosition(cursor.End)
+        self.input_text.setTextCursor(cursor)
+
     def input_key_press_event(self, event):
         """处理输入框按键事件"""
         if event.key() == Qt.Key_Return and not event.modifiers() & Qt.ShiftModifier:
-            if not self.is_ai_responding:  # 只有在AI不在回复时才能发送
+            if not self.is_ai_responding:
                 self.send_message()
         else:
             QTextEdit.keyPressEvent(self.input_text, event)
@@ -944,27 +1055,16 @@ class ChatInterface(QMainWindow):
 
     def finish_ai_response(self):
         """完成AI回复"""
-        # 如果有source，将其添加到流式输出的末尾
-        # if hasattr(self, 'source') and self.source:
-        #     source_text = f"\n\n参考文献：{self.source}"
-        #     # 继续流式输出source部分
-        #     for char in source_text:
-        #         self.streaming_widget.append_text(char)
-        #     self.scroll_to_bottom()
-
         # 恢复发送状态
         self.is_ai_responding = False
         self.send_btn.setEnabled(True)
         self.input_text.setEnabled(True)
         self.status_label.setText("")
 
-        # 保存完整回复到对话记录（包含source）
+        #保存完整回复到对话记录（包含source）
         self.current_conversation.append({
             "role": "assistant",
             "content": self.full_response,  # 原始内容
-            # 单独保存source
-            "source": self.source if hasattr(self, 'source') else None,
-            "timestamp": datetime.now().isoformat()
         })
 
         # 更新当前会话的消息记录
@@ -972,6 +1072,7 @@ class ChatInterface(QMainWindow):
             self.conversations[self.current_conversation_index]["messages"] = self.current_conversation.copy()
             # 标记为已修改（如果是已保存的对话，需要重新保存）
             self.conversations[self.current_conversation_index]["modified"] = True
+            self.save_current_conversation_state()
 
         # 重新聚焦到输入框
         self.input_text.setFocus()

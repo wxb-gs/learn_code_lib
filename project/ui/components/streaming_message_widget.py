@@ -8,7 +8,7 @@ import re
 import mistune
 from PyQt5.QtCore import QSize, Qt, QTimer
 from styles.qeditor import scrollbar_style, qeditor_qss
-
+from pathlib import Path
 
 MAX_HEIGHT = 650
 MIN_HEIGHT = 28
@@ -16,6 +16,8 @@ MIN_HEIGHT = 28
 USER_MAX_WIDTH = 460
 AI_MAX_WIDTH = 680
 
+SYS_PATH = Path(__file__).resolve().parent.parent / "icon/sys.png" 
+USER_PATH = Path(__file__).resolve().parent.parent / "icon/user.png" 
 
 class StreamingMessageWidget(QWidget):
     """支持流式输出的消息气泡组件"""
@@ -44,9 +46,10 @@ class StreamingMessageWidget(QWidget):
 
         # 设置头像图片
         if self.is_user:
-            pixmap = QPixmap("./icon/user.png")
+            # print(f"=================================={USER_PATH}=================")
+            pixmap = QPixmap(str(USER_PATH))
         else:
-            pixmap = QPixmap("./icon/sys.png")
+            pixmap = QPixmap(str(SYS_PATH))
 
         # 如果图片加载失败，设置默认背景
         avatar.setPixmap(pixmap)
