@@ -39,16 +39,17 @@ st.markdown("""
     border: 1px solid #b7eb8f;  /* 边框 */
 }
 </style>
+            
 """, unsafe_allow_html=True)
 
 # 侧边栏设置
 with st.sidebar:
     st.title("聊天设置")
     st.write("Ollama流式输出演示")
-    
+
     with st.echo():
         st.write("当前模型：qwen2.5:7b")
-    
+
     # 清空聊天历史按钮
     if st.button("清空对话历史"):
         st.session_state.messages = []
@@ -70,30 +71,30 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("请输入您的问题..."):
     # 添加用户消息到历史
     st.session_state.messages.append({"role": "human", "content": prompt})
-    
+
     # 显示用户消息（应用自定义样式）
     with st.chat_message("human", avatar=usr_img):
         st.markdown(prompt)
-    
+
     # 准备AI消息占位符
     with st.chat_message("ai", avatar=sys_img):
         message_placeholder = st.empty()
         full_response = ""
-        
+
         # 创建LangChain消息格式
-        # lc_messages = [HumanMessage(content=msg["content"]) 
-        #               for msg in st.session_state.messages 
+        # lc_messages = [HumanMessage(content=msg["content"])
+        #               for msg in st.session_state.messages
         #               if msg["role"] == "human"]
         lc_messages = st.session_state.messages
-        
+
         # 流式调用模型
         for chunk in llm.stream(lc_messages):
             content = chunk.content
             full_response += content
             message_placeholder.markdown(full_response + "▌")  # 添加光标效果
-        
+
         # 最终更新消息（移除光标）
         message_placeholder.markdown(full_response)
-    
+
     # 添加AI响应到历史
     st.session_state.messages.append({"role": "ai", "content": full_response})
