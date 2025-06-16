@@ -43,6 +43,8 @@ async def run_agent():
     ):
         event_type = event["event"]
         data = event["data"]
+        print(event)
+        print("="*100)
         # if event_type == "on_chat_model_stream":
         #     print(data)
         #     print("="*100)
