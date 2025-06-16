@@ -27,6 +27,7 @@ import pyaudio
 
 from styles.btn_qss import blue_btn_qss, simple_btn_qss, delete_btn_qss
 from styles.history_list_qss import history_list_styles
+from styles.left_panel_qss import left_panel_style
 from components.search_dialog import SearchDialog
 from components.params_dialog import ConversationEditDialog
 from db.database import ConversationDatabase
@@ -117,25 +118,25 @@ class ChatInterface(QMainWindow):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
 
-        # 创建主标题 - 更加简洁的设计
-        main_title = QLabel("智能助手")
-        main_title.setAlignment(Qt.AlignCenter)
-        main_title.setFixedHeight(60)
-        main_title.setStyleSheet("""
-            QLabel {
-                font-size: 18px;
-                font-weight: 600;
-                font-family: "Microsoft YaHei UI", "PingFang SC", "SF Pro Display", sans-serif;
-                padding: 15px;
-                background-color: #ffffff;
-                color: #1a73e8;
-                border: none;
-                border-bottom: 1px solid #e8eaed;
-                margin: 0px;
-                text-align: center;
-                letter-spacing: 0.5px;
-            }
-            """)
+        # # 创建主标题 - 更加简洁的设计
+        # main_title = QLabel("智能助手")
+        # main_title.setAlignment(Qt.AlignCenter)
+        # main_title.setFixedHeight(60)
+        # main_title.setStyleSheet("""
+        #     QLabel {
+        #         font-size: 18px;
+        #         font-weight: 600;
+        #         font-family: "Microsoft YaHei UI", "PingFang SC", "SF Pro Display", sans-serif;
+        #         padding: 15px;
+        #         background-color: #ffffff;
+        #         color: #1a73e8;
+        #         border: none;
+        #         border-bottom: 1px solid #e8eaed;
+        #         margin: 0px;
+        #         text-align: center;
+        #         letter-spacing: 0.5px;
+        #     }
+        #     """)
 
         # 创建内容分割器（左右布局）
         content_splitter = QSplitter(Qt.Horizontal)
@@ -160,7 +161,7 @@ class ChatInterface(QMainWindow):
         main_layout = QVBoxLayout()
         main_layout.setSpacing(0)
         main_layout.setContentsMargins(0, 0, 0, 0)
-        main_layout.addWidget(main_title)
+        # main_layout.addWidget(main_title)
         main_layout.addWidget(content_splitter, 1)
         central_widget.setLayout(main_layout)
 
@@ -189,7 +190,7 @@ class ChatInterface(QMainWindow):
         # self.thread3.start()
         return
     
-    # ===================================left all logic=============================================
+    # ===================================left panel=============================================
     def create_left_panel(self):
         """创建左侧历史会话面板"""
         left_widget = QWidget()
@@ -206,7 +207,7 @@ class ChatInterface(QMainWindow):
         top_layout = QHBoxLayout()
         top_layout.setSpacing(8)
         top_layout.setContentsMargins(16, 16, 16, 16)
-
+        
         # 新建对话按钮
         self.new_chat_btn = QPushButton("新建对话")
         self.new_chat_btn.setFixedHeight(36)
@@ -216,9 +217,9 @@ class ChatInterface(QMainWindow):
         self.new_chat_btn.clicked.connect(self.new_conversation)
 
         # 搜索按钮
-        self.search_btn = QPushButton("搜索")
+        self.search_btn = QPushButton("搜索对话")
         self.search_btn.setFixedHeight(36)
-        self.search_btn.setIcon(QIcon("./icon/search_blue.png"))  # 设置图标
+        self.search_btn.setIcon(QIcon("./icon/search.png"))  # 设置图标
         self.search_btn.setIconSize(QSize(16, 16))  # 设置图标大小
         self.search_btn.setStyleSheet(simple_btn_qss)
         self.search_btn.clicked.connect(self.open_search_dialog)
@@ -246,12 +247,7 @@ class ChatInterface(QMainWindow):
         left_widget.setLayout(left_layout)
 
         # 左侧面板整体样式
-        left_widget.setStyleSheet("""
-            QWidget {
-                background-color: #ffffff;
-                border-right: 1px solid #e8eaed;
-            }
-        """)
+        left_widget.setStyleSheet(left_panel_style)
 
         return left_widget
 
@@ -643,6 +639,7 @@ class ChatInterface(QMainWindow):
         print(f"总共加载了 {len(self.conversations)} 个已保存的对话")
         self.update_history_list()
 
+    #========================================update history list===========================================
     def update_history_list(self):
         """更新历史对话列表"""
         self.history_list.clear()
@@ -658,9 +655,9 @@ class ChatInterface(QMainWindow):
             item = QListWidgetItem(display_text)
 
             # 设置工具提示
-            save_status = ""
-            if conv.get("modified", False):
-                save_status += " (已修改)"
+            id = conv.get("id","xxxx")
+            # if conv.get("modified", False):
+            #     save_status += " (已修改)"
             filename = conv.get("name", "无文件")
 
             # 时间戳转换为可读格式
@@ -672,7 +669,7 @@ class ChatInterface(QMainWindow):
             wake_words_str = ', '.join(conv.get("wake_words", []))
             smart_mode_str = "是" if conv.get("smart_mode", False) else "否"
 
-            tooltip_text = f"状态: {save_status}\n文件名: {filename}\n创建时间: {create_time_str}\n最后使用: {last_used_time_str}\n消息数: {len(conv['messages'])}\n唤醒词: {wake_words_str}\n智能模式: {smart_mode_str}"
+            tooltip_text = f"会话id: {id}\n文件名: {filename}\n创建时间: {create_time_str}\n最后使用: {last_used_time_str}\n消息数: {len(conv['messages'])}\n唤醒词: {wake_words_str}\n智能模式: {smart_mode_str}"
 
             item.setToolTip(tooltip_text)
 
@@ -696,10 +693,20 @@ class ChatInterface(QMainWindow):
 
         # 顶部工具栏
         toolbar_widget = QWidget()
+        toolbar_widget.setFixedHeight(70)
+        # toolbar_widget.setStyleSheet("""
+        #     QWidget {
+        #         background-color: #F3F5F6;
+        #         border-top: 1px solid #e8eaed;
+        #         border-bottom: 1px solid #e8eaed;
+        #     }
+        # """)
         toolbar_widget.setFixedHeight(60)
         toolbar = QHBoxLayout()
-        toolbar.setSpacing(12)
-        toolbar.setContentsMargins(20, 12, 20, 12)
+        toolbar.setSpacing(8)
+        toolbar.setContentsMargins(16, 16, 16, 16)
+        # toolbar.setSpacing(12)
+        # toolbar.setContentsMargins(20, 12, 20, 12)
 
         # 状态指示器
         self.status_label = QLabel("")
@@ -988,7 +995,7 @@ class ChatInterface(QMainWindow):
         else:
             QTextEdit.keyPressEvent(self.input_text, event)
 
-    # ===================================sendmessage all logic=============================================
+    # ===================================send message all logic=============================================
     # 发送消息，触发对话
     def send_message(self):
         """发送消息"""

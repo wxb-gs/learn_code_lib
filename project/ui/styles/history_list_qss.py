@@ -1,6 +1,6 @@
+                # background-color: #FAFAFA;
 history_list_styles = """
             QListWidget {
-                background-color: #ffffff;
                 border: none;
                 border-top: 1px solid #e8eaed;
                 padding: 8px 0px;
@@ -10,7 +10,7 @@ history_list_styles = """
 
             QListWidget::item {
                 background-color: transparent;
-                border: none;
+                border: 1px solid #e8eaed;
                 border-radius: 8px;
                 padding: 12px 16px;
                 margin: 2px 8px;
@@ -20,7 +20,7 @@ history_list_styles = """
             }
 
             QListWidget::item:hover {
-                background-color: #f8f9fa;
+                background-color: #EBEDEE;
             }
 
             QListWidget::item:selected {

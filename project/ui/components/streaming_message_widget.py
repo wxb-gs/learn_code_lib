@@ -76,7 +76,7 @@ class StreamingMessageWidget(QWidget):
 
         # 创建消息气泡
         self.message_bubble = QFrame()
-        self.message_bubble.setMinimumWidth(100)
+        self.message_bubble.setMinimumWidth(60)
         self.message_bubble.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
         self.message_bubble.enterEvent = self.show_scrollbars
         self.message_bubble.leaveEvent = self.hide_scrollbars
@@ -256,5 +256,6 @@ class StreamingMessageWidget(QWidget):
         message_container.setFixedWidth(final_width)
         
         # 更新几何形状
+        
         self.updateGeometry()
         self.adjust_height()
