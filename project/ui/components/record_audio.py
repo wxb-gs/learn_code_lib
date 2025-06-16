@@ -209,7 +209,7 @@ class AnimatedRecordButton(QPushButton):
         self.setToolTip("点击开始录音")
         
         # 动画相关属性
-        self.is_recording = False
+        self.is_recording = True
         self.animation_timer = QTimer()
         self.animation_timer.timeout.connect(self.update_animation)
         
@@ -237,11 +237,6 @@ class AnimatedRecordButton(QPushButton):
                 font-weight: 500;
                 font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
             }
-            QPushButton:hover {
-                background-color: #f8f9fa;
-                border: 2px solid #34a853;
-                color: #34a853;
-            }
             QPushButton:pressed {
                 background-color: #e8f5e8;
             }
@@ -260,7 +255,15 @@ class AnimatedRecordButton(QPushButton):
         
         # 开始动画定时器
         self.animation_timer.start(50)  # 50ms更新一次，更流畅但不过快
-    
+        self.setStyleSheet("""
+            QPushButton{
+                background-color: #f8f9fa;
+                border: 2px solid #34a853;
+                color: #34a853;
+            }
+        """)
+
+
     def stop_recording_animation(self):
         """停止录音动画"""
         self.is_recording = False
@@ -278,6 +281,12 @@ class AnimatedRecordButton(QPushButton):
             self.setGraphicsEffect(None)
             delattr(self, 'shadow_effect')
         
+        self.setStyleSheet("""
+            QPushButton {
+                background-color: #ffffff;
+                color: #34a853;
+                border: 2px solid #e8eaed;
+        """)
         self.update()
     
     def update_animation(self):

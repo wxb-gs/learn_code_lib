@@ -17,6 +17,50 @@ blue_btn_qss = """
             }
             """
 
+blue_btn_with_disable_style = """
+            QPushButton {
+                background: #1677FF;
+                color: white;
+                border: none;
+                border-radius: 26px;
+                font-size: 14px;
+                font-weight: 600;
+                font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
+            }
+            QPushButton:hover {
+                background: #4096FF;
+            }
+            QPushButton:pressed {
+                background: #70a2e8;
+            }
+            QPushButton:disabled {
+                background-color: #f1f3f4;
+                color: #9aa0a6;
+            }
+            """
+
+simple_btn_with_disable_style = """
+            QPushButton {
+                background: #13C2C2;
+                color: white;
+                border: none;
+                border-radius: 26px;
+                font-size: 14px;
+                font-weight: 600;
+                font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
+            }
+            QPushButton:hover {
+                background: #36CFC9;
+            }
+            QPushButton:pressed {
+                background: #46CFC9;
+            }
+            QPushButton:disabled {
+                background-color: #f1f3f4;
+                color: #9aa0a6;
+            }
+            """
+
 simple_btn_qss ="""
             QPushButton {
                 background-color: #13C2C2;

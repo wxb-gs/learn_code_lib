@@ -25,7 +25,7 @@ from PyQt5.QtWidgets import (QAction, QApplication, QFrame,  # 你现有的导�
 import speech_recognition as sr
 import pyaudio
 
-from styles.btn_qss import blue_btn_qss, simple_btn_qss, delete_btn_qss
+from styles.btn_qss import blue_btn_qss, simple_btn_qss, blue_btn_with_disable_style
 from styles.history_list_qss import history_list_styles
 from styles.left_panel_qss import left_panel_style
 from components.search_dialog import SearchDialog
@@ -710,17 +710,17 @@ class ChatInterface(QMainWindow):
 
         # 状态指示器
         self.status_label = QLabel("")
-        self.status_label.setStyleSheet("""
-            QLabel {
-                font-size: 13px;
-                font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
-                padding: 6px 12px;
-                border-radius: 12px;
-                color: #3f6368;
-                background-color: #f8f9fa;
-                min-width:100px;
-            }
-            """)
+        # self.status_label.setStyleSheet("""
+        #     QLabel {
+        #         font-size: 13px;
+        #         font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        #         padding: 6px 12px;
+        #         border-radius: 12px;
+        #         color: #3f6368;
+        #         background-color: #f8f9fa;
+        #         min-width:100px;
+        #     }
+        #     """)
 
         toolbar.addWidget(self.status_label)
         toolbar.addStretch()
@@ -827,6 +827,7 @@ class ChatInterface(QMainWindow):
 
         input_wrapper_layout.addWidget(self.input_text)
         input_wrapper.setLayout(input_wrapper_layout)
+ 
 
         # 使用新的动画录音按钮
         self.record_btn = AnimatedRecordButton()
@@ -837,31 +838,9 @@ class ChatInterface(QMainWindow):
         self.send_btn.setFixedSize(52, 52)
         self.send_btn.setIcon(QIcon("./icon/send.png"))
         self.send_btn.setIconSize(QSize(24, 24))
-        self.send_btn.setStyleSheet("""
-            QPushButton {
-                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                    stop:0 #4285f4, stop:1 #1a73e8);
-                color: white;
-                border: none;
-                border-radius: 26px;
-                font-size: 14px;
-                font-weight: 600;
-                font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
-            }
-            QPushButton:hover {
-                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                    stop:0 #5a95f5, stop:1 #1557b0);
-            }
-            QPushButton:pressed {
-                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                    stop:0 #1557b0, stop:1 #1144a3);
-            }
-            QPushButton:disabled {
-                background-color: #f1f3f4;
-                color: #9aa0a6;
-            }
-            """)
+        self.send_btn.setStyleSheet(blue_btn_with_disable_style)
         self.send_btn.clicked.connect(self.send_message)
+        self.send_btn.setToolTip("发送文本消息")
 
         # 清除记录按钮
         clear_btn = QPushButton("")
