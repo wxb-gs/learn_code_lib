@@ -36,7 +36,7 @@ class SpeechProcessingThread(QThread):
             "A机": ["A机", "AG", "阿机"],
             "B机": ["B机", "BG", "逼机"],
             "C机": ["C机", "CG", "西机"],
-            "D机": ["D机", "DG", "迪机"],
+            "D机": ["D机", "DG", "迪机"],0
         }
         self.pinyin_wakeword_database = self.convert_wakewords_to_pinyin(self.wakeword_database)
         
