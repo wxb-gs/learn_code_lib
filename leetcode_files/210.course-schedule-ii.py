@@ -12,20 +12,19 @@
 # @lc code=start
 
 
-class Node:
-    num = None
-    pre_order = []
 
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        m = dict([])
+        out = dict()
+        visited = [0] * 2001
+        in_nums = [0] * 2001 
         for prerq in prerequisites:
             [a, b] = prerq
-            if a not in m:
-                m[a] = []
-            m[a].append(b)
-        
-        visited = [0] * 2001
+            if b not in out:
+                out[b] = []
+            out[b].append(a)
+            in_nums[a] += 1
+            
         ans = []
         
         def dfs(i):
@@ -33,25 +32,27 @@ class Solution:
             if visited[i] == 1:
                 return
             
-            if i not in m:
-                ans.append(i)
-                visited[i] = 1
+            ans.append(i)
+            visited[i] = 1
+            
+            if i not in out:
                 return
             
-            for num in m[i]:
+            for num in out[i]:
+                in_nums[num] -= 1
+                
                 if visited[num] == 1:
                     continue
                 else:
-                    dfs(num)
+                    # 对应的入度减1
+                    if in_nums[num] <=0: dfs(num)
                     
-            ans.append(i)
-            visited[i] = 1
         
         
         for i in range(numCourses): 
-            dfs(i)
+            if in_nums[i] == 0: dfs(i)
         
-        return ans
+        return ans if len(ans) == numCourses else []
 # @lc code=end
 
 
