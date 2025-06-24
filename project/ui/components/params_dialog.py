@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import (QApplication, QDialog, QVBoxLayout, QHBoxLayout, 
                              QFormLayout, QLabel, QLineEdit, QCheckBox, QPushButton, 
                              QGroupBox, QListWidget, QListWidgetItem, QMessageBox,
-                             QFrame, QSizePolicy)
+                             QFrame, QSizePolicy, QDoubleSpinBox)
 from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtGui import QFont, QIcon
 import datetime
@@ -183,7 +183,7 @@ class ConversationEditDialog(QDialog):
         self.conversation_data = conversation_data or {}
         self.setWindowTitle("编辑会话")
         self.setModal(True)
-        self.resize(500, 650)
+        self.resize(500, 700)  # 增加高度以容纳新字段
         
         # 存储参数值
         self.parameters = {}
@@ -293,7 +293,7 @@ class ConversationEditDialog(QDialog):
                 font-size: 13px;
             }
             
-            QLineEdit {
+            QLineEdit, QDoubleSpinBox {
                 border: 2px solid #e9ecef;
                 border-radius: 6px;
                 padding: 8px 12px;
@@ -302,13 +302,38 @@ class ConversationEditDialog(QDialog):
                 selection-background-color: #007bff;
             }
             
-            QLineEdit:focus {
+            QLineEdit:focus, QDoubleSpinBox:focus {
                 border-color: #007bff;
                 outline: none;
             }
             
-            QLineEdit:hover {
+            QLineEdit:hover, QDoubleSpinBox:hover {
                 border-color: #80bdff;
+            }
+            
+            QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
+                width: 20px;
+                height: 15px;
+                border: none;
+                background-color: #f8f9fa;
+            }
+            
+            QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover {
+                background-color: #e9ecef;
+            }
+            
+            QDoubleSpinBox::up-arrow {
+                image: none;
+                border-style: solid;
+                border-width: 3px;
+                border-color: transparent transparent #6c757d transparent;
+            }
+            
+            QDoubleSpinBox::down-arrow {
+                image: none;
+                border-style: solid;
+                border-width: 3px;
+                border-color: #6c757d transparent transparent transparent;
             }
             
             QCheckBox {
@@ -323,7 +348,6 @@ class ConversationEditDialog(QDialog):
                 height: 20px;
                 border-radius: 4px;
                 border: 2px solid #dee2e6;
-                # background-color: white;
             }
             
             QCheckBox::indicator:checked {
@@ -430,6 +454,53 @@ class ConversationEditDialog(QDialog):
         self.widgets['name'].setPlaceholderText("请输入会话名称")
         layout.addRow("会话名称:", self.widgets['name'])
         
+        # 时间阈值
+        time_threshold_layout = QVBoxLayout()
+        time_threshold_info = QLabel("设置对话的时间阈值（秒），用于控制会话的时间敏感性")
+        time_threshold_info.setObjectName("info-label")
+        time_threshold_info.setStyleSheet("QLabel { color: #6c757d; font-size: 11px; font-style: italic; margin-bottom: 5px; }")
+
+        self.widgets['time_threshold'] = QDoubleSpinBox()
+        self.widgets['time_threshold'].setMinimum(0.1)  # 最小值0.1秒
+        self.widgets['time_threshold'].setMaximum(3600.0)  # 最大值1小时
+        self.widgets['time_threshold'].setSingleStep(0.5)  # 步长0.5秒
+        self.widgets['time_threshold'].setDecimals(1)  # 显示1位小数
+        self.widgets['time_threshold'].setSuffix(" 秒")  # 添加单位
+        self.widgets['time_threshold'].setValue(5.0)  # 默认值5秒
+        self.widgets['time_threshold'].setFixedWidth(120)
+
+        # 美化SpinBox样式，隐藏上下箭头
+        self.widgets['time_threshold'].setStyleSheet("""
+            QDoubleSpinBox {
+                border: 1px solid #ced4da;
+                border-radius: 4px;
+                padding: 4px 6px;
+                font-size: 12px;
+                background-color: #ffffff;
+            }
+            QDoubleSpinBox:hover {
+                border-color: #80bdff;
+            }
+            QDoubleSpinBox:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+            QDoubleSpinBox::up-button {
+                width: 0px;
+                height: 0px;
+                border: none;
+            }
+            QDoubleSpinBox::down-button {
+                width: 0px;
+                height: 0px;
+                border: none;
+            }
+        """)
+
+        time_threshold_layout.addWidget(time_threshold_info)
+        time_threshold_layout.addWidget(self.widgets['time_threshold'])
+        layout.addRow("时间阈值:", time_threshold_layout)
+                
         # 唤醒词列表
         wake_words_layout = QVBoxLayout()
         wake_words_info = QLabel("可以添加多个唤醒词，用于快速识别会话")
@@ -499,6 +570,7 @@ class ConversationEditDialog(QDialog):
         
         # 加载可编辑信息
         self.widgets['name'].setText(self.conversation_data.get('name', ''))
+        self.widgets['time_threshold'].setValue(self.conversation_data.get('time_threshold', 5.0))
         self.widgets['wake_words'].set_words(self.conversation_data.get('wake_words', []))
         self.widgets['smart_mode'].setChecked(self.conversation_data.get('smart_mode', False))
         
@@ -509,6 +581,13 @@ class ConversationEditDialog(QDialog):
         if not name:
             QMessageBox.warning(self, "警告", "会话名称不能为空！")
             self.widgets['name'].setFocus()
+            return
+            
+        # 验证时间阈值
+        time_threshold = self.widgets['time_threshold'].value()
+        if time_threshold <= 0:
+            QMessageBox.warning(self, "警告", "时间阈值必须大于0！")
+            self.widgets['time_threshold'].setFocus()
             return
             
         wake_words = self.widgets['wake_words'].get_words()
@@ -528,6 +607,7 @@ class ConversationEditDialog(QDialog):
             'name': name,
             'create_time': self.conversation_data.get('create_time', ''),  # 保留原始时间戳
             'last_used_time': self.conversation_data.get('last_used_time', ''),  # 保留原始时间戳
+            'time_threshold': time_threshold,  # 新增时间阈值
             'wake_words': wake_words,
             'smart_mode': self.widgets['smart_mode'].isChecked(),
         }
@@ -549,6 +629,7 @@ def main():
         'name': '生活顾问',
         'create_time': 1710072000,  # 整数时间戳
         'last_used_time': '1717977000.123',  # 字符串格式的浮点时间戳
+        'time_threshold': 10.5,  # 新增时间阈值字段
         'wake_words': ['生活', '建议', '推荐'],
         'smart_mode': False
     }

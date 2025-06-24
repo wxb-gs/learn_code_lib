@@ -37,9 +37,21 @@ class ConversationDatabase:
                     smart_mode BOOLEAN DEFAULT FALSE,
                     messages TEXT DEFAULT '[]',
                     modified BOOLEAN DEFAULT FALSE,
-                    last_updated TEXT
+                    last_updated TEXT,
+                    time_threshold REAL DEFAULT 5.0
                 )
             ''')
+
+            # 检查是否需要添加 time_threshold 列（用于数据库升级）
+            cursor.execute("PRAGMA table_info(conversations)")
+            columns = [column[1] for column in cursor.fetchall()]
+            
+            if 'time_threshold' not in columns:
+                cursor.execute('''
+                    ALTER TABLE conversations 
+                    ADD COLUMN time_threshold REAL DEFAULT 5.0
+                ''')
+                print("已添加 time_threshold 列到现有数据库")
 
             conn.commit()
             conn.close()
@@ -86,8 +98,8 @@ class ConversationDatabase:
             cursor.execute('''
                 REPLACE INTO conversations 
                 (id, name, create_time, last_used_time, wake_words, smart_mode, 
-                 messages, modified, last_updated)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                 messages, modified, last_updated, time_threshold)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
                 conversation_data['id'],
                 conversation_data.get('name', '未知对话'),
@@ -97,7 +109,8 @@ class ConversationDatabase:
                 conversation_data.get('smart_mode', False),
                 messages_json,
                 conversation_data.get('modified', False),
-                conversation_data['last_updated']
+                conversation_data['last_updated'],
+                conversation_data.get('time_threshold', 5.0)
             ))
 
             conn.commit()
@@ -125,7 +138,7 @@ class ConversationDatabase:
 
             cursor.execute('''
                 SELECT id, name, create_time, last_used_time, wake_words, 
-                       smart_mode, messages, modified, last_updated
+                       smart_mode, messages, modified, last_updated, time_threshold
                 FROM conversations 
                 WHERE id = ?
             ''', (conversation_id,))
@@ -156,7 +169,7 @@ class ConversationDatabase:
 
             cursor.execute('''
                 SELECT id, name, create_time, last_used_time, wake_words, 
-                       smart_mode, messages, modified, last_updated
+                       smart_mode, messages, modified, last_updated, time_threshold
                 FROM conversations 
                 ORDER BY create_time DESC
             ''')
@@ -247,7 +260,7 @@ class ConversationDatabase:
             print(f"更新对话消息失败: {e}")
             return False
 
-    def update_conversation_settings(self, conversation_id, name=None, wake_words=None, smart_mode=None):
+    def update_conversation_settings(self, conversation_id, name=None, wake_words=None, smart_mode=None, time_threshold=None):
         """
         更新对话的设置信息（简化版）
 
@@ -256,6 +269,7 @@ class ConversationDatabase:
             name (str, optional): 对话名称
             wake_words (list, optional): 唤醒词列表
             smart_mode (bool, optional): 智能模式
+            time_threshold (float, optional): 时间阈值
 
         Returns:
             bool: 更新是否成功
@@ -274,6 +288,8 @@ class ConversationDatabase:
                 current_data['wake_words'] = wake_words
             if smart_mode is not None:
                 current_data['smart_mode'] = smart_mode
+            if time_threshold is not None:
+                current_data['time_threshold'] = float(time_threshold)
 
             # 标记为已修改
             current_data['modified'] = True
@@ -289,6 +305,41 @@ class ConversationDatabase:
 
         except Exception as e:
             print(f"更新对话设置失败: {e}")
+            return False
+
+    def update_time_threshold(self, conversation_id, time_threshold):
+        """
+        更新对话的时间阈值
+
+        Args:
+            conversation_id (str): 对话ID
+            time_threshold (float): 时间阈值
+
+        Returns:
+            bool: 更新是否成功
+        """
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+
+            cursor.execute('''
+                UPDATE conversations 
+                SET time_threshold = ?, last_updated = ?, modified = TRUE
+                WHERE id = ?
+            ''', (float(time_threshold), datetime.now().isoformat(), conversation_id))
+
+            if cursor.rowcount > 0:
+                conn.commit()
+                conn.close()
+                print(f"更新时间阈值成功: {conversation_id} -> {time_threshold}")
+                return True
+            else:
+                conn.close()
+                print(f"对话不存在，无法更新时间阈值: {conversation_id}")
+                return False
+
+        except Exception as e:
+            print(f"更新时间阈值失败: {e}")
             return False
 
     def update_last_used_time(self, conversation_id):
@@ -324,7 +375,7 @@ class ConversationDatabase:
             print(f"更新最后使用时间失败: {e}")
             return False
 
-    def create_new_conversation(self, name=None, wake_words=None, smart_mode=False):
+    def create_new_conversation(self, name=None, wake_words=None, smart_mode=False, time_threshold=5.0):
         """
         创建新对话
 
@@ -332,6 +383,7 @@ class ConversationDatabase:
             name (str): 对话名称，如果为None则自动生成
             wake_words (list): 唤醒词列表
             smart_mode (bool): 是否启用智能模式
+            time_threshold (float): 时间阈值，默认5.0秒
 
         Returns:
             dict: 新创建的对话数据
@@ -353,7 +405,8 @@ class ConversationDatabase:
             "wake_words": wake_words,
             "smart_mode": smart_mode,
             "messages": [],
-            "modified": False
+            "modified": False,
+            "time_threshold": float(time_threshold)
         }
 
         if self.save_conversation(new_conversation):
@@ -380,7 +433,7 @@ class ConversationDatabase:
             # 搜索名称或消息内容包含关键词的对话
             cursor.execute('''
                 SELECT id, name, create_time, last_used_time, wake_words, 
-                       smart_mode, messages, modified, last_updated
+                       smart_mode, messages, modified, last_updated, time_threshold
                 FROM conversations 
                 WHERE name LIKE ? OR messages LIKE ?
                 ORDER BY last_used_time DESC
@@ -421,6 +474,60 @@ class ConversationDatabase:
             print(f"获取对话总数失败: {e}")
             return 0
 
+    def get_conversations_by_threshold(self, min_threshold=None, max_threshold=None):
+        """
+        根据时间阈值范围获取对话
+
+        Args:
+            min_threshold (float, optional): 最小时间阈值
+            max_threshold (float, optional): 最大时间阈值
+
+        Returns:
+            list: 符合条件的对话列表
+        """
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+
+            # 构建查询条件
+            where_conditions = []
+            params = []
+
+            if min_threshold is not None:
+                where_conditions.append("time_threshold >= ?")
+                params.append(min_threshold)
+
+            if max_threshold is not None:
+                where_conditions.append("time_threshold <= ?")
+                params.append(max_threshold)
+
+            where_clause = ""
+            if where_conditions:
+                where_clause = "WHERE " + " AND ".join(where_conditions)
+
+            query = f'''
+                SELECT id, name, create_time, last_used_time, wake_words, 
+                       smart_mode, messages, modified, last_updated, time_threshold
+                FROM conversations 
+                {where_clause}
+                ORDER BY time_threshold ASC
+            '''
+
+            cursor.execute(query, params)
+            rows = cursor.fetchall()
+            conn.close()
+
+            conversations = []
+            for row in rows:
+                conversations.append(self._row_to_dict(row))
+
+            print(f"根据时间阈值查询成功，找到 {len(conversations)} 个对话")
+            return conversations
+
+        except Exception as e:
+            print(f"根据时间阈值查询失败: {e}")
+            return []
+
     def _row_to_dict(self, row):
         """
         将数据库行转换为字典格式
@@ -441,7 +548,8 @@ class ConversationDatabase:
                 'smart_mode': bool(row[5]),
                 'messages': json.loads(row[6]) if row[6] else [],
                 'modified': bool(row[7]) if row[7] is not None else False,
-                'last_updated': row[8]
+                'last_updated': row[8],
+                'time_threshold': float(row[9]) if len(row) > 9 and row[9] is not None else 5.0
             }
         except Exception as e:
             print(f"转换数据行失败: {e}")
@@ -455,7 +563,8 @@ class ConversationDatabase:
                 'smart_mode': False,
                 'messages': [],
                 'modified': False,
-                'last_updated': datetime.now().isoformat()
+                'last_updated': datetime.now().isoformat(),
+                'time_threshold': 5.0
             }
 
     def close(self):

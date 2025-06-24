@@ -359,12 +359,14 @@ class ChatInterface(QMainWindow):
             conversations[index]["name"] = params["name"]
             conversations[index]["smart_mode"] = params["smart_mode"]
             conversations[index]["wake_words"] = params["wake_words"]
+            conversations[index]["time_threshold"] = params["time_threshold"]
             # 写入
             self.db.update_conversation_settings(
                 conversation_id=conversations[index]['id'],
                 name=params['name'],
                 wake_words=params['wake_words'],
-                smart_mode=params['smart_mode']
+                smart_mode=params['smart_mode'],
+                time_threshold=params['time_threshold']
             )
             self.update_history_list()
         else:
@@ -669,7 +671,8 @@ class ChatInterface(QMainWindow):
             wake_words_str = ', '.join(conv.get("wake_words", []))
             smart_mode_str = "是" if conv.get("smart_mode", False) else "否"
 
-            tooltip_text = f"会话id: {id}\n文件名: {filename}\n创建时间: {create_time_str}\n最后使用: {last_used_time_str}\n消息数: {len(conv['messages'])}\n唤醒词: {wake_words_str}\n智能模式: {smart_mode_str}"
+            time_threshold = conv.get("time_threshold",1.0)
+            tooltip_text = f"会话id: {id}\n文件名: {filename}\n 时间阈值：{time_threshold} \n创建时间: {create_time_str}\n最后使用: {last_used_time_str}\n消息数: {len(conv['messages'])}\n唤醒词: {wake_words_str}\n智能模式: {smart_mode_str}"
 
             item.setToolTip(tooltip_text)
 
