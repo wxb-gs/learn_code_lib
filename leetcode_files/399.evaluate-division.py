@@ -32,9 +32,9 @@ class Solution:
             
             if a in m[end]:
                 val = m[a][end]
-                print(f"{start} : {end} val: {val}")
+                # print(f"{start} : {end} val: {val}")
                 m[start][end] = num * val
-                m[end][start] = val * num 
+                m[end][start] = 1 / (num *val)
                 return True
             
             for key, val in  m[a].items():
