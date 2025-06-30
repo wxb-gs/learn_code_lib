@@ -22,36 +22,32 @@ class Solution:
             m[a][b] = values[i] 
             m[b][a] = 1 / values[i]
         
-        def dfs(start, a, end, num):
-            nonlocal m
+        visited = None
+        
+        def dfs(a, end, num):
             if a not in m or end not in m:
-                return False
+                return -1.0
             
-            if start == end:
-                return True
-            
-            if a in m[end]:
-                val = m[a][end]
-                # print(f"{start} : {end} val: {val}")
-                m[start][end] = num * val
-                m[end][start] = 1 / (num *val)
-                return True
+            if a == end:
+                return num
             
             for key, val in  m[a].items():
-                if dfs(start, key, end, num * val):
-                    return True
-
+                if key not in visited:
+                    visited.add(key)
+                    tm = dfs(key, end, num * val)
+                    if tm + 1.0 > 0.0000001:
+                        return tm
+            
+            return -1.0
             
         ans = []
         for q in queries:
+            visited = set()
             [a, b] = q
-            if not dfs(a, a, b, 1):
-                ans.append(-1.0)
-            else:
-                if a != b:
-                    ans.append(m[a][b])
-                else:
-                    ans.append(1.0)
+            # 目前已经遍历到a
+            visited.add(a)
+            ans.append(dfs(a, b, 1))
+            
         return ans
 # @lc code=end
 
