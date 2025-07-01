@@ -46,9 +46,7 @@ class ChatBot:
         self.app = self.define()
 
     def stream_model(self, state: MessagesState):
-        for chunk in self.llm.stream(state["messages"]):
-            # if chunk.content:
-            yield {"messages": [AIMessage(content=chunk.content)]}
+        return self.llm.invoke(input = state["messages"])
 
     def define(self):
         graph = (
@@ -62,10 +60,13 @@ class ChatBot:
         memory_saver = MemorySaver()
         return graph.compile(checkpointer=memory_saver)
 
-    def answer_updates(self, question: str, thread_id: str = "default"):
+    def answer(self, question: str, thread_id: str = "default"):
         config = {"configurable": {"thread_id": thread_id}}
         inputs = {"messages": [HumanMessage(content=question)]}
-        return self.app.stream(input=inputs, config=config, stream_mode=["values"])
+        # 多个模式的时候分别从chunk中按照指定模式取出
+        for chunk in self.app.stream(input=inputs, config=config, stream_mode="messages"):
+            msg, _ = chunk
+            yield msg.content
 
 
 # 测试：以更新模式流式输出
@@ -73,10 +74,5 @@ if __name__ == "__main__":
     bot = ChatBot()
     print("回答开始：")
 
-    for update in bot.answer_updates("如何学习RAG", thread_id="456"):
-        # update 是类似 {'messages': [AIMessage(...)]} 的增量
-        # messages = update.get("messages", [])
-        print(update)
-        # for msg in messages:
-        #     if isinstance(msg, AIMessage):
-        #         print(msg.content, end="", flush=True)
+    for content in bot.answer("你好"):
+        print(content, end = "")
