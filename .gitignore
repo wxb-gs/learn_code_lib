@@ -10,3 +10,5 @@ chineseJH_chroma_db/
 cache/
 .deepeval/
 .pytest_cache/
+project/py_qt_ui/chat_bot_qt5_py3_8/app/resource
+project/py_qt_ui/easy_chat/app/resource
