@@ -3,7 +3,7 @@
         "AcrylicBlurRadius": 15
     },
     "Update": {
-        "CheckUpdateAtStartUp": true
+        "CheckUpdateAtStartUp": false
     },
     "Folders": {
         "Download": "E:/documents/good_projects/PyQt-Fluent-Widgets-master/PyQt-Fluent-Widgets-master/examples/gallery/app/download",
@@ -12,10 +12,10 @@
     "MainWindow": {
         "DpiScale": "Auto",
         "Language": "zh_CN",
-        "MicaEnabled": true
+        "MicaEnabled": false
     },
     "QFluentWidgets": {
-        "ThemeColor": "#ff009faa",
+        "ThemeColor": "#ffaa430c",
         "ThemeMode": "Light"
     }
 }

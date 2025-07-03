@@ -35,7 +35,7 @@ class MainWindow(FluentWindow):
         # 导航页面
         self.homeInterface = HomeInterface(self)
         self.settingInterface = SettingInterface(self)
-               
+
         # enable acrylic effect
         self.navigationInterface.setAcrylicEnabled(True)
 
@@ -90,8 +90,9 @@ class MainWindow(FluentWindow):
     def initWindow(self):
         self.resize(960, 780)
         self.setMinimumWidth(760)
-        self.setWindowIcon(QIcon(':/gallery/images/logo.png'))
-        self.setWindowTitle('PyQt-Fluent-Widgets')
+        # self.setWindowIcon(QIcon(':/gallery/images/logo.png'))
+        self.setWindowIcon(QIcon('./app/assets/images/robot.png'))
+        self.setWindowTitle('聊天机器人')
 
         self.setMicaEffectEnabled(cfg.get(cfg.micaEnabled))
 

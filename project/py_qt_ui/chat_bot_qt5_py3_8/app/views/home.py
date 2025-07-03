@@ -8,105 +8,32 @@ from ..common.config import cfg, HELP_URL, REPO_URL, EXAMPLE_URL, FEEDBACK_URL
 from ..common.icon import Icon, FluentIconBase
 from ..components.link_card import LinkCardView
 from ..components.sample_card import SampleCardView
+import sys
+from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, 
+                            QTextEdit, QPushButton, QScrollArea, QFrame, 
+                            QLabel, QLineEdit, QSizePolicy)
+from PyQt5.QtCore import QObject, pyqtSignal, QThread, Qt, QTimer
+from PyQt5.QtGui import QFont, QPalette, QColor
+
 from ..common.style_sheet import StyleSheet
-
-
-class BannerWidget(QWidget):
-    """ Banner widget """
-
-    def __init__(self, parent=None):
-        super().__init__(parent=parent)
-        self.setFixedHeight(336)
-
-        self.vBoxLayout = QVBoxLayout(self)
-        self.galleryLabel = QLabel('Fluent Gallery', self)
-        self.banner = QPixmap(':/gallery/images/header1.png')
-        self.linkCardView = LinkCardView(self)
-
-        self.galleryLabel.setObjectName('galleryLabel')
-
-        self.vBoxLayout.setSpacing(0)
-        self.vBoxLayout.setContentsMargins(0, 20, 0, 0)
-        self.vBoxLayout.addWidget(self.galleryLabel)
-        self.vBoxLayout.addWidget(self.linkCardView, 1, Qt.AlignBottom)
-        self.vBoxLayout.setAlignment(Qt.AlignLeft | Qt.AlignTop)
-
-        self.linkCardView.addCard(
-            ':/gallery/images/logo.png',
-            self.tr('Getting started'),
-            self.tr('An overview of app development options and samples.'),
-            HELP_URL
-        )
-
-        self.linkCardView.addCard(
-            FluentIcon.GITHUB,
-            self.tr('GitHub repo'),
-            self.tr(
-                'The latest fluent design controls and styles for your applications.'),
-            REPO_URL
-        )
-
-        self.linkCardView.addCard(
-            FluentIcon.CODE,
-            self.tr('Code samples'),
-            self.tr(
-                'Find samples that demonstrate specific tasks, features and APIs.'),
-            EXAMPLE_URL
-        )
-
-        self.linkCardView.addCard(
-            FluentIcon.FEEDBACK,
-            self.tr('Send feedback'),
-            self.tr('Help us improve PyQt-Fluent-Widgets by providing feedback.'),
-            FEEDBACK_URL
-        )
-
-    def paintEvent(self, e):
-        super().paintEvent(e)
-        painter = QPainter(self)
-        painter.setRenderHints(
-            QPainter.SmoothPixmapTransform | QPainter.Antialiasing)
-        painter.setPen(Qt.NoPen)
-
-        path = QPainterPath()
-        path.setFillRule(Qt.WindingFill)
-        w, h = self.width(), self.height()
-        path.addRoundedRect(QRectF(0, 0, w, h), 10, 10)
-        path.addRect(QRectF(0, h-50, 50, 50))
-        path.addRect(QRectF(w-50, 0, 50, 50))
-        path.addRect(QRectF(w-50, h-50, 50, 50))
-        path = path.simplified()
-
-        # init linear gradient effect
-        gradient = QLinearGradient(0, 0, 0, h)
-
-        # draw background color
-        if not isDarkTheme():
-            gradient.setColorAt(0, QColor(207, 216, 228, 255))
-            gradient.setColorAt(1, QColor(207, 216, 228, 0))
-        else:
-            gradient.setColorAt(0, QColor(0, 0, 0, 255))
-            gradient.setColorAt(1, QColor(0, 0, 0, 0))
-            
-        painter.fillPath(path, QBrush(gradient))
-
-        # draw banner image
-        pixmap = self.banner.scaled(
-            self.size(), transformMode=Qt.SmoothTransformation)
-        painter.fillPath(path, QBrush(pixmap))
-
+from ..chatbot import chatbot, ChatBotThread
+from ..components.message_widget import MessageWidget 
 
 class HomeInterface(ScrollArea):
     """ Home interface """
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
-        self.banner = BannerWidget(self)
         self.view = QWidget(self)
         self.vBoxLayout = QVBoxLayout(self.view)
-
+        self.bot = chatbot
+        self.bot.connect(self.update_bot_message)
+        self.current_bot_message = None
+        self.chat_thread = None
+        self.init_ui()
+        
         self.__initWidget()
-        self.loadSamples()
+        
 
     def __initWidget(self):
         self.view.setObjectName('view')
@@ -119,378 +46,210 @@ class HomeInterface(ScrollArea):
 
         self.vBoxLayout.setContentsMargins(0, 0, 0, 36)
         self.vBoxLayout.setSpacing(40)
-        self.vBoxLayout.addWidget(self.banner)
         self.vBoxLayout.setAlignment(Qt.AlignTop)
 
-    def loadSamples(self):
-        """ load samples """
-        # basic input samples
-        basicInputView = SampleCardView(
-            self.tr("Basic input samples"), self.view)
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/Button.png",
-            title="Button",
-            content=self.tr(
-                "A control that responds to user input and emit clicked signal."),
-            routeKey="basicInputInterface",
-            index=0
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/Checkbox.png",
-            title="CheckBox",
-            content=self.tr("A control that a user can select or clear."),
-            routeKey="basicInputInterface",
-            index=8
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/ComboBox.png",
-            title="ComboBox",
-            content=self.tr(
-                "A drop-down list of items a user can select from."),
-            routeKey="basicInputInterface",
-            index=10
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/DropDownButton.png",
-            title="DropDownButton",
-            content=self.tr(
-                "A button that displays a flyout of choices when clicked."),
-            routeKey="basicInputInterface",
-            index=12
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/HyperlinkButton.png",
-            title="HyperlinkButton",
-            content=self.tr(
-                "A button that appears as hyperlink text, and can navigate to a URI or handle a Click event."),
-            routeKey="basicInputInterface",
-            index=18
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/RadioButton.png",
-            title="RadioButton",
-            content=self.tr(
-                "A control that allows a user to select a single option from a group of options."),
-            routeKey="basicInputInterface",
-            index=19
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/Slider.png",
-            title="Slider",
-            content=self.tr(
-                "A control that lets the user select from a range of values by moving a Thumb control along a track."),
-            routeKey="basicInputInterface",
-            index=20
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/SplitButton.png",
-            title="SplitButton",
-            content=self.tr(
-                "A two-part button that displays a flyout when its secondary part is clicked."),
-            routeKey="basicInputInterface",
-            index=21
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/ToggleSwitch.png",
-            title="SwitchButton",
-            content=self.tr(
-                "A switch that can be toggled between 2 states."),
-            routeKey="basicInputInterface",
-            index=25
-        )
-        basicInputView.addSampleCard(
-            icon=":/gallery/images/controls/ToggleButton.png",
-            title="ToggleButton",
-            content=self.tr(
-                "A button that can be switched between two states like a CheckBox."),
-            routeKey="basicInputInterface",
-            index=26
-        )
-        self.vBoxLayout.addWidget(basicInputView)
-
-        # date time samples
-        dateTimeView = SampleCardView(self.tr('Date & time samples'), self.view)
-        dateTimeView.addSampleCard(
-            icon=":/gallery/images/controls/CalendarDatePicker.png",
-            title="CalendarPicker",
-            content=self.tr("A control that lets a user pick a date value using a calendar."),
-            routeKey="dateTimeInterface",
-            index=0
-        )
-        dateTimeView.addSampleCard(
-            icon=":/gallery/images/controls/DatePicker.png",
-            title="DatePicker",
-            content=self.tr("A control that lets a user pick a date value."),
-            routeKey="dateTimeInterface",
-            index=2
-        )
-        dateTimeView.addSampleCard(
-            icon=":/gallery/images/controls/TimePicker.png",
-            title="TimePicker",
-            content=self.tr(
-                "A configurable control that lets a user pick a time value."),
-            routeKey="dateTimeInterface",
-            index=4
-        )
-        self.vBoxLayout.addWidget(dateTimeView)
-
-        # dialog samples
-        dialogView = SampleCardView(self.tr('Dialog samples'), self.view)
-        dialogView.addSampleCard(
-            icon=":/gallery/images/controls/Flyout.png",
-            title="Dialog",
-            content=self.tr("A frameless message dialog."),
-            routeKey="dialogInterface",
-            index=0
-        )
-        dialogView.addSampleCard(
-            icon=":/gallery/images/controls/ContentDialog.png",
-            title="MessageBox",
-            content=self.tr("A message dialog with mask."),
-            routeKey="dialogInterface",
-            index=1
-        )
-        dialogView.addSampleCard(
-            icon=":/gallery/images/controls/ColorPicker.png",
-            title="ColorDialog",
-            content=self.tr("A dialog that allows user to select color."),
-            routeKey="dialogInterface",
-            index=2
-        )
-        dialogView.addSampleCard(
-            icon=":/gallery/images/controls/Flyout.png",
-            title="Flyout",
-            content=self.tr("Shows contextual information and enables user interaction."),
-            routeKey="dialogInterface",
-            index=3
-        )
-        dialogView.addSampleCard(
-            icon=":/gallery/images/controls/TeachingTip.png",
-            title="TeachingTip",
-            content=self.tr("A content-rich flyout for guiding users and enabling teaching moments."),
-            routeKey="dialogInterface",
-            index=5
-        )
-        self.vBoxLayout.addWidget(dialogView)
-
-        # layout samples
-        layoutView = SampleCardView(self.tr('Layout samples'), self.view)
-        layoutView.addSampleCard(
-            icon=":/gallery/images/controls/Grid.png",
-            title="FlowLayout",
-            content=self.tr(
-                "A layout arranges components in a left-to-right flow, wrapping to the next row when the current row is full."),
-            routeKey="layoutInterface",
-            index=0
-        )
-        self.vBoxLayout.addWidget(layoutView)
-
-        # material samples
-        materialView = SampleCardView(self.tr('Material samples'), self.view)
-        materialView.addSampleCard(
-            icon=":/gallery/images/controls/Acrylic.png",
-            title="AcrylicLabel",
-            content=self.tr(
-                "A translucent material recommended for panel background."),
-            routeKey="materialInterface",
-            index=0
-        )
-        self.vBoxLayout.addWidget(materialView)
-
-        # menu samples
-        menuView = SampleCardView(self.tr('Menu & toolbars samples'), self.view)
-        menuView.addSampleCard(
-            icon=":/gallery/images/controls/MenuFlyout.png",
-            title="RoundMenu",
-            content=self.tr(
-                "Shows a contextual list of simple commands or options."),
-            routeKey="menuInterface",
-            index=0
-        )
-        menuView.addSampleCard(
-            icon=":/gallery/images/controls/CommandBar.png",
-            title="CommandBar",
-            content=self.tr(
-                "Shows a contextual list of simple commands or options."),
-            routeKey="menuInterface",
-            index=2
-        )
-        menuView.addSampleCard(
-            icon=":/gallery/images/controls/CommandBarFlyout.png",
-            title="CommandBarFlyout",
-            content=self.tr(
-                "A mini-toolbar displaying proactive commands, and an optional menu of commands."),
-            routeKey="menuInterface",
-            index=3
-        )
-        self.vBoxLayout.addWidget(menuView)
-
-        # navigation
-        navigationView = SampleCardView(self.tr('Navigation'), self.view)
-        navigationView.addSampleCard(
-            icon=":/gallery/images/controls/BreadcrumbBar.png",
-            title="BreadcrumbBar",
-            content=self.tr(
-                "Shows the trail of navigation taken to the current location."),
-            routeKey="navigationViewInterface",
-            index=0
-        )
-        navigationView.addSampleCard(
-            icon=":/gallery/images/controls/Pivot.png",
-            title="Pivot",
-            content=self.tr(
-                "Presents information from different sources in a tabbed view."),
-            routeKey="navigationViewInterface",
-            index=1
-        )
-        navigationView.addSampleCard(
-            icon=":/gallery/images/controls/TabView.png",
-            title="TabView",
-            content=self.tr(
-                "Presents information from different sources in a tabbed view."),
-            routeKey="navigationViewInterface",
-            index=3
-        )
-        self.vBoxLayout.addWidget(navigationView)
-
-        # scroll samples
-        scrollView = SampleCardView(self.tr('Scrolling samples'), self.view)
-        scrollView.addSampleCard(
-            icon=":/gallery/images/controls/ScrollViewer.png",
-            title="ScrollArea",
-            content=self.tr(
-                "A container control that lets the user pan and zoom its content smoothly."),
-            routeKey="scrollInterface",
-            index=0
-        )
-        scrollView.addSampleCard(
-            icon=":/gallery/images/controls/PipsPager.png",
-            title="PipsPager",
-            content=self.tr(
-                "A control to let the user navigate through a paginated collection when the page numbers do not need to be visually known."),
-            routeKey="scrollInterface",
-            index=3
-        )
-        self.vBoxLayout.addWidget(scrollView)
-
-        # state info samples
-        stateInfoView = SampleCardView(self.tr('Status & info samples'), self.view)
-        stateInfoView.addSampleCard(
-            icon=":/gallery/images/controls/ProgressRing.png",
-            title="StateToolTip",
-            content=self.tr(
-                "Shows the apps progress on a task, or that the app is performing ongoing work that does block user interaction."),
-            routeKey="statusInfoInterface",
-            index=0
-        )
-        stateInfoView.addSampleCard(
-            icon=":/gallery/images/controls/InfoBadge.png",
-            title="InfoBadge",
-            content=self.tr(
-                "An non-intrusive Ul to display notifications or bring focus to an area."),
-            routeKey="statusInfoInterface",
-            index=3
-        )
-        stateInfoView.addSampleCard(
-            icon=":/gallery/images/controls/InfoBar.png",
-            title="InfoBar",
-            content=self.tr(
-                "An inline message to display app-wide status change information."),
-            routeKey="statusInfoInterface",
-            index=4
-        )
-        stateInfoView.addSampleCard(
-            icon=":/gallery/images/controls/ProgressBar.png",
-            title="ProgressBar",
-            content=self.tr(
-                "Shows the apps progress on a task, or that the app is performing ongoing work that doesn't block user interaction."),
-            routeKey="statusInfoInterface",
-            index=8
-        )
-        stateInfoView.addSampleCard(
-            icon=":/gallery/images/controls/ProgressRing.png",
-            title="ProgressRing",
-            content=self.tr(
-                "Shows the apps progress on a task, or that the app is performing ongoing work that doesn't block user interaction."),
-            routeKey="statusInfoInterface",
-            index=10
-        )
-        stateInfoView.addSampleCard(
-            icon=":/gallery/images/controls/ToolTip.png",
-            title="ToolTip",
-            content=self.tr(
-                "Displays information for an element in a pop-up window."),
-            routeKey="statusInfoInterface",
-            index=1
-        )
-        self.vBoxLayout.addWidget(stateInfoView)
-
-        # text samples
-        textView = SampleCardView(self.tr('Text samples'), self.view)
-        textView.addSampleCard(
-            icon=":/gallery/images/controls/TextBox.png",
-            title="LineEdit",
-            content=self.tr("A single-line plain text field."),
-            routeKey="textInterface",
-            index=0
-        )
-        textView.addSampleCard(
-            icon=":/gallery/images/controls/PasswordBox.png",
-            title="PasswordLineEdit",
-            content=self.tr("A control for entering passwords."),
-            routeKey="textInterface",
-            index=2
-        )
-        textView.addSampleCard(
-            icon=":/gallery/images/controls/NumberBox.png",
-            title="SpinBox",
-            content=self.tr(
-                "A text control used for numeric input and evaluation of algebraic equations."),
-            routeKey="textInterface",
-            index=3
-        )
-        textView.addSampleCard(
-            icon=":/gallery/images/controls/RichEditBox.png",
-            title="TextEdit",
-            content=self.tr(
-                "A rich text editing control that supports formatted text, hyperlinks, and other rich content."),
-            routeKey="textInterface",
-            index=8
-        )
-        self.vBoxLayout.addWidget(textView)
-
-        # view samples
-        collectionView = SampleCardView(self.tr('View samples'), self.view)
-        collectionView.addSampleCard(
-            icon=":/gallery/images/controls/ListView.png",
-            title="ListView",
-            content=self.tr(
-                "A control that presents a collection of items in a vertical list."),
-            routeKey="viewInterface",
-            index=0
-        )
-        collectionView.addSampleCard(
-            icon=":/gallery/images/controls/DataGrid.png",
-            title="TableView",
-            content=self.tr(
-                "The DataGrid control provides a flexible way to display a collection of data in rows and columns."),
-            routeKey="viewInterface",
-            index=1
-        )
-        collectionView.addSampleCard(
-            icon=":/gallery/images/controls/TreeView.png",
-            title="TreeView",
-            content=self.tr(
-                "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items."),
-            routeKey="viewInterface",
-            index=2
-        )
-        collectionView.addSampleCard(
-            icon=":/gallery/images/controls/FlipView.png",
-            title="FlipView",
-            content=self.tr(
-                "Presents a collection of items that the user can flip through,one item at a time."),
-            routeKey="viewInterface",
-            index=4
-        )
-        self.vBoxLayout.addWidget(collectionView)
+    
+    def init_ui(self):
+        self.setWindowTitle("AI 聊天机器人")
+        self.setGeometry(100, 100, 800, 600)
+        
+        # 设置窗口样式
+        self.setStyleSheet("""
+            QWidget {
+                background-color: #ffffff;
+                font-family: 'Segoe UI', Arial, sans-serif;
+            }
+        """)
+        
+        # 创建主布局
+        main_layout = QVBoxLayout(self)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.setSpacing(0)
+        
+        # # 创建标题栏
+        # title_frame = QFrame()
+        # title_frame.setStyleSheet("""
+        #     QFrame {
+        #         background-color: #f8f9fa;
+        #         border-bottom: 1px solid #dee2e6;
+        #     }
+        # """)
+        # title_layout = QHBoxLayout(title_frame)
+        # title_layout.setContentsMargins(20, 15, 20, 15)
+        
+        # title_label = QLabel("AI 聊天助手")
+        # title_label.setFont(QFont("Arial", 16, QFont.Bold))
+        # title_label.setStyleSheet("color: #333;")
+        # title_layout.addWidget(title_label)
+        
+        # main_layout.addWidget(title_frame)
+        
+        # 创建聊天区域
+        self.chat_area = QScrollArea()
+        self.chat_area.setWidgetResizable(True)
+        self.chat_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.chat_area.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.chat_area.setStyleSheet("""
+            QScrollArea {
+                border: none;
+                background-color: #ffffff;
+            }
+            QScrollBar:vertical {
+                border: none;
+                background-color: #f1f1f1;
+                width: 8px;
+                border-radius: 4px;
+            }
+            QScrollBar::handle:vertical {
+                background-color: #c1c1c1;
+                border-radius: 4px;
+                min-height: 20px;
+            }
+            QScrollBar::handle:vertical:hover {
+                background-color: #a1a1a1;
+            }
+        """)
+        
+        # 聊天内容容器
+        self.chat_widget = QWidget()
+        self.chat_layout = QVBoxLayout(self.chat_widget)
+        self.chat_layout.setContentsMargins(0, 10, 0, 10)
+        self.chat_layout.setSpacing(2)  # 减少消息间距
+        self.chat_layout.addStretch()
+        
+        self.chat_area.setWidget(self.chat_widget)
+        main_layout.addWidget(self.chat_area)
+        
+        # 创建输入区域
+        input_frame = QFrame()
+        input_frame.setStyleSheet("""
+            QFrame {
+                background-color: #f8f9fa;
+                border-top: 1px solid #dee2e6;
+            }
+        """)
+        input_layout = QHBoxLayout(input_frame)
+        input_layout.setContentsMargins(20, 15, 20, 15)
+        input_layout.setSpacing(10)
+        
+        # 输入框
+        self.input_field = QLineEdit()
+        self.input_field.setPlaceholderText("输入您的问题...")
+        self.input_field.setFont(QFont("Arial", 11))
+        self.input_field.setStyleSheet("""
+            QLineEdit {
+                padding: 12px 16px;
+                border: 2px solid #dee2e6;
+                border-radius: 25px;
+                font-size: 14px;
+                background-color: white;
+            }
+            QLineEdit:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+        """)
+        self.input_field.returnPressed.connect(self.send_message)
+        
+        # 发送按钮
+        self.send_button = QPushButton("发送")
+        self.send_button.setFont(QFont("Arial", 10, QFont.Bold))
+        self.send_button.setStyleSheet("""
+            QPushButton {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-size: 14px;
+            }
+            QPushButton:hover {
+                background-color: #0056b3;
+            }
+            QPushButton:pressed {
+                background-color: #004085;
+            }
+            QPushButton:disabled {
+                background-color: #6c757d;
+            }
+        """)
+        self.send_button.clicked.connect(self.send_message)
+        
+        input_layout.addWidget(self.input_field)
+        input_layout.addWidget(self.send_button)
+        
+        main_layout.addWidget(input_frame)
+        
+        # 添加欢迎消息
+        self.add_bot_message("你好！我是AI助手，有什么可以帮助您的吗？")
+    
+    def add_user_message(self, message):
+        """添加用户消息"""
+        message_widget = MessageWidget(message, is_user=True)
+        self.chat_layout.insertWidget(self.chat_layout.count() - 1, message_widget)
+        self.scroll_to_bottom()
+        message_widget.adjust_message_width_by_content()
+    
+    def add_bot_message(self, message):
+        """添加机器人消息"""
+        message_widget = MessageWidget(message, is_user=False)
+        self.chat_layout.insertWidget(self.chat_layout.count() - 1, message_widget)
+        self.current_bot_message = message_widget
+        self.scroll_to_bottom()
+    
+    def update_bot_message(self, token):
+        """更新当前机器人消息"""
+        if self.current_bot_message:
+            current_text = self.current_bot_message.message_text
+            new_text = current_text + token
+            self.current_bot_message.update_message(new_text)
+            self.scroll_to_bottom()
+    
+    def scroll_to_bottom(self):
+        """滚动到底部"""
+        QTimer.singleShot(10, lambda: self.chat_area.verticalScrollBar().setValue(
+            self.chat_area.verticalScrollBar().maximum()))
+    
+    def send_message(self):
+        """发送消息"""
+        message = self.input_field.text().strip()
+        if not message:
+            return
+        
+        # 添加用户消息
+        self.add_user_message(message)
+        self.input_field.clear()
+        
+        # 禁用发送按钮和输入框
+        self.send_button.setEnabled(False)
+        self.input_field.setEnabled(False)
+        
+        # 添加空的机器人消息
+        self.add_bot_message("")
+        
+        # 创建并启动聊天线程
+        self.chat_thread = ChatBotThread(message, self.bot)
+        self.chat_thread.finished.connect(self.on_chat_finished)
+        self.chat_thread.start()
+    
+    def on_chat_finished(self, full_content):
+        """聊天完成回调"""
+        # 重新启用发送按钮和输入框
+        self.send_button.setEnabled(True)
+        self.input_field.setEnabled(True)
+        self.input_field.setFocus()
+        
+        # 清理线程
+        if self.chat_thread:
+            self.chat_thread.quit()
+            self.chat_thread.wait()
+            self.chat_thread = None
+        
+        self.current_bot_message = None
+    
+    def closeEvent(self, event):
+        """关闭窗口时的清理"""
+        if self.chat_thread and self.chat_thread.isRunning():
+            self.chat_thread.quit()
+            self.chat_thread.wait()
+        event.accept()
