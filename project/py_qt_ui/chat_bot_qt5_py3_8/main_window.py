@@ -30,6 +30,7 @@ class MainWindow(FluentWindow):
         self.initWindow()
 
         # create system theme listener
+        
         self.themeListener = SystemThemeListener(self)
         
         # 导航页面
