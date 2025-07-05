@@ -53,6 +53,7 @@ def crate_right_panel():
                     seesion_id, [human_message, ai_message])
                 if not added:
                     raise Exception("数据添加失败")
+            
             except Exception as e:
                 error_msg = f"发生错误: {str(e)}"
                 st.error(error_msg)
