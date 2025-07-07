@@ -12,3 +12,5 @@ cache/
 .pytest_cache/
 project/py_qt_ui/chat_bot_qt5_py3_8/app/resource
 project/py_qt_ui/easy_chat/app/resource
+project/chat_bot/models/bge-m3/*
+project/chat_bot/app/models/bge-m3

@@ -4,7 +4,7 @@ from langchain_ollama import ChatOllama
 from langchain_core.messages import trim_messages
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import START, END, StateGraph, MessagesState
-from langchain.schema import HumanMessage, AIMessage
+
 
 # 模型输入模板
 template = """
